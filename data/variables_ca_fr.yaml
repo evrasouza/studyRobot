@@ -1,0 +1,22 @@
+COUNTRY: ca
+LANGUAGE: fr
+REGION: "ON"
+NAME_REGION: Ontario
+TITLE: DÉFINIR VOTRE EMPLACEMENT
+TITLE_SEALYNX: Définir votre emplacement
+SUBTITLE: Veuillez choisir un emplacement pour trouver des offres près de chez vous.
+TEXT_COMBOBOX: Choisir un emplacement
+BUTTON: CONFIRMER
+BUTTON_SEA: Confirmer
+SHOWING_RESULTS: Afficher les résultats pour
+TAB_TITLE: Toutes les offres
+EXPECTED_PAGE_TITLE: TOUTES LES OFFRES
+EXPECTED_PAGE_TITLE_SEALYNX: Toutes les offres
+SUBTITLE_VEHICLEPAGE: Sélectionnez un type de véhicule
+SUBTITLE_MODELPAGE: Sélectionnez une année et un modèle pour voir les ensembles et les offres disponibles
+REQUESTAQUOTE: demandez-un-prix.html
+NGCAT: BRP_SSV
+NGMODEL: Defender
+NGTRIM: Defender
+NGMSRP: '15399'
+NGCURR: CAD

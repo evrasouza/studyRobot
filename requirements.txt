@@ -1,0 +1,3 @@
+robotframework==6.0.2
+robotframework-browser==13.1.0
+robotframework-yamllibrary==0.2.8
