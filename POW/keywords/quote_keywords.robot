@@ -15,6 +15,11 @@ The user selects a model and year
     Click Model By Name     ${brand_data["model"]}
     Click                   text=${brand_data["model_year"]}
 
+#The user selects a model and year
+    #Click Model Menu        ${${model_data}["menu_label"]}
+    #Click Model By Name     ${${model_data}["model"]}
+    #Click                   text=${${model_data}["model_year"]}
+
 The user clicks the quote button
     ${brand_data}=  Get From Dictionary    ${brands}    ${BRAND}
     Click    text=${brand_data["quote_text"]} >> nth=0
@@ -23,9 +28,22 @@ The user fills out and submits the quote form
     Fill Quote Form                ${form}
     Take Timestamped Screenshot    ${locale}
 
+#Setup Test
+    #New Context            viewport={'width': 1920, 'height': 1080}
+    #Set Browser Timeout    1 minute
+    #${model_data}=    Evaluate    globals()[${brand}]
+    #Set Suite Variable    ${model_data}
+
 Setup Test
     New Context            viewport={'width': 1920, 'height': 1080}
     Set Browser Timeout    1 minute
+    ${model_data}=    Get Variable Value    ${brand}    # Acessa o valor de ${brand}
+    Run Keyword If      '${model_data}' == ''    Fail    Brand data not found!
+    Log    ${model_data}    # Depuração para conferir o conteúdo
+    Set Suite Variable    ${model_data}
+    Log    ${brand}    # Verifique se a variável brand tem o valor esperado, como 'can_am' ou 'sea_doo'
+
+
 
 Close Modal If Exists
     ${newsletter}=    Get Element Count    css=#root_newsletter-popup .overlay
