@@ -1,9 +1,7 @@
 name: Regression Tests
-
 on:
   push:
     branches: [ "main" ]
-
 jobs:  
   web_tests:
     runs-on: ubuntu-latest
@@ -11,7 +9,6 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.9"]
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -38,7 +35,7 @@ jobs:
         chmod +x ./frontend/run.sh
         cd frontend/ && ./run.sh
     - name: Upload web test results
-      uses: actions/upload-artifact@v2.3.1
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: web-reports
@@ -49,4 +46,3 @@ jobs:
         name: Web Test Result
         path: frontend/logs/xunit.xml
         reporter: java-junit
-        
