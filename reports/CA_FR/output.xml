@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.10.11 on win32)" generated="2025-04-13T08:46:15.062957" rpa="false" schemaversion="5">
+<suite id="s1" name="Request A Quote" source="C:\projects\ROBOT\BRP\POW\tests\request_a_quote.robot">
+<kw name="New Browser" owner="Browser" type="SETUP">
+<msg time="2025-04-13T08:46:15.761060" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "deprecated_pos_args": [], "tracesDir": "C:\\projects\\ROBOT\\BRP\\POW\\reports\\CA_FR\\browser\\traces\\08783da3-b205-46c5-8401-dc4139048bd1"}</msg>
+<msg time="2025-04-13T08:46:16.030061" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"deprecated_pos_args":[],"tracesDir":"C:\\projects\\ROBOT\\BRP\\POW\\reports\\CA_FR\\browser\\traces\\08783da3-b205-46c5-8401-dc4139048bd1"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-04-13T08:46:15.761060" elapsed="0.269001"/>
+</kw>
+<test id="s1-t1" name="User tries to send a request a quote form without filling in the required fields" line="13">
+<msg time="2025-04-13T08:46:16.034061" level="INFO">[
+  {
+    "type": "chromium",
+    "id": "browser=db9beb6b-581d-4113-865e-1f31adb99f63",
+    "contexts": [],
+    "activeBrowser": true
+  }
+]</msg>
+<kw name="Setup Test" owner="quote_keywords" type="SETUP">
+<kw name="New Context" owner="Browser">
+<msg time="2025-04-13T08:46:16.036063" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "height": 1080,
+    "width": 1920
+  },
+  "deprecated_pos_args": []
+}</msg>
+<msg time="2025-04-13T08:46:16.049061" level="INFO">Successfully created context. </msg>
+<msg time="2025-04-13T08:46:16.049061" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'height': 1080, 'width': 1920}, 'deprecated_pos_args': []}</msg>
+<arg>viewport={'width': 1920, 'height': 1080}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-04-13T08:46:16.035062" elapsed="0.013999"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<msg time="2025-04-13T08:46:16.052061" level="INFO">Set timeout to: 60000</msg>
+<arg>1 minute</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2025-04-13T08:46:16.049061" elapsed="0.004001"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:16.035062" elapsed="0.018000"/>
+</kw>
+<kw name="Given The user accesses the site with its respective data" owner="quote_keywords">
+<kw name="New Page" owner="Browser">
+<msg time="2025-04-13T08:46:18.863053" level="INFO">Successfully initialized new page object and opened url: https://can-am.brp.com/off-road/ca/fr/</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-04-13T08:46:16.053062" elapsed="2.810990"/>
+</kw>
+<kw name="Close Modal If Exists" owner="quote_keywords">
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-04-13T08:46:18.905053" level="INFO">${newsletter} = 1</msg>
+<var>${newsletter}</var>
+<arg>css=#root_newsletter-popup .overlay</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:18.864052" elapsed="0.041001"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<arg>css=#root_newsletter-popup button[aria-label="Close"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:18.907055" elapsed="5.062869"/>
+</kw>
+<arg>${newsletter} &gt; 0</arg>
+<arg>Click</arg>
+<arg>css=#root_newsletter-popup button[aria-label="Close"]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-13T08:46:18.906053" elapsed="5.063871"/>
+</kw>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-04-13T08:46:23.975924" level="INFO">${modals} = 0</msg>
+<var>${modals}</var>
+<arg>css=.modal.fade.show</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:23.969924" elapsed="0.006000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${modals} &gt; 0</arg>
+<arg>Click</arg>
+<arg>css=.modal.fade.show button.close</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-13T08:46:23.976923" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:18.864052" elapsed="5.112871"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-13T08:46:23.982923" level="INFO">Waited for Element with selector css=#root_newsletter-popup .overlay at state hidden</msg>
+<arg>css=#root_newsletter-popup .overlay</arg>
+<arg>hidden</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-13T08:46:23.976923" elapsed="0.006000"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2025-04-13T08:46:23.985924" level="INFO">Title: 'Véhicules Can-Am Hors-Route 2025 : VTT et VCC'</msg>
+<msg time="2025-04-13T08:46:23.985924" level="INFO">${title} = Véhicules Can-Am Hors-Route 2025 : VTT et VCC</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-04-13T08:46:23.982923" elapsed="0.003001"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>${can_am["expected_title"]}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-13T08:46:23.985924" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:16.053062" elapsed="7.933861"/>
+</kw>
+<kw name="When The user selects a model and year" owner="quote_keywords">
+<kw name="Click Model Menu" owner="quote_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:23.987923" level="INFO">${selector} = a[data-analytic-label="side-by-side-vehicles"]</msg>
+<var>${selector}</var>
+<arg>a[data-analytic-label="${menu_label}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:23.987923" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${selector} &gt;&gt; nth=1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:23.987923" elapsed="0.519000"/>
+</kw>
+<arg>${can_am["menu_label"]}</arg>
+<status status="PASS" start="2025-04-13T08:46:23.987923" elapsed="0.519000"/>
+</kw>
+<kw name="Click Model By Name" owner="quote_keywords">
+<kw name="Get Element" owner="Browser">
+<msg time="2025-04-13T08:46:25.353552" level="INFO">Locator found successfully.</msg>
+<msg time="2025-04-13T08:46:25.354552" level="INFO">${element} = element=f422ef50-90df-4e4c-88ce-1d78a67dcb0e</msg>
+<var>${element}</var>
+<arg>a[data-technical-name="${model_name}"]:visible &gt;&gt; nth=0</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-04-13T08:46:24.507923" elapsed="0.846629"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${element}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:25.354552" elapsed="0.791004"/>
+</kw>
+<arg>${can_am["model"]}</arg>
+<status status="PASS" start="2025-04-13T08:46:24.506923" elapsed="1.639633"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=${can_am["model_year"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:26.147557" elapsed="2.109615"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:23.986923" elapsed="4.271248"/>
+</kw>
+<kw name="And The user clicks the quote button" owner="quote_keywords">
+<kw name="Click" owner="Browser">
+<arg>text=${can_am["quote_text"]} &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:28.258171" elapsed="4.315224"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:28.258171" elapsed="4.315224"/>
+</kw>
+<kw name="And The user tries to submit the quote form without filling in the required fields" owner="quote_keywords">
+<kw name="Click" owner="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="button1"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:32.574394" elapsed="1.989611"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:32.573395" elapsed="1.991606"/>
+</kw>
+<kw name="Then Validation messages should appear for each required field" owner="quote_keywords">
+<kw name="Validate Error Messages In Iframe" owner="quote_keywords">
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:34.567001" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_name_error_text</msg>
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.566002" elapsed="0.000999"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-04-13T08:46:34.567001" level="INFO">${expected} = Veuillez saisir un prénom et un nom valides.</msg>
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.567001" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-04-13T08:46:34.607002" level="INFO">Text: 'Veuillez saisir un prénom et un nom valides.'</msg>
+<msg time="2025-04-13T08:46:34.607002" level="INFO">${actual} = Veuillez saisir un prénom et un nom valides.</msg>
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.567001" elapsed="0.040001"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.607002" elapsed="0.001000"/>
+</kw>
+<var name="${id}">form_input_name_error_text</var>
+<status status="PASS" start="2025-04-13T08:46:34.566002" elapsed="0.042000"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:34.609009" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_email_error_text</msg>
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.608002" elapsed="0.001007"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-04-13T08:46:34.609009" level="INFO">${expected} = Veuillez saisir une adresse électronique valide.</msg>
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.609009" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-04-13T08:46:34.624001" level="INFO">Text: 'Veuillez saisir une adresse électronique valide.'</msg>
+<msg time="2025-04-13T08:46:34.624001" level="INFO">${actual} = Veuillez saisir une adresse électronique valide.</msg>
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.609009" elapsed="0.014992"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.624001" elapsed="0.001001"/>
+</kw>
+<var name="${id}">form_input_email_error_text</var>
+<status status="PASS" start="2025-04-13T08:46:34.608002" elapsed="0.017000"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:34.625002" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_phone_error_text</msg>
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.625002" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-04-13T08:46:34.625002" level="INFO">${expected} = Veuillez saisir un numéro de téléphone valide.</msg>
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.625002" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-04-13T08:46:34.637002" level="INFO">Text: 'Veuillez saisir un numéro de téléphone valide.'</msg>
+<msg time="2025-04-13T08:46:34.637002" level="INFO">${actual} = Veuillez saisir un numéro de téléphone valide.</msg>
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.626001" elapsed="0.011001"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.637002" elapsed="0.000999"/>
+</kw>
+<var name="${id}">form_input_phone_error_text</var>
+<status status="PASS" start="2025-04-13T08:46:34.625002" elapsed="0.012999"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:34.638001" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_custom2_error_text</msg>
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.638001" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-04-13T08:46:34.639001" level="INFO">${expected} = Veuillez saisir une adresse valide.</msg>
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.638001" elapsed="0.001000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-04-13T08:46:34.650001" level="INFO">Text: 'Veuillez saisir une adresse valide.'</msg>
+<msg time="2025-04-13T08:46:34.650001" level="INFO">${actual} = Veuillez saisir une adresse valide.</msg>
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.639001" elapsed="0.011000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.650001" elapsed="0.001000"/>
+</kw>
+<var name="${id}">form_input_custom2_error_text</var>
+<status status="PASS" start="2025-04-13T08:46:34.638001" elapsed="0.013000"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:34.651001" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_custom3_error_text</msg>
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.651001" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-04-13T08:46:34.651001" level="INFO">${expected} = Veuillez saisir une ville valide.</msg>
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.651001" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-04-13T08:46:34.664001" level="INFO">Text: 'Veuillez saisir une ville valide.'</msg>
+<msg time="2025-04-13T08:46:34.664001" level="INFO">${actual} = Veuillez saisir une ville valide.</msg>
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.651001" elapsed="0.013000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.664001" elapsed="0.000000"/>
+</kw>
+<var name="${id}">form_input_custom3_error_text</var>
+<status status="PASS" start="2025-04-13T08:46:34.651001" elapsed="0.013000"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:34.665001" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_custom4_error_text</msg>
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.665001" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-04-13T08:46:34.665001" level="INFO">${expected} = Veuillez sélectionner votre province.</msg>
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.665001" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-04-13T08:46:34.676001" level="INFO">Text: 'Veuillez sélectionner votre province.'</msg>
+<msg time="2025-04-13T08:46:34.676001" level="INFO">${actual} = Veuillez sélectionner votre province.</msg>
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.665001" elapsed="0.011000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.677001" elapsed="0.000000"/>
+</kw>
+<var name="${id}">form_input_custom4_error_text</var>
+<status status="PASS" start="2025-04-13T08:46:34.664001" elapsed="0.013000"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:34.677001" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_custom5_error_text</msg>
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.677001" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-04-13T08:46:34.678000" level="INFO">${expected} = Veuillez saisir un code postal valide.</msg>
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.677001" elapsed="0.000999"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-04-13T08:46:34.687001" level="INFO">Text: 'Veuillez saisir un code postal valide.'</msg>
+<msg time="2025-04-13T08:46:34.688001" level="INFO">${actual} = Veuillez saisir un code postal valide.</msg>
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.678000" elapsed="0.010001"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.688001" elapsed="0.000000"/>
+</kw>
+<var name="${id}">form_input_custom5_error_text</var>
+<status status="PASS" start="2025-04-13T08:46:34.677001" elapsed="0.011000"/>
+</iter>
+<var>${id}</var>
+<value>@{errors.keys()}</value>
+<status status="PASS" start="2025-04-13T08:46:34.566002" elapsed="0.121999"/>
+</for>
+<arg>${IFRAME_SELECTOR}</arg>
+<arg>&amp;{EXPECTED_ERRORS}</arg>
+<status status="PASS" start="2025-04-13T08:46:34.565001" elapsed="0.123000"/>
+</kw>
+<kw name="Take Timestamped Screenshot" owner="quote_keywords">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-04-13T08:46:34.689001" level="INFO">${timestamp} = 2025-04-13 08:46:34</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M%S</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.689001" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:34.689001" level="INFO">${timestamp} = 2025-04-13 08-46-34</msg>
+<var>${timestamp}</var>
+<arg>${timestamp.replace(":", "-")}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.689001" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:34.690001" level="INFO">${filename} = CA_FR-screenshot-2025-04-13 08-46-34</msg>
+<var>${filename}</var>
+<arg>${locale}-screenshot-${timestamp}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.690001" elapsed="0.000000"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2025-04-13T08:46:35.088002" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/CA_FR-screenshot-2025-04-13%2008-46-34.png" target="_blank"&gt;&lt;img src="browser/screenshot/CA_FR-screenshot-2025-04-13%2008-46-34.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>filename=${filename}</arg>
+<arg>fullPage=True</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-04-13T08:46:34.690001" elapsed="0.399002"/>
+</kw>
+<arg>${locale}</arg>
+<status status="PASS" start="2025-04-13T08:46:34.688001" elapsed="0.401002"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:34.565001" elapsed="0.524002"/>
+</kw>
+<kw name="And The form should not be submitted" owner="quote_keywords">
+<kw name="Get Text" owner="Browser">
+<msg time="2025-04-13T08:46:35.530323" level="INFO">Text: 'DEMANDEZ UN PRIX'</msg>
+<msg time="2025-04-13T08:46:35.530835" level="INFO">${text} = DEMANDEZ UN PRIX</msg>
+<var>${text}</var>
+<arg>h1.cmp-teaser__title</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:35.090002" elapsed="0.440833"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${can_am["title_RAQ_PAGE"]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-13T08:46:35.530835" elapsed="0.000519"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:35.089003" elapsed="0.442868"/>
+</kw>
+<kw name="Close Context" owner="Browser" type="TEARDOWN">
+<msg time="2025-04-13T08:46:35.536580" level="INFO">[
+  {
+    "type": "chromium",
+    "id": "browser=db9beb6b-581d-4113-865e-1f31adb99f63",
+    "contexts": [
+      {
+        "type": "context",
+        "id": "context=50e28db0-9d69-4bac-856b-7a36f689da91",
+        "activePage": "page=9d143835-ef87-4760-9649-95a5aef5bcd2",
+        "pages": [
+          {
+            "type": "page",
+            "title": "Demandez un prix pour un VTT ou VCC - Can-Am Hors-Route",
+            "url": "https://can-am.brp.com/off-road/ca/fr/outils-de-magasinage/demandez-un-prix.html#ng_cat=BRP_SSV&amp;ng_model=Defender&amp;ng_trim=Defender&amp;ng_msrp=15399&amp;ng_curr=CAD",
+            "id": "page=9d143835-ef87-4760-9649-95a5aef5bcd2",
+            "timestamp": 1744544776.166
+          }
+        ]
+      }
+    ],
+    "activeContext": "context=50e28db0-9d69-4bac-856b-7a36f689da91",
+    "activeBrowser": true
+  }
+]</msg>
+<msg time="2025-04-13T08:46:35.536580" level="INFO">Switching browser to CURRENT</msg>
+<msg time="2025-04-13T08:46:35.538131" level="INFO">Active context id</msg>
+<msg time="2025-04-13T08:46:35.538131" level="INFO">Switching browser to browser=db9beb6b-581d-4113-865e-1f31adb99f63</msg>
+<msg time="2025-04-13T08:46:35.539169" level="INFO">Successfully changed active browser</msg>
+<msg time="2025-04-13T08:46:35.539169" level="INFO">Switching context to CURRENT in CURRENT</msg>
+<msg time="2025-04-13T08:46:35.541771" level="INFO">Returned active context id</msg>
+<msg time="2025-04-13T08:46:35.542294" level="INFO">Switching context to context=50e28db0-9d69-4bac-856b-7a36f689da91 in CURRENT</msg>
+<msg time="2025-04-13T08:46:35.548231" level="INFO">[
+  {
+    "type": "chromium",
+    "id": "browser=db9beb6b-581d-4113-865e-1f31adb99f63",
+    "contexts": [
+      {
+        "type": "context",
+        "id": "context=50e28db0-9d69-4bac-856b-7a36f689da91",
+        "activePage": "page=9d143835-ef87-4760-9649-95a5aef5bcd2",
+        "pages": [
+          {
+            "type": "page",
+            "title": "Demandez un prix pour un VTT ou VCC - Can-Am Hors-Route",
+            "url": "https://can-am.brp.com/off-road/ca/fr/outils-de-magasinage/demandez-un-prix.html#ng_cat=BRP_SSV&amp;ng_model=Defender&amp;ng_trim=Defender&amp;ng_msrp=15399&amp;ng_curr=CAD",
+            "id": "page=9d143835-ef87-4760-9649-95a5aef5bcd2",
+            "timestamp": 1744544776.166
+          }
+        ]
+      }
+    ],
+    "activeContext": "context=50e28db0-9d69-4bac-856b-7a36f689da91",
+    "activeBrowser": true
+  }
+]</msg>
+<msg time="2025-04-13T08:46:35.551294" level="INFO">Successfully changed active context</msg>
+<msg time="2025-04-13T08:46:35.668785" level="INFO">Successfully closed Context</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes a Context.</doc>
+<status status="PASS" start="2025-04-13T08:46:35.531871" elapsed="0.137918"/>
+</kw>
+<msg time="2025-04-13T08:46:35.674791" level="INFO">No context open.</msg>
+<msg time="2025-04-13T08:46:35.679788" level="INFO">[
+  {
+    "type": "chromium",
+    "id": "browser=db9beb6b-581d-4113-865e-1f31adb99f63",
+    "contexts": [],
+    "activeBrowser": true
+  }
+]</msg>
+<status status="PASS" start="2025-04-13T08:46:16.030061" elapsed="19.640725"/>
+</test>
+<test id="s1-t2" name="User Navigates, Selects Model And Submits Quote Form" line="21">
+<msg time="2025-04-13T08:46:35.684315" level="INFO">[
+  {
+    "type": "chromium",
+    "id": "browser=db9beb6b-581d-4113-865e-1f31adb99f63",
+    "contexts": [],
+    "activeBrowser": true
+  }
+]</msg>
+<kw name="Setup Test" owner="quote_keywords" type="SETUP">
+<kw name="New Context" owner="Browser">
+<msg time="2025-04-13T08:46:35.685313" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "height": 1080,
+    "width": 1920
+  },
+  "deprecated_pos_args": []
+}</msg>
+<msg time="2025-04-13T08:46:35.693312" level="INFO">Successfully created context. </msg>
+<msg time="2025-04-13T08:46:35.694313" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'height': 1080, 'width': 1920}, 'deprecated_pos_args': []}</msg>
+<arg>viewport={'width': 1920, 'height': 1080}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-04-13T08:46:35.685313" elapsed="0.009000"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>1 minute</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2025-04-13T08:46:35.694313" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:35.684315" elapsed="0.009998"/>
+</kw>
+<kw name="Given The user accesses the site with its respective data" owner="quote_keywords">
+<kw name="New Page" owner="Browser">
+<msg time="2025-04-13T08:46:39.357470" level="INFO">Successfully initialized new page object and opened url: https://can-am.brp.com/off-road/ca/fr/</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-04-13T08:46:35.695312" elapsed="3.663157"/>
+</kw>
+<kw name="Close Modal If Exists" owner="quote_keywords">
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-04-13T08:46:39.405469" level="INFO">${newsletter} = 1</msg>
+<var>${newsletter}</var>
+<arg>css=#root_newsletter-popup .overlay</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:39.358469" elapsed="0.047000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<arg>css=#root_newsletter-popup button[aria-label="Close"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:39.405469" elapsed="3.774290"/>
+</kw>
+<arg>${newsletter} &gt; 0</arg>
+<arg>Click</arg>
+<arg>css=#root_newsletter-popup button[aria-label="Close"]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-13T08:46:39.405469" elapsed="3.774290"/>
+</kw>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-04-13T08:46:43.186759" level="INFO">${modals} = 0</msg>
+<var>${modals}</var>
+<arg>css=.modal.fade.show</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:43.179759" elapsed="0.007000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${modals} &gt; 0</arg>
+<arg>Click</arg>
+<arg>css=.modal.fade.show button.close</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-13T08:46:43.186759" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:39.358469" elapsed="3.828290"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-13T08:46:43.191759" level="INFO">Waited for Element with selector css=#root_newsletter-popup .overlay at state hidden</msg>
+<arg>css=#root_newsletter-popup .overlay</arg>
+<arg>hidden</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-13T08:46:43.187760" elapsed="0.003999"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2025-04-13T08:46:43.193759" level="INFO">Title: 'Véhicules Can-Am Hors-Route 2025 : VTT et VCC'</msg>
+<msg time="2025-04-13T08:46:43.193759" level="INFO">${title} = Véhicules Can-Am Hors-Route 2025 : VTT et VCC</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-04-13T08:46:43.191759" elapsed="0.002000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>${can_am["expected_title"]}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-13T08:46:43.193759" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:35.694313" elapsed="7.500446"/>
+</kw>
+<kw name="When The user selects a model and year" owner="quote_keywords">
+<kw name="Click Model Menu" owner="quote_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:43.195759" level="INFO">${selector} = a[data-analytic-label="side-by-side-vehicles"]</msg>
+<var>${selector}</var>
+<arg>a[data-analytic-label="${menu_label}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:43.195759" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${selector} &gt;&gt; nth=1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:43.195759" elapsed="0.470001"/>
+</kw>
+<arg>${can_am["menu_label"]}</arg>
+<status status="PASS" start="2025-04-13T08:46:43.194759" elapsed="0.471001"/>
+</kw>
+<kw name="Click Model By Name" owner="quote_keywords">
+<kw name="Get Element" owner="Browser">
+<msg time="2025-04-13T08:46:44.366873" level="INFO">Locator found successfully.</msg>
+<msg time="2025-04-13T08:46:44.366873" level="INFO">${element} = element=ecb0b6ef-b6a9-482d-a62a-8a7228f6ef6a</msg>
+<var>${element}</var>
+<arg>a[data-technical-name="${model_name}"]:visible &gt;&gt; nth=0</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-04-13T08:46:43.666759" elapsed="0.700114"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${element}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:44.366873" elapsed="0.853000"/>
+</kw>
+<arg>${can_am["model"]}</arg>
+<status status="PASS" start="2025-04-13T08:46:43.666759" elapsed="1.554115"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=${can_am["model_year"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:45.220874" elapsed="2.016716"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:43.194759" elapsed="4.042831"/>
+</kw>
+<kw name="And The user clicks the quote button" owner="quote_keywords">
+<kw name="Click" owner="Browser">
+<arg>text=${can_am["quote_text"]} &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:47.238589" elapsed="4.332414"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:47.237590" elapsed="4.333413"/>
+</kw>
+<kw name="Then The user fills out and submits the quote form" owner="quote_keywords">
+<kw name="Fill Quote Form" owner="quote_keywords">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-13T08:46:52.585003" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-13T08:46:51.572006" elapsed="1.012997"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-04-13T08:46:52.586003" level="INFO">Fills the text 'John' in the given field.</msg>
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_first_name"]</arg>
+<arg>${form["first_name"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:52.585003" elapsed="0.899965"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-04-13T08:46:53.485967" level="INFO">Fills the text 'Doe' in the given field.</msg>
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_last_name"]</arg>
+<arg>${form["last_name"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.484968" elapsed="0.078999"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-04-13T08:46:53.564968" level="INFO">Fills the text 'john.doe@example.com' in the given field.</msg>
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_email"]</arg>
+<arg>${form["email"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.563967" elapsed="0.054001"/>
+</kw>
+<kw name="Select Options By" owner="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_country_code"]</arg>
+<arg>value</arg>
+<arg>${form["country_code"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.617968" elapsed="0.035000"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-04-13T08:46:53.652968" level="INFO">Fills the text '1234567890' in the given field.</msg>
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_phone"]</arg>
+<arg>${form["phone"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.652968" elapsed="0.027001"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-04-13T08:46:53.682970" level="INFO">Fills the text '2, rue des Jardins Québec, QC G1R4S9Canada' in the given field.</msg>
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_custom2"]</arg>
+<arg>${form["address"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.679969" elapsed="0.024998"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-04-13T08:46:53.705966" level="INFO">Fills the text 'Quebec' in the given field.</msg>
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_custom3"]</arg>
+<arg>${form["city"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.704967" elapsed="0.023002"/>
+</kw>
+<kw name="Select Options By" owner="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_custom4"]</arg>
+<arg>value</arg>
+<arg>${form["province"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.728969" elapsed="0.023998"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-04-13T08:46:53.753967" level="INFO">Fills the text 'G1R4S9' in the given field.</msg>
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_custom5"]</arg>
+<arg>${form["postal_code"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.752967" elapsed="0.021001"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${form["click_checkboxes"]}' == 'True'</arg>
+<arg>Click Checkboxes In Iframe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.773968" elapsed="0.000000"/>
+</kw>
+<arg>${form}</arg>
+<status status="PASS" start="2025-04-13T08:46:51.572006" elapsed="2.201962"/>
+</kw>
+<kw name="Take Timestamped Screenshot" owner="quote_keywords">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-04-13T08:46:53.774967" level="INFO">${timestamp} = 2025-04-13 08:46:53</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M%S</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.774967" elapsed="0.001001"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:53.775968" level="INFO">${timestamp} = 2025-04-13 08-46-53</msg>
+<var>${timestamp}</var>
+<arg>${timestamp.replace(":", "-")}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.775968" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-13T08:46:53.776969" level="INFO">${filename} = CA_FR-screenshot-2025-04-13 08-46-53</msg>
+<var>${filename}</var>
+<arg>${locale}-screenshot-${timestamp}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.775968" elapsed="0.001001"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2025-04-13T08:46:54.156967" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/CA_FR-screenshot-2025-04-13%2008-46-53.png" target="_blank"&gt;&lt;img src="browser/screenshot/CA_FR-screenshot-2025-04-13%2008-46-53.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>filename=${filename}</arg>
+<arg>fullPage=True</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-04-13T08:46:53.776969" elapsed="0.380999"/>
+</kw>
+<arg>${locale}</arg>
+<status status="PASS" start="2025-04-13T08:46:53.774967" elapsed="0.383001"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:51.572006" elapsed="2.585962"/>
+</kw>
+<kw name="Close Context" owner="Browser" type="TEARDOWN">
+<msg time="2025-04-13T08:46:54.491969" level="INFO">[
+  {
+    "type": "chromium",
+    "id": "browser=db9beb6b-581d-4113-865e-1f31adb99f63",
+    "contexts": [
+      {
+        "type": "context",
+        "id": "context=65c42452-d121-4bb9-9e6a-4a02e952bc41",
+        "activePage": "page=f2f1f767-553f-4573-926a-feee319a53a1",
+        "pages": [
+          {
+            "type": "page",
+            "title": "Demandez un prix pour un VTT ou VCC - Can-Am Hors-Route",
+            "url": "https://can-am.brp.com/off-road/ca/fr/outils-de-magasinage/demandez-un-prix.html#ng_cat=BRP_SSV&amp;ng_model=Defender&amp;ng_trim=Defender&amp;ng_msrp=15399&amp;ng_curr=CAD",
+            "id": "page=f2f1f767-553f-4573-926a-feee319a53a1",
+            "timestamp": 1744544795.831
+          }
+        ]
+      }
+    ],
+    "activeContext": "context=65c42452-d121-4bb9-9e6a-4a02e952bc41",
+    "activeBrowser": true
+  }
+]</msg>
+<msg time="2025-04-13T08:46:54.491969" level="INFO">Switching browser to CURRENT</msg>
+<msg time="2025-04-13T08:46:54.493968" level="INFO">Active context id</msg>
+<msg time="2025-04-13T08:46:54.493968" level="INFO">Switching browser to browser=db9beb6b-581d-4113-865e-1f31adb99f63</msg>
+<msg time="2025-04-13T08:46:54.495969" level="INFO">Successfully changed active browser</msg>
+<msg time="2025-04-13T08:46:54.495969" level="INFO">Switching context to CURRENT in CURRENT</msg>
+<msg time="2025-04-13T08:46:54.496968" level="INFO">Returned active context id</msg>
+<msg time="2025-04-13T08:46:54.496968" level="INFO">Switching context to context=65c42452-d121-4bb9-9e6a-4a02e952bc41 in CURRENT</msg>
+<msg time="2025-04-13T08:46:54.514969" level="INFO">[
+  {
+    "type": "chromium",
+    "id": "browser=db9beb6b-581d-4113-865e-1f31adb99f63",
+    "contexts": [
+      {
+        "type": "context",
+        "id": "context=65c42452-d121-4bb9-9e6a-4a02e952bc41",
+        "activePage": "page=f2f1f767-553f-4573-926a-feee319a53a1",
+        "pages": [
+          {
+            "type": "page",
+            "title": "Demandez un prix pour un VTT ou VCC - Can-Am Hors-Route",
+            "url": "https://can-am.brp.com/off-road/ca/fr/outils-de-magasinage/demandez-un-prix.html#ng_cat=BRP_SSV&amp;ng_model=Defender&amp;ng_trim=Defender&amp;ng_msrp=15399&amp;ng_curr=CAD",
+            "id": "page=f2f1f767-553f-4573-926a-feee319a53a1",
+            "timestamp": 1744544795.831
+          }
+        ]
+      }
+    ],
+    "activeContext": "context=65c42452-d121-4bb9-9e6a-4a02e952bc41",
+    "activeBrowser": true
+  }
+]</msg>
+<msg time="2025-04-13T08:46:54.519968" level="INFO">Successfully changed active context</msg>
+<msg time="2025-04-13T08:46:54.660969" level="INFO">Successfully closed Context</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes a Context.</doc>
+<status status="PASS" start="2025-04-13T08:46:54.158968" elapsed="0.502001"/>
+</kw>
+<msg time="2025-04-13T08:46:54.663969" level="INFO">No context open.</msg>
+<msg time="2025-04-13T08:46:54.665970" level="INFO">[
+  {
+    "type": "chromium",
+    "id": "browser=db9beb6b-581d-4113-865e-1f31adb99f63",
+    "contexts": [],
+    "activeBrowser": true
+  }
+]</msg>
+<status status="PASS" start="2025-04-13T08:46:35.680785" elapsed="18.981185"/>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2025-04-13T08:46:54.852967" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-13T08:46:54.666969" elapsed="0.186999"/>
+</kw>
+<status status="PASS" start="2025-04-13T08:46:15.064957" elapsed="39.789011"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Request A Quote" id="s1" pass="2" fail="0" skip="0">Request A Quote</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
