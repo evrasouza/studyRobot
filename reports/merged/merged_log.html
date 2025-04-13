@@ -5,60 +5,16 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.2 (Python 3.10.11 on win32)" name="Generator">
+<meta content="Robot Framework 5.0 (Python 3.9.4 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
-<style media="all">
-:root {
-    --text-color: black;
-    --background-color: white;
-    --primary-color: #ddd;
-    --secondary-color: #ccc;
-    --link-color: #15c;
-    --link-hover-color: #61c;
-    --highlight-color: #eee;
-    --target-color: #f9f9f9;
-    --pass-color: #97bd61;
-    --fail-color: #ce3e01;
-    --warn-color: #fed84f;
-    --pass-link-color: #098a09;
-    --warn-link-color: #927201;
-    --fail-link-color: #ce3e01;
-    --ascending-icon: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
-    --descending-icon: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
-}
-@media (prefers-color-scheme: dark) {
-    :root {
-        color-scheme: dark;
-    }
-}
-[data-theme="dark"] {
-    --text-color: #e2e1d7;
-    --background-color: #1c2227;
-    --primary-color: #26373b;
-    --secondary-color: #424f5a;
-    --link-color: #8cc4ff;
-    --link-hover-color: #bb86fc;
-    --highlight-color: #002b36;
-    --target-color: #1a252e;
-    --pass-link-color: #97bd61;
-    --warn-link-color: #fed84f;
-    --fail-link-color: #ff9b8f;
-    --ascending-icon: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJAgMAAACZCj6+AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAAfn5+////f/cqYgAAAAN0Uk5TAP//RFDWIQAAACdJREFUeJxjYHBgYGAMYGBgDWFgEA1lAAOtVQwMXCsYGJgWADkNDAA78QP9oKr7vwAAAABJRU5ErkJggg==);
-    --descending-icon: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJAgMAAACZCj6+AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAA////fn5+K6jOaAAAAAN0Uk5TAP//RFDWIQAAACdJREFUeJxjYHBgYGAMYGBgDWFgEA1lAAOtVQwMXCsYGJgWADkNDAA78QP9oKr7vwAAAABJRU5ErkJggg==);
-}
+<style media="all" type="text/css">
 /* Generic and misc styles */
 body {
     font-family: Helvetica, sans-serif;
     font-size: 0.8em;
-    color: black; /* Fallback value */
-    color: var(--text-color);
+    color: black;
     padding: 6px;
-    background: white; /* Fallback value */
-    background: var(--background-color);
-    margin-left: 15px;
-}
-body[theme-toggled] {
-    transition: background 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s;
+    background: white;
 }
 table {
     table-layout: fixed;
@@ -73,37 +29,20 @@ br {
     mso-data-placement: same-cell; /* maintain line breaks in Excel */
 }
 hr {
-    background: #ccc; /* Fallback value */
-    background: var(--secondary-color);
+    background: #ccc;
     height: 1px;
     border: 0;
 }
 a, a:link, a:visited {
     text-decoration: none;
-    color: #15c; /* Fallback value */
-    color: var(--link-color);
+    color: #15c;
 }
 a > img {
-    border-width: 1px !important;
-    border-style: solid !important;
-    border-color: #15c !important; /* Fallback value */
-    border-color: var(--link-color) !important;
+    border: 1px solid #15c !important;
 }
 a:hover, a:active {
     text-decoration: underline;
-    color: #61c; /* Fallback value */
-    color: var(--link-hover-color);
-}
-select {
-    background-color: white; /* Fallback value */
-    background-color: var(--background-color);
-    color: black; /* Fallback value */
-    color: var(--text-color);
-    border-width: 2px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
-    border-radius: 4px;
+    color: #61c;
 }
 .parent-name {
     font-size: 0.7em;
@@ -116,7 +55,7 @@ select {
 #header {
     width: 65em;
     height: 3em;
-    margin: 20px 0 6px 0;
+    margin: 6px 0;
 }
 h1 {
     float: left;
@@ -144,17 +83,14 @@ h2 {
 }
 /* Status text colors -- !important allows using them in links */
 .fail {
-    color: #ce3e01 !important; /* Fallback value */
-    color: var(--fail-link-color) !important;
+    color: #ce3e01 !important;
     font-weight: bold;
 }
 .pass {
-    color: #098a09 !important; /* Fallback value */
-    color: var(--pass-link-color) !important;
+    color: #098a09 !important;
 }
 .skip {
-    color: #927201 !important; /* Fallback value */
-    color: var(--warn-link-color) !important;
+    color: #927201 !important;
     font-weight: bold;
 }
 .label {
@@ -162,10 +98,8 @@ h2 {
     font-size: 0.75em;
     letter-spacing: 1px;
     white-space: nowrap;
-    color: black; /* Fallback value */
-    color: var(--text-color);
-    background-color: #ddd; /* Fallback value */
-    background-color: var(--primary-color);
+    color: black;
+    background-color: #ddd;
     border-radius: 3px;
 }
 .label.debug, .label.trace, .label.error, .label.keyword {
@@ -175,18 +109,15 @@ h2 {
     font-weight: bold;
 }
 .label.pass {
-    background-color: #97bd61; /* Fallback value */
-    background-color: var(--pass-color);
+    background-color: #97bd61;
     color: #000 !important;
 }
 .label.fail, .label.error {
-    background-color: #ce3e01; /* Fallback value */
-    background-color: var(--fail-color);
+    background-color: #ce3e01;
     color: #fff !important;
 }
 .label.skip, .label.warn {
-    background-color: #fed84f; /* Fallback value */
-    background-color: var(--warn-color);
+    background-color: #fed84f;
     color: #000 !important;
 }
 /* Top right header */
@@ -215,8 +146,7 @@ h2 {
     padding: 0.3em 0;
     font-size: 0.9em;
     border-bottom-left-radius: 4px;
-    background: #ddd; /* Fallback value */
-    background: var(--primary-color);
+    background: #ddd;
 }
 /* Statistics table */
 .statistics {
@@ -226,20 +156,15 @@ h2 {
     margin-bottom: 1em;
 }
 .statistics tr:hover {
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #f4f4f4;
     cursor: pointer;
 }
 .statistics th, .statistics td {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+    border: 1px solid #ccc;
     padding: 0.1em 0.3em;
 }
 .statistics th {
-    background-color: #ddd; /* Fallback value */
-    background-color: var(--primary-color);
+    background-color: #ddd;
     padding: 0.2em 0.3em;
 }
 .statistics td {
@@ -275,33 +200,27 @@ th.stats-col-graph:hover {
 }
 /* Statistics graph */
 .graph, .empty-graph {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+    border: 1px solid #ccc;
     width: auto;
     height: 7px;
     padding: 0;
+    background: #aaa;
 }
 .empty-graph {
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #eee;
 }
 .pass-bar, .fail-bar, .skip-bar {
     float: left;
     height: 100%;
 }
 .fail-bar {
-    background: #ce3e01; /* Fallback value */
-    background: var(--fail-color);
+    background: #ce3e01;
 }
 .pass-bar {
-    background: #97bd61; /* Fallback value */
-    background: var(--pass-color);
+    background: #97bd61;
 }
 .skip-bar {
-    background: #fed84f; /* Fallback value */
-    background: var(--warn-color);
+    background: #fed84f;
 }
 /* Tablesorter - adapted from provided Blue Skin */
 .tablesorter-header {
@@ -311,84 +230,30 @@ th.stats-col-graph:hover {
     cursor: pointer;
 }
 .tablesorter-header:hover {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--secondary-color);
+    background-color: #ccc;
 }
 .tablesorter-headerAsc {
-    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==); /* Fallback value */
-    background-image: var(--ascending-icon);
-    background-color: #ccc !important; /* Fallback value */
-    background-color: var(--secondary-color) !important;
+    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
+    background-color: #ccc !important;
 }
 .tablesorter-headerDesc {
-    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==); /* Fallback value */
-    background-image: var(--descending-icon);
-    background-color: #ccc !important; /* Fallback value */
-    background-color: var(--secondary-color) !important;
+    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
+    background-color: #ccc !important;
 }
 .sorter-false {
     background-image: none;
     cursor: default;
 }
 .sorter-false:hover {
-    background-color: #ddd; /* Fallback value */
-    background-color: var(--primary-color);
-}
-#theme-toggle {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 28px;
-    height: 28px;
-    border: none;
-    padding: 4px;
-    z-index: 1000;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    background: var(--highlight-color);
-}
-[data-theme="dark"] .dark-mode-icon,
-[data-theme="light"] .light-mode-icon {
-    display: none;
-}
-[data-theme="dark"] .light-mode-icon,
-[data-theme="light"] .dark-mode-icon {
-    display: block;
-}
-@keyframes highlight {
-    0% {
-        background: var(--primary-color)
-    }
-    100% {
-        background: var(--target-color);
-    }
-}
-:target {
-    background: var(--target-color);
-    transition: background 0.3s;
-    animation: highlight 4s;
+    background-color: #ddd;
 }
 </style>
-<style media="all">
+<style media="all" type="text/css">
 /* Icons are from Open Iconic <https://useiconic.com/open/>.
    Licensed under the MIT License. */
-:root {
-    --icon-filter: invert(0);
-    --icon-highlight: var(--secondary-color);
-    --elapsed-color: #666;
-}
-/* @media (prefers-color-scheme: dark) { */
-[data-theme="dark"] {
-    --icon-filter: invert(1);
-    --icon-highlight: #a39990;
-    --elapsed-color: #999;
-}
 /* Containers */
 .suite, .test, #errors {
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     padding: 0.3em 0.2em;
     margin: 0.2em 0;
 }
@@ -417,10 +282,8 @@ th.stats-col-graph:hover {
 }
 .element-header:hover {
     cursor: pointer;
-    background-color: #eee; /* Fallback value */
-    background-color: var(--highlight-color);
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+    background-color: #eee;
+    border-color: #ccc;
 }
 .element-header-toggle {
     position: absolute;
@@ -430,14 +293,10 @@ th.stats-col-graph:hover {
     background-position: center;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAQAAABKxSfDAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0JChSkZz20AAAAGklEQVQI12NgQAKMDKzInP8IDhOqMk4G7AAANQwBE427PYUAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0wIDB2Mmg4di0yaC04eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAzKSIgLz4KPC9zdmc+), none;
-    filter: var(--icon-filter);
     height: 10px;
     width: 10px;
     background-size: 6px 6px;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--icon-highlight);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .closed > .element-header-toggle {
@@ -445,8 +304,7 @@ th.stats-col-graph:hover {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0zIDB2M2gtM3YyaDN2M2gydi0zaDN2LTJoLTN2LTNoLTJ6IiAvPgo8L3N2Zz4=), none;
 }
 .element-header:hover > .element-header-toggle {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--icon-highlight);
+    background-color: #ccc;
 }
 .element-header-right:hover ~ .element-header-toggle {
     background-color: transparent;
@@ -466,31 +324,23 @@ th.stats-col-graph:hover {
 }
 .name {
     font-weight: bold;
-    white-space: pre-wrap;
-}
-.arg, .assign {
-    white-space: pre-wrap;
 }
 .elapsed {
     float: right;
-    color: #666; /* Fallback value */
-    color: var(--elapsed-color);
+    color: #666;
     padding-left: 1em;
 }
 .link {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHlJREFUGJVtzrEJwmAQBtCn6ASuIKTIBhY2gmghBiJYB1udwk10B8FJbKMBcQFbtbkfJHrVwfu+4/idJR64Y9H7E3higj5O3S8Y44ApLnjhnXCNGhV2yNGggDJwiC02gavUbpDFvscRo4QdXOMKDHBufz3HLYKzNn4AbSkV3fncGQYAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik01Ljg4LjAzYy0uMTguMDEtLjM2LjAzLS41My4wOS0uMjcuMS0uNTMuMjUtLjc1LjQ3YS41LjUgMCAxIDAgLjY5LjY5Yy4xMS0uMTEuMjQtLjE3LjM4LS4yMi4zNS0uMTIuNzgtLjA3IDEuMDYuMjIuMzkuMzkuMzkgMS4wNCAwIDEuNDRsLTEuNSAxLjVjLS40NC40NC0uOC40OC0xLjA2LjQ3LS4yNi0uMDEtLjQxLS4xMy0uNDEtLjEzYS41LjUgMCAxIDAtLjUuODhzLjM0LjIyLjg0LjI1Yy41LjAzIDEuMi0uMTYgMS44MS0uNzhsMS41LTEuNWMuNzgtLjc4Ljc4LTIuMDQgMC0yLjgxLS4yOC0uMjgtLjYxLS40NS0uOTctLjUzLS4xOC0uMDQtLjM4LS4wNC0uNTYtLjAzem0tMiAyLjMxYy0uNS0uMDItMS4xOS4xNS0xLjc4Ljc1bC0xLjUgMS41Yy0uNzguNzgtLjc4IDIuMDQgMCAyLjgxLjU2LjU2IDEuMzYuNzIgMi4wNi40Ny4yNy0uMS41My0uMjUuNzUtLjQ3YS41LjUgMCAxIDAtLjY5LS42OWMtLjExLjExLS4yNC4xNy0uMzguMjItLjM1LjEyLS43OC4wNy0xLjA2LS4yMi0uMzktLjM5LS4zOS0xLjA0IDAtMS40NGwxLjUtMS41Yy40LS40Ljc1LS40NSAxLjAzLS40NC4yOC4wMS40Ny4wOS40Ny4wOWEuNS41IDAgMSAwIC40NC0uODhzLS4zNC0uMi0uODQtLjIyeiIKICAvPgo8L3N2Zz4=), none;
-    filter: var(--icon-filter);
 }
 .expand {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAADtJREFUGJVjYCACKDAwMByA0ljFDjAwMPxnYGB4ABVQgLL/Q+VQBB6gseGmIivCkERXhFUSWRFOSawAAEl7E3uv1iMcAAAAAElFTkSuQmCC);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0xLjUgMGwtMS41IDEuNSA0IDQgNC00LTEuNS0xLjUtMi41IDIuNS0yLjUtMi41eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxKSIgLz4KPC9zdmc+), none;
-    filter: var(--icon-filter);
 }
 .collapse {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAC5JREFUGJVjYCARNEAxTsn/UIyhCFkSQxG6ThQ+C5IpjWhG1yNb4YDFTdjEMAEACi8Q++9Y9TAAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik00IDBsLTQgNCAxLjUgMS41IDIuNS0yLjUgMi41IDIuNSAxLjUtMS41LTQtNHoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMSkiIC8+Cjwvc3ZnPg==), none;
-    filter: var(--icon-filter);
 }
 .expand, .collapse, .link {
     float: left;
@@ -502,10 +352,7 @@ th.stats-col-graph:hover {
     background-size: 8px 8px;
     background-repeat: no-repeat;
     background-position: center;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--icon-highlight);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .link {
@@ -515,8 +362,7 @@ th.stats-col-graph:hover {
     visibility: visible;
 }
 .expand:hover, .collapse:hover, .link:hover {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--icon-highlight);
+    background-color: #ccc;
 }
 /* Messages and errors */
 .messages .time, .messages .message {
@@ -557,16 +403,11 @@ th.stats-col-graph:hover {
 .message-row:hover .select-message div {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0MOzhWKZQOAAAASUlEQVQY032PsRHAIAwDX9BkicD+W8UMEqegAQJWKZ/+3sLZJhFGQEZzNaIa4ibh66En867VNaIeoP5WppNuIGoAlOm3g5VC1AdYeQv1BZPRSgAAAABJRU5ErkJggg==);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0wIDB2MWg4di0xaC04em0wIDJ2MWg2di0xaC02em0wIDJ2MWg4di0xaC04em0wIDJ2MWg2di0xaC02eiIgLz4KPC9zdmc+), none;
-    filter: var(--icon-filter);
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--icon-highlight);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .select-message:hover div {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--icon-highlight);
+    background-color: #ccc;
     cursor: pointer;
 }
 /* Message tables - these MUST NOT be combined together because otherwise
@@ -598,7 +439,7 @@ th.stats-col-graph:hover {
     cursor: default;
 }
 </style>
-<style media="print">
+<style media="print" type="text/css">
 body {
     background: white !important;
     padding: 0;
@@ -638,7 +479,7 @@ a:link, a:visited {
     background: #ddd !important;
 }
 </style>
-<style media="all">
+<style media="all" type="text/css">
 #javascript-disabled {
     width: 600px;
     margin: 100px auto 0 auto;
@@ -661,7 +502,7 @@ a:link, a:visited {
     font-style: italic;
 }
 </style>
-<style media="all">
+<style media="all" type="text/css">
 .doc > * {
     margin: 0.7em 1em 0.1em 1em;
     padding: 0;
@@ -673,12 +514,14 @@ a:link, a:visited {
     margin-top: 0.1em;
 }
 .doc table {
+    border: 1px solid #ccc;
     background: transparent;
     border-collapse: collapse;
     empty-cells: show;
     font-size: 0.9em;
 }
 .doc table th, .doc table td {
+    border: 1px solid #ccc;
     background: transparent;
     padding: 0.1em 0.3em;
     height: 1.2em;
@@ -688,32 +531,24 @@ a:link, a:visited {
     letter-spacing: 0.1em;
 }
 .doc pre {
-    border-radius: 2px;
     font-size: 1.1em;
     letter-spacing: 0.05em;
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #f4f4f4;
 }
 .doc code {
-    border-radius: 2px;
     padding: 0 0.2em;
     letter-spacing: 0.05em;
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #eee;
 }
 .doc li {
     list-style-position: inside;
     list-style-type: square;
 }
-.doc img, .doc table, .doc table th, .doc table td {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+.doc img {
+    border: 1px solid #ccc;
 }
 .doc hr {
-    background: #ccc; /* Fallback value */
-    background: var(--secondary-color);
+    background: #ccc;
     height: 1px;
     border: 0;
 }
@@ -725,9 +560,6 @@ function toggleSuite(suiteId) {
 }
 function toggleTest(testId) {
     toggleElement(testId, ['keyword']);
-    var test = window.testdata.findLoaded(testId);
-    if (test.status == "FAIL" || test.status == "SKIP")
-        expandFailed(test);
 }
 function toggleKeyword(kwId) {
     toggleElement(kwId, ['keyword']);
@@ -791,7 +623,7 @@ function loadAndExpandElementIds(ids) {
     }
 }
 function expandFailed(element) {
-    if (element.status == "FAIL" || (element.type == "test" && element.status == "SKIP")) {
+    if (element.status == "FAIL") {
         window.elementsToExpand = [element];
         window.expandDecider = function (e) {
             return e.status == "FAIL";
@@ -1015,6 +847,7 @@ window.model = (function () {
         suite.populateSuites = createIterablePopulator('Suite');
         suite.childrenNames = ['keyword', 'suite', 'test'];
         suite.callWhenChildrenReady = function (callable) { callable(); };
+        suite.message = data.message;
         suite.children = function () {
             return suite.keywords().concat(suite.tests()).concat(suite.suites());
         };
@@ -1105,7 +938,6 @@ window.model = (function () {
             name: data.name,
             doc: data.doc,
             status: data.status,
-            message: data.message,
             times: data.times,
             id: data.parent ? data.parent.id + '-' + data.id : data.id
         };
@@ -1126,6 +958,7 @@ window.model = (function () {
                 return test.keywords();
         };
         test.tags = data.tags;
+        test.message = data.message;
         test.matchesTagPattern = function (pattern) {
             return containsTagPattern(test.tags, pattern);
         };
@@ -1136,12 +969,13 @@ window.model = (function () {
     }
     function Keyword(data) {
         var kw = createModelObject(data);
+        var flatTypes = ['RETURN', 'BREAK', 'CONTINUE'];
         kw.libname = data.libname;
         kw.fullName = (kw.libname ? kw.libname + '.' : '') + kw.name;
         kw.type = data.type;
         kw.template = 'keywordTemplate';
         kw.arguments = data.args;
-        kw.assign = data.assign + (data.assign ? ' =  ' : '');
+        kw.assign = data.assign + (data.assign ? ' =' : '');
         kw.tags = data.tags;
         kw.timeout = data.timeout;
         kw.populateKeywords = createIterablePopulator('Keyword');
@@ -1252,48 +1086,58 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0)
+        if (total == 0) {
             return [0.0, 0.0, 0.0];
+        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1;
+            pass = 0.1
         if (fail > 0 && fail < 0.1)
-            fail = 0.1;
+            fail = 0.1
         if (skip > 0 && skip < 0.1)
-            skip = 0.1;
+            skip = 0.1
         if (pass > 99.95 && pass < 100)
-            pass = 99.9;
+            pass = 99.9
         if (fail > 99.95 && fail < 100)
-            fail = 99.9;
+            fail = 99.9
         if (skip > 99.95 && skip < 100)
-            skip = 99.9;
-        return [round1(pass), round1(skip), round1(fail)];
+            skip = 99.9
+        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1.0;
+            num1 = 1
         if (num2 > 0 && num2 < 1)
-            num2 = 1.0;
+            num2 = 1
         if (num3 > 0 && num3 < 1)
-            num3 = 1.0;
+            num3 = 1
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 >= num2 && num1 >= num3)
-                num1 = round1(num1 - 0.1);
-            else if (num2 >= num1 && num2 >= num3)
-                num2 = round1(num2 - 0.1);
-            else
-                num3 = round1(num3 - 0.1);
+            if (num1 > num2 && num1 > num3)
+                num1 -= 0.1;
+            else if (num2 > num1 && num2 > num3)
+                num2 -= 0.1;
+            else if (num3 > num1 && num3 > num2)
+                num3 -= 0.1;
+            else if (num1 > num3 && num1 == num2) {
+                num1 -= 0.1;
+                num2 -= 0.1;
+            }
+            else if (num1 > num2 && num1 == num3) {
+                num1 -= 0.1;
+                num3 -= 0.1;
+            }
+            else if (num2 > num1 && num2 == num3) {
+                num2 -= 0.1;
+                num3 -= 0.1;
+            }
         }
-        return [num1, num2, num3];
-    }
-    function round1(num) {
-        return Math.round(num*10) / 10;
+        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
     }
     return {
         Statistics: Statistics
@@ -1510,9 +1354,8 @@ window.testdata = function () {
     var _statistics = null;
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
-    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
-                         'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
+    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
+                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1555,7 +1398,6 @@ window.testdata = function () {
         return createKeyword(parent, element, strings, index - messages.length);
     }
     function createKeyword(parent, element, strings, index) {
-        var status = element[8];
         var kw = model.Keyword({
             parent: parent,
             type: KEYWORD_TYPES[element[0]],
@@ -1571,12 +1413,7 @@ window.testdata = function () {
                 this.doc = function () { return doc; };
                 return doc;
             },
-            status: parseStatus(status),
-            message: function () {
-                var msg = status.length == 4 ? strings.get(status[3]) : '';
-                this.message = function () { return msg; };
-                return msg;
-            },
+            status: parseStatus(element[8], strings),
             times: model.Times(times(element[8])),
             isChildrenLoaded: typeof(element[9]) !== 'number'
         });
@@ -1787,20 +1624,6 @@ window.testdata = function () {
 }();
 </script>
 <script type="text/javascript">
-const lightModeIcon = `
-<svg class="light-mode-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
-    viewBox="0 0 24 24" fill="var(--text-color)">
-    <rect fill="none" height="24" width="24" />
-    <path
-        d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41 l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z" />
-</svg>`
-const darkModeIcon = `
-<svg class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
-    viewBox="0 0 24 24" fill="var(--text-color)">
-    <rect fill="none" height="24" width="24" />
-    <path
-        d="M11.01,3.05C6.51,3.54,3,7.36,3,12c0,4.97,4.03,9,9,9c4.63,0,8.45-3.5,8.95-8c0.09-0.79-0.78-1.42-1.54-0.95 c-0.84,0.54-1.84,0.85-2.91,0.85c-2.98,0-5.4-2.42-5.4-5.4c0-1.06,0.31-2.06,0.84-2.89C12.39,3.94,11.9,2.98,11.01,3.05z" />
-</svg>`
 function removeJavaScriptDisabledWarning() {
     // Not using jQuery here for maximum speed
     document.getElementById('javascript-disabled').style.display = 'none';
@@ -1836,10 +1659,6 @@ function setTitle(suiteName, type) {
 function addHeader() {
     var generated = util.timestamp(window.output.generated);
     $.tmpl('<h1>${title}</h1>' +
-           '<button id=theme-toggle>' +
-             lightModeIcon +
-             darkModeIcon +
-           '</button>' +
            '<div id="generated">' +
              '<span>Generated<br>${generated}</span><br>' +
              '<span id="generated-ago">${ago} ago</span>' +
@@ -1851,7 +1670,6 @@ function addHeader() {
         ago: util.createGeneratedAgoString(generated),
         title: document.title
     }).appendTo($('#header'));
-    document.getElementById('theme-toggle')?.addEventListener('click', theme.onClick);
 }
 function addReportOrLogLink(myType) {
     var url;
@@ -1980,116 +1798,30 @@ function stopPropagation(event) {
     if (event.stopPropagation)
         event.stopPropagation();
 }
-const theme = function () {
-    const storageKey = 'theme-preference';
-    const urlParams = new URLSearchParams(window.location.search);
-    var storage;
-    var theme;
-    function init(givenStorage) {
-        storage = givenStorage;
-        theme = { value: getPreference() };
-        document.body.setAttribute('data-theme', theme.value);
-        reflectPreference();
-        window.matchMedia('(prefers-color-scheme: dark)')
-            .addEventListener('change', ({matches:isDark}) => {
-                theme.value = isDark ? 'dark' : 'light';
-                setPreference();
-            });
-        window.addEventListener('storage', ({key, newValue}) => {
-            if (key === storage.fullKey(storageKey)) {
-                theme.value = newValue === 'dark' ? 'dark' : 'light';
-                setPreference();
-            }
-        });
-    }
-    function getPreference() {
-        if (urlParams.has('theme')) {
-            var urlTheme = urlParams.get('theme') === 'dark' ? 'dark' : 'light';
-            storage.set(storageKey, urlTheme);
-            urlParams.delete('theme');
-            return urlTheme;
-        }
-        if (storage.get(storageKey))
-            return storage.get(storageKey) === 'dark' ? 'dark' : 'light';
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    function setPreference() {
-        storage.set(storageKey, theme.value);
-        reflectPreference();
-    }
-    function reflectPreference() {
-        document.body.setAttribute('data-theme', theme.value);
-        document.querySelector('#theme-toggle')?.setAttribute('aria-label', theme.value);
-        const event = new Event('theme-change', {value: theme.value});
-        document.dispatchEvent(event);
-    }
-    function onClick() {
-        theme.value = theme.value === 'light' ? 'dark' : 'light';
-        document.body.setAttribute('theme-toggled', "");
-        setPreference();
-    }
-    return {init: init, getPreference: getPreference, setPreference: setPreference,
-        reflectPreference: reflectPreference, onClick: onClick};
-}();
-</script>
-<script type="text/javascript">
-storage = function () {
-    var prefix = 'robot-framework-';
-    var storage;
-    function init(user) {
-        if (user)
-            prefix += user + '-';
-        storage = getStorage();
-    }
-    function getStorage() {
-        // Use localStorage if it's accessible, normal object otherwise.
-        // Inspired by https://stackoverflow.com/questions/11214404
-        try {
-            localStorage.setItem(prefix, prefix);
-            localStorage.removeItem(prefix);
-            return localStorage;
-        } catch (exception) {
-            return {};
-        }
-    }
-    function get(key, defaultValue) {
-        var value = storage[fullKey(key)];
-        if (typeof value === 'undefined')
-            return defaultValue;
-        return value;
-    }
-    function set(key, value) {
-        storage[fullKey(key)] = value;
-    }
-    function fullKey(key) {
-        return prefix + key;
-    }
-    return {init: init, get: get, set: set, fullKey: fullKey};
-}();
 </script>
 <script type="text/javascript">
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,0,0,0,[],[1,null,146547],[[2,3,4,0,[],[1,0,42837],[],[[5,0,0,[],[1,958,21244],[[1,6,7,0,0,0,0,0,[1,962,18],[[0,8,9,0,10,11,0,12,[1,963,14],[[964,2,13],[977,2,14],[977,2,15]]],[0,16,9,0,17,18,0,19,[1,977,3],[[980,2,20]]]]],[962,2,21],[0,22,7,0,0,0,0,0,[1,981,7818],[[0,23,9,0,24,25,0,12,[1,981,4182],[[5163,2,26]]],[0,27,7,0,0,0,0,0,[1,5164,3622],[[0,28,9,0,29,30,31,32,[1,5164,43],[[5207,2,33]]],[0,34,35,0,36,37,0,0,[1,5208,3557],[[0,38,9,0,39,40,0,41,[1,5208,3557],[]]]],[0,28,9,0,29,42,43,32,[1,8765,21],[[8786,2,44]]],[0,34,35,0,36,45,0,0,[1,8786,0],[]]]],[0,46,9,0,47,48,0,49,[1,8786,11],[[8796,2,50]]],[0,51,9,0,52,0,53,32,[1,8797,3],[[8800,2,54],[8800,2,55]]],[0,56,35,0,57,58,0,0,[1,8800,0],[]]]],[0,59,7,0,0,0,0,0,[1,8801,5763],[[0,60,7,0,0,61,0,0,[1,8801,475],[[0,62,35,0,63,64,65,0,[1,8802,0],[[8802,2,66]]],[0,38,9,0,39,67,0,41,[1,8802,473],[]]]],[0,68,7,0,0,69,0,0,[1,9276,1605],[[0,70,9,0,71,72,73,74,[1,9277,799],[[10076,2,75],[10076,2,76]]],[0,38,9,0,39,73,0,41,[1,10076,805],[]]]],[0,38,9,0,39,77,0,41,[1,10881,3683],[]]]],[0,78,7,0,0,0,0,0,[1,14565,4606],[[0,38,9,0,39,79,0,41,[1,14565,4606],[]]]],[0,80,7,0,0,0,0,0,[1,19171,1788],[[0,38,9,0,39,81,0,41,[1,19172,1787],[]]]],[0,82,7,0,0,0,0,0,[1,20959,598],[[0,83,7,0,0,84,0,0,[1,20959,150],[[3,85,0,0,0,0,0,0,[1,20959,149],[[4,86,0,0,0,0,0,0,[1,20960,72],[[0,62,35,0,63,87,65,0,[1,20960,0],[[20960,2,88]]],[0,89,90,0,91,92,93,0,[1,20960,0],[[20960,2,94]]],[0,95,9,0,96,65,97,32,[1,20961,71],[[21032,2,98],[21032,2,99]]],[0,100,35,0,101,102,0,0,[1,21032,0],[]]]],[4,103,0,0,0,0,0,0,[1,21032,14],[[0,62,35,0,63,87,65,0,[1,21032,1],[[21033,2,104]]],[0,89,90,0,91,92,93,0,[1,21033,0],[[21033,2,105]]],[0,95,9,0,96,65,97,32,[1,21033,12],[[21045,2,106],[21045,2,107]]],[0,100,35,0,101,102,0,0,[1,21045,1],[]]]],[4,108,0,0,0,0,0,0,[1,21046,12],[[0,62,35,0,63,87,65,0,[1,21046,0],[[21046,2,109]]],[0,89,90,0,91,92,93,0,[1,21046,1],[[21047,2,110]]],[0,95,9,0,96,65,97,32,[1,21047,10],[[21057,2,111],[21057,2,112]]],[0,100,35,0,101,102,0,0,[1,21058,0],[]]]],[4,113,0,0,0,0,0,0,[1,21058,12],[[0,62,35,0,63,87,65,0,[1,21058,0],[[21058,2,114]]],[0,89,90,0,91,92,93,0,[1,21059,0],[[21059,2,115]]],[0,95,9,0,96,65,97,32,[1,21059,10],[[21069,2,116],[21069,2,117]]],[0,100,35,0,101,102,0,0,[1,21070,0],[]]]],[4,118,0,0,0,0,0,0,[1,21070,13],[[0,62,35,0,63,87,65,0,[1,21070,0],[[21070,2,119]]],[0,89,90,0,91,92,93,0,[1,21071,0],[[21071,2,120]]],[0,95,9,0,96,65,97,32,[1,21071,12],[[21083,2,121],[21083,2,122]]],[0,100,35,0,101,102,0,0,[1,21083,0],[]]]],[4,123,0,0,0,0,0,0,[1,21083,14],[[0,62,35,0,63,87,65,0,[1,21084,0],[[21084,2,124]]],[0,89,90,0,91,92,93,0,[1,21084,0],[[21084,2,125]]],[0,95,9,0,96,65,97,32,[1,21084,12],[[21096,2,126],[21096,2,127]]],[0,100,35,0,101,102,0,0,[1,21097,0],[]]]],[4,128,0,0,0,0,0,0,[1,21097,11],[[0,62,35,0,63,87,65,0,[1,21097,0],[[21097,2,129]]],[0,89,90,0,91,92,93,0,[1,21097,1],[[21098,2,130]]],[0,95,9,0,96,65,97,32,[1,21098,10],[[21108,2,131],[21108,2,132]]],[0,100,35,0,101,102,0,0,[1,21108,0],[]]]]]]]],[0,133,7,0,0,134,0,0,[1,21109,447],[[0,135,35,0,136,137,138,0,[1,21109,0],[[21109,2,139]]],[0,62,35,0,63,140,138,0,[1,21109,1],[[21110,2,141]]],[0,62,35,0,63,142,143,0,[1,21110,0],[[21110,2,144]]],[0,145,9,0,146,147,0,148,[1,21110,446],[[21556,2,149]]]]]]],[0,150,7,0,0,0,0,0,[1,21557,517],[[0,95,9,0,96,151,152,32,[1,21557,516],[[22073,2,153],[22073,2,154]]],[0,100,35,0,101,155,0,0,[1,22073,1],[]]]],[22204,2,156],[22206,2,21],[2,157,9,0,158,0,0,12,[1,22074,128],[[22079,2,159],[22079,2,160],[22080,2,161],[22080,2,162],[22081,2,163],[22082,2,164],[22082,2,165],[22083,2,166],[22085,2,159],[22088,2,167],[22201,2,168]]]]],[169,0,0,[],[1,22207,20423],[[1,6,7,0,0,0,0,0,[1,22210,18],[[0,8,9,0,10,11,0,12,[1,22210,17],[[22211,2,13],[22227,2,14],[22227,2,15]]],[0,16,9,0,17,18,0,19,[1,22227,1],[]]]],[22209,2,21],[0,22,7,0,0,0,0,0,[1,22228,7420],[[0,23,9,0,24,25,0,12,[1,22228,4218],[[26445,2,26]]],[0,27,7,0,0,0,0,0,[1,26446,3192],[[0,28,9,0,29,30,31,32,[1,26447,45],[[26492,2,33]]],[0,34,35,0,36,37,0,0,[1,26492,3100],[[0,38,9,0,39,40,0,41,[1,26493,3099],[]]]],[0,28,9,0,29,42,43,32,[1,29592,46],[[29638,2,44]]],[0,34,35,0,36,45,0,0,[1,29638,0],[]]]],[0,46,9,0,47,48,0,49,[1,29638,6],[[29644,2,50]]],[0,51,9,0,52,0,53,32,[1,29645,2],[[29647,2,54],[29647,2,55]]],[0,56,35,0,57,58,0,0,[1,29647,0],[]]]],[0,59,7,0,0,0,0,0,[1,29648,5644],[[0,60,7,0,0,61,0,0,[1,29648,464],[[0,62,35,0,63,64,65,0,[1,29649,0],[[29649,2,66]]],[0,38,9,0,39,67,0,41,[1,29649,463],[]]]],[0,68,7,0,0,69,0,0,[1,30112,1602],[[0,70,9,0,71,72,73,74,[1,30113,810],[[30923,2,75],[30923,2,170]]],[0,38,9,0,39,73,0,41,[1,30924,790],[]]]],[0,38,9,0,39,77,0,41,[1,31715,3577],[]]]],[0,78,7,0,0,0,0,0,[1,35292,4381],[[0,38,9,0,39,79,0,41,[1,35293,4380],[]]]],[0,171,7,0,0,0,0,0,[1,39673,2453],[[0,172,7,0,0,173,0,0,[1,39674,2051],[[0,174,35,0,175,176,0,0,[1,39674,1008],[[40682,2,177]]],[0,178,9,0,179,180,0,41,[1,40682,751],[[40684,2,181]]],[0,178,9,0,179,182,0,41,[1,41433,122],[[41436,2,183]]],[0,178,9,0,179,184,0,41,[1,41556,24],[[41556,2,185]]],[0,186,9,0,187,188,0,41,[1,41581,30],[]],[0,178,9,0,179,189,0,41,[1,41611,23],[[41612,2,190]]],[0,178,9,0,179,191,0,41,[1,41635,21],[[41635,2,192]]],[0,178,9,0,179,193,0,41,[1,41657,26],[[41657,2,194]]],[0,186,9,0,187,195,0,41,[1,41683,21],[]],[0,178,9,0,179,196,0,41,[1,41705,20],[[41705,2,197]]],[0,34,35,0,36,198,0,0,[1,41725,0],[]]]],[0,133,7,0,0,134,0,0,[1,41726,399],[[0,135,35,0,136,137,138,0,[1,41726,0],[[41726,2,199]]],[0,62,35,0,63,140,138,0,[1,41726,1],[[41727,2,200]]],[0,62,35,0,63,142,143,0,[1,41727,0],[[41727,2,201]]],[0,145,9,0,146,147,0,148,[1,41727,398],[[42125,2,202]]]]]]],[42633,2,156],[42635,2,21],[2,157,9,0,158,0,0,12,[1,42126,505],[[42164,2,203],[42164,2,160],[42167,2,161],[42167,2,162],[42171,2,163],[42172,2,164],[42173,2,165],[42174,2,204],[42190,2,203],[42194,2,167],[42630,2,168]]]]]],[[1,205,9,0,206,207,0,12,[1,696,262],[[697,2,208],[958,2,209]]],[2,210,9,0,211,0,0,12,[1,42636,201],[[42837,2,212]]]],[2,2,0,0]],[2,3,4,0,[],[1,43242,39789],[],[[5,0,0,[],[1,44207,19641],[[1,6,7,0,0,0,0,0,[1,44212,18],[[0,8,9,0,10,11,0,12,[1,44212,14],[[44213,2,213],[44226,2,14],[44226,2,214]]],[0,16,9,0,17,18,0,19,[1,44226,4],[[44229,2,20]]]]],[44211,2,215],[0,22,7,0,0,0,0,0,[1,44230,7934],[[0,23,9,0,24,25,0,12,[1,44230,2811],[[47040,2,216]]],[0,27,7,0,0,0,0,0,[1,47041,5113],[[0,28,9,0,29,30,31,32,[1,47041,41],[[47082,2,33]]],[0,34,35,0,36,37,0,0,[1,47083,5064],[[0,38,9,0,39,40,0,41,[1,47084,5063],[]]]],[0,28,9,0,29,42,43,32,[1,52147,6],[[52153,2,44]]],[0,34,35,0,36,45,0,0,[1,52154,0],[]]]],[0,46,9,0,47,48,0,49,[1,52154,6],[[52160,2,50]]],[0,51,9,0,52,0,53,32,[1,52160,3],[[52163,2,217],[52163,2,218]]],[0,56,35,0,57,58,0,0,[1,52163,1],[]]]],[0,59,7,0,0,0,0,0,[1,52164,4271],[[0,60,7,0,0,61,0,0,[1,52165,519],[[0,62,35,0,63,64,65,0,[1,52165,0],[[52165,2,66]]],[0,38,9,0,39,67,0,41,[1,52165,519],[]]]],[0,68,7,0,0,69,0,0,[1,52684,1640],[[0,70,9,0,71,72,73,74,[1,52685,847],[[53531,2,75],[53532,2,219]]],[0,38,9,0,39,73,0,41,[1,53532,791],[]]]],[0,38,9,0,39,77,0,41,[1,54325,2110],[]]]],[0,78,7,0,0,0,0,0,[1,56435,4315],[[0,38,9,0,39,79,0,41,[1,56435,4315],[]]]],[0,80,7,0,0,0,0,0,[1,60750,1992],[[0,38,9,0,39,81,0,41,[1,60751,1990],[]]]],[0,82,7,0,0,0,0,0,[1,62742,524],[[0,83,7,0,0,84,0,0,[1,62742,123],[[3,85,0,0,0,0,0,0,[1,62743,122],[[4,86,0,0,0,0,0,0,[1,62743,42],[[0,62,35,0,63,87,65,0,[1,62743,1],[[62744,2,88]]],[0,89,90,0,91,92,93,0,[1,62744,0],[[62744,2,220]]],[0,95,9,0,96,65,97,32,[1,62744,40],[[62784,2,221],[62784,2,222]]],[0,100,35,0,101,102,0,0,[1,62784,1],[]]]],[4,103,0,0,0,0,0,0,[1,62785,17],[[0,62,35,0,63,87,65,0,[1,62785,1],[[62786,2,104]]],[0,89,90,0,91,92,93,0,[1,62786,0],[[62786,2,223]]],[0,95,9,0,96,65,97,32,[1,62786,15],[[62801,2,224],[62801,2,225]]],[0,100,35,0,101,102,0,0,[1,62801,1],[]]]],[4,108,0,0,0,0,0,0,[1,62802,13],[[0,62,35,0,63,87,65,0,[1,62802,0],[[62802,2,109]]],[0,89,90,0,91,92,93,0,[1,62802,0],[[62802,2,226]]],[0,95,9,0,96,65,97,32,[1,62803,11],[[62814,2,227],[62814,2,228]]],[0,100,35,0,101,102,0,0,[1,62814,1],[]]]],[4,113,0,0,0,0,0,0,[1,62815,13],[[0,62,35,0,63,87,65,0,[1,62815,0],[[62815,2,114]]],[0,89,90,0,91,92,93,0,[1,62815,1],[[62816,2,229]]],[0,95,9,0,96,65,97,32,[1,62816,11],[[62827,2,230],[62827,2,231]]],[0,100,35,0,101,102,0,0,[1,62827,1],[]]]],[4,118,0,0,0,0,0,0,[1,62828,13],[[0,62,35,0,63,87,65,0,[1,62828,0],[[62828,2,119]]],[0,89,90,0,91,92,93,0,[1,62828,0],[[62828,2,232]]],[0,95,9,0,96,65,97,32,[1,62828,13],[[62841,2,233],[62841,2,234]]],[0,100,35,0,101,102,0,0,[1,62841,0],[]]]],[4,123,0,0,0,0,0,0,[1,62841,13],[[0,62,35,0,63,87,65,0,[1,62842,0],[[62842,2,124]]],[0,89,90,0,91,92,93,0,[1,62842,0],[[62842,2,235]]],[0,95,9,0,96,65,97,32,[1,62842,11],[[62853,2,236],[62853,2,237]]],[0,100,35,0,101,102,0,0,[1,62854,0],[]]]],[4,128,0,0,0,0,0,0,[1,62854,11],[[0,62,35,0,63,87,65,0,[1,62854,0],[[62854,2,129]]],[0,89,90,0,91,92,93,0,[1,62854,1],[[62855,2,238]]],[0,95,9,0,96,65,97,32,[1,62855,10],[[62864,2,239],[62865,2,240]]],[0,100,35,0,101,102,0,0,[1,62865,0],[]]]]]]]],[0,133,7,0,0,134,0,0,[1,62865,401],[[0,135,35,0,136,137,138,0,[1,62866,0],[[62866,2,241]]],[0,62,35,0,63,140,138,0,[1,62866,0],[[62866,2,242]]],[0,62,35,0,63,142,143,0,[1,62867,0],[[62867,2,243]]],[0,145,9,0,146,147,0,148,[1,62867,399],[[63265,2,244]]]]]]],[0,150,7,0,0,0,0,0,[1,63266,443],[[0,95,9,0,96,151,152,32,[1,63267,441],[[63707,2,245],[63708,2,246]]],[0,100,35,0,101,155,0,0,[1,63708,1],[]]]],[63852,2,156],[63857,2,215],[2,157,9,0,158,0,0,12,[1,63709,138],[[63714,2,247],[63714,2,160],[63715,2,161],[63715,2,248],[63716,2,163],[63716,2,164],[63719,2,165],[63719,2,249],[63725,2,247],[63728,2,167],[63846,2,168]]]]],[169,0,0,[],[1,63858,18981],[[1,6,7,0,0,0,0,0,[1,63861,10],[[0,8,9,0,10,11,0,12,[1,63862,9],[[63862,2,213],[63870,2,14],[63871,2,214]]],[0,16,9,0,17,18,0,19,[1,63871,0],[]]]],[63861,2,215],[0,22,7,0,0,0,0,0,[1,63871,7500],[[0,23,9,0,24,25,0,12,[1,63872,3663],[[67534,2,216]]],[0,27,7,0,0,0,0,0,[1,67535,3828],[[0,28,9,0,29,30,31,32,[1,67535,47],[[67582,2,33]]],[0,34,35,0,36,37,0,0,[1,67582,3774],[[0,38,9,0,39,40,0,41,[1,67582,3774],[]]]],[0,28,9,0,29,42,43,32,[1,71357,7],[[71364,2,44]]],[0,34,35,0,36,45,0,0,[1,71364,0],[]]]],[0,46,9,0,47,48,0,49,[1,71365,4],[[71369,2,50]]],[0,51,9,0,52,0,53,32,[1,71369,2],[[71371,2,217],[71371,2,218]]],[0,56,35,0,57,58,0,0,[1,71371,1],[]]]],[0,59,7,0,0,0,0,0,[1,71372,4043],[[0,60,7,0,0,61,0,0,[1,71372,471],[[0,62,35,0,63,64,65,0,[1,71373,0],[[71373,2,66]]],[0,38,9,0,39,67,0,41,[1,71373,470],[]]]],[0,68,7,0,0,69,0,0,[1,71844,1554],[[0,70,9,0,71,72,73,74,[1,71844,700],[[72544,2,75],[72544,2,250]]],[0,38,9,0,39,73,0,41,[1,72544,853],[]]]],[0,38,9,0,39,77,0,41,[1,73398,2017],[]]]],[0,78,7,0,0,0,0,0,[1,75415,4333],[[0,38,9,0,39,79,0,41,[1,75416,4332],[]]]],[0,171,7,0,0,0,0,0,[1,79749,2586],[[0,172,7,0,0,173,0,0,[1,79749,2202],[[0,174,35,0,175,176,0,0,[1,79749,1013],[[80762,2,177]]],[0,178,9,0,179,180,0,41,[1,80762,900],[[80763,2,181]]],[0,178,9,0,179,182,0,41,[1,81662,79],[[81663,2,183]]],[0,178,9,0,179,184,0,41,[1,81741,54],[[81742,2,185]]],[0,186,9,0,187,188,0,41,[1,81795,35],[]],[0,178,9,0,179,189,0,41,[1,81830,27],[[81830,2,190]]],[0,178,9,0,179,191,0,41,[1,81857,25],[[81860,2,192]]],[0,178,9,0,179,193,0,41,[1,81882,23],[[81883,2,194]]],[0,186,9,0,187,195,0,41,[1,81906,24],[]],[0,178,9,0,179,196,0,41,[1,81930,21],[[81931,2,197]]],[0,34,35,0,36,198,0,0,[1,81951,0],[]]]],[0,133,7,0,0,134,0,0,[1,81952,383],[[0,135,35,0,136,137,138,0,[1,81952,1],[[81952,2,251]]],[0,62,35,0,63,140,138,0,[1,81953,0],[[81953,2,252]]],[0,62,35,0,63,142,143,0,[1,81953,1],[[81954,2,253]]],[0,145,9,0,146,147,0,148,[1,81954,381],[[82334,2,254]]]]]]],[82841,2,156],[82843,2,215],[2,157,9,0,158,0,0,12,[1,82336,502],[[82669,2,255],[82669,2,160],[82671,2,161],[82671,2,248],[82673,2,163],[82673,2,164],[82674,2,165],[82674,2,256],[82692,2,255],[82697,2,167],[82838,2,168]]]]]],[[1,205,9,0,206,207,0,12,[1,43938,269],[[43938,2,257],[44207,2,258]]],[2,210,9,0,211,0,0,12,[1,82844,187],[[83030,2,212]]]],[2,2,0,0]],[2,3,4,0,[],[1,83432,63921],[],[[5,0,0,[],[1,84391,25362],[[1,6,7,0,0,0,0,0,[1,84395,19],[[0,8,9,0,10,11,0,12,[1,84395,15],[[84396,2,13],[84410,2,14],[84410,2,15]]],[0,16,9,0,17,18,0,19,[1,84410,3],[[84413,2,20]]]]],[84394,2,259],[0,22,7,0,0,0,0,0,[1,84414,12486],[[0,23,9,0,24,25,0,12,[1,84414,3639],[[88053,2,260]]],[0,27,7,0,0,0,0,0,[1,88053,8836],[[0,28,9,0,29,30,31,32,[1,88053,48],[[88101,2,33]]],[0,34,35,0,36,37,0,0,[1,88101,8744],[[0,38,9,0,39,40,0,41,[1,88101,8744],[]]]],[0,28,9,0,29,42,43,32,[1,96846,43],[[96889,2,44]]],[0,34,35,0,36,45,0,0,[1,96890,0],[]]]],[0,46,9,0,47,48,0,49,[1,96890,6],[[96896,2,50]]],[0,51,9,0,52,0,53,32,[1,96896,3],[[96899,2,54],[96899,2,55]]],[0,56,35,0,57,58,0,0,[1,96899,1],[]]]],[0,59,7,0,0,0,0,0,[1,96900,5568],[[0,60,7,0,0,61,0,0,[1,96901,447],[[0,62,35,0,63,64,65,0,[1,96901,0],[[96901,2,66]]],[0,38,9,0,39,67,0,41,[1,96901,446],[]]]],[0,68,7,0,0,69,0,0,[1,97348,1578],[[0,70,9,0,71,72,73,74,[1,97348,803],[[98151,2,75],[98151,2,261]]],[0,38,9,0,39,73,0,41,[1,98151,774],[]]]],[0,38,9,0,39,77,0,41,[1,98925,3543],[]]]],[0,78,7,0,0,0,0,0,[1,102469,4136],[[0,38,9,0,39,79,0,41,[1,102469,4136],[]]]],[0,80,7,0,0,0,0,0,[1,106606,2063],[[0,38,9,0,39,81,0,41,[1,106606,2063],[]]]],[0,82,7,0,0,0,0,0,[1,108669,564],[[0,83,7,0,0,84,0,0,[1,108670,131],[[3,85,0,0,0,0,0,0,[1,108670,131],[[4,86,0,0,0,0,0,0,[1,108670,55],[[0,62,35,0,63,87,65,0,[1,108670,1],[[108671,2,88]]],[0,89,90,0,91,92,93,0,[1,108671,0],[[108671,2,94]]],[0,95,9,0,96,65,97,32,[1,108671,53],[[108724,2,98],[108724,2,99]]],[0,100,35,0,101,102,0,0,[1,108724,1],[]]]],[4,103,0,0,0,0,0,0,[1,108725,13],[[0,62,35,0,63,87,65,0,[1,108725,0],[[108725,2,104]]],[0,89,90,0,91,92,93,0,[1,108725,0],[[108725,2,105]]],[0,95,9,0,96,65,97,32,[1,108726,11],[[108737,2,106],[108737,2,107]]],[0,100,35,0,101,102,0,0,[1,108737,1],[]]]],[4,108,0,0,0,0,0,0,[1,108738,13],[[0,62,35,0,63,87,65,0,[1,108738,0],[[108738,2,109]]],[0,89,90,0,91,92,93,0,[1,108738,0],[[108738,2,110]]],[0,95,9,0,96,65,97,32,[1,108738,13],[[108751,2,111],[108751,2,112]]],[0,100,35,0,101,102,0,0,[1,108751,0],[]]]],[4,113,0,0,0,0,0,0,[1,108751,13],[[0,62,35,0,63,87,65,0,[1,108752,0],[[108752,2,114]]],[0,89,90,0,91,92,93,0,[1,108752,0],[[108752,2,115]]],[0,95,9,0,96,65,97,32,[1,108752,11],[[108763,2,116],[108763,2,117]]],[0,100,35,0,101,102,0,0,[1,108764,0],[]]]],[4,118,0,0,0,0,0,0,[1,108764,13],[[0,62,35,0,63,87,65,0,[1,108764,0],[[108764,2,119]]],[0,89,90,0,91,92,93,0,[1,108764,1],[[108765,2,120]]],[0,95,9,0,96,65,97,32,[1,108765,12],[[108777,2,121],[108777,2,122]]],[0,100,35,0,101,102,0,0,[1,108777,0],[]]]],[4,123,0,0,0,0,0,0,[1,108777,12],[[0,62,35,0,63,87,65,0,[1,108778,0],[[108778,2,124]]],[0,89,90,0,91,92,93,0,[1,108778,0],[[108778,2,125]]],[0,95,9,0,96,65,97,32,[1,108778,11],[[108789,2,126],[108789,2,127]]],[0,100,35,0,101,102,0,0,[1,108789,0],[]]]],[4,128,0,0,0,0,0,0,[1,108789,12],[[0,62,35,0,63,87,65,0,[1,108789,1],[[108790,2,129]]],[0,89,90,0,91,92,93,0,[1,108790,0],[[108790,2,130]]],[0,95,9,0,96,65,97,32,[1,108790,10],[[108800,2,131],[108800,2,132]]],[0,100,35,0,101,102,0,0,[1,108800,1],[]]]]]]]],[0,133,7,0,0,134,0,0,[1,108801,432],[[0,135,35,0,136,137,138,0,[1,108801,1],[[108802,2,262]]],[0,62,35,0,63,140,138,0,[1,108802,0],[[108802,2,263]]],[0,62,35,0,63,142,143,0,[1,108802,0],[[108802,2,264]]],[0,145,9,0,146,147,0,148,[1,108803,430],[[109233,2,265]]]]]]],[0,150,7,0,0,0,0,0,[1,109233,407],[[0,95,9,0,96,151,152,32,[1,109234,405],[[109639,2,153],[109639,2,154]]],[0,100,35,0,101,155,0,0,[1,109640,0],[]]]],[109755,2,156],[109757,2,259],[2,157,9,0,158,0,0,12,[1,109641,112],[[109643,2,266],[109643,2,160],[109644,2,161],[109645,2,267],[109645,2,163],[109645,2,164],[109646,2,165],[109647,2,268],[109651,2,266],[109654,2,167],[109753,2,168]]]]],[169,0,0,[],[1,109758,37427],[[1,6,7,0,0,0,0,0,[1,109765,16],[[0,8,9,0,10,11,0,12,[1,109767,13],[[109768,2,13],[109780,2,14],[109780,2,15]]],[0,16,9,0,17,18,0,19,[1,109781,0],[]]]],[109764,2,259],[0,22,7,0,0,0,0,0,[1,109782,24237],[[0,23,9,0,24,25,0,12,[1,109782,21582],[[131363,2,260]]],[0,27,7,0,0,0,0,0,[1,131364,2646],[[0,28,9,0,29,30,31,32,[1,131364,47],[[131411,2,33]]],[0,34,35,0,36,37,0,0,[1,131411,2548],[[0,38,9,0,39,40,0,41,[1,131411,2548],[]]]],[0,28,9,0,29,42,43,32,[1,133960,50],[[134010,2,44]]],[0,34,35,0,36,45,0,0,[1,134010,0],[]]]],[0,46,9,0,47,48,0,49,[1,134011,5],[[134016,2,50]]],[0,51,9,0,52,0,53,32,[1,134016,3],[[134018,2,54],[134019,2,55]]],[0,56,35,0,57,58,0,0,[1,134019,0],[]]]],[0,59,7,0,0,0,0,0,[1,134020,5897],[[0,60,7,0,0,61,0,0,[1,134020,560],[[0,62,35,0,63,64,65,0,[1,134020,1],[[134021,2,66]]],[0,38,9,0,39,67,0,41,[1,134021,558],[]]]],[0,68,7,0,0,69,0,0,[1,134580,1604],[[0,70,9,0,71,72,73,74,[1,134581,737],[[135318,2,75],[135318,2,269]]],[0,38,9,0,39,73,0,41,[1,135319,865],[]]]],[0,38,9,0,39,77,0,41,[1,136184,3731],[]]]],[0,78,7,0,0,0,0,0,[1,139916,4373],[[0,38,9,0,39,79,0,41,[1,139916,4373],[]]]],[0,171,7,0,0,0,0,0,[1,144290,2571],[[0,172,7,0,0,173,0,0,[1,144291,2069],[[0,174,35,0,175,176,0,0,[1,144291,1006],[[145297,2,177]]],[0,178,9,0,179,180,0,41,[1,145297,763],[[145298,2,270]]],[0,178,9,0,179,182,0,41,[1,146060,65],[[146061,2,271]]],[0,178,9,0,179,184,0,41,[1,146125,68],[[146126,2,272]]],[0,186,9,0,187,188,0,41,[1,146193,43],[]],[0,178,9,0,179,189,0,41,[1,146237,23],[[146237,2,273]]],[0,178,9,0,179,191,0,41,[1,146260,25],[[146260,2,274]]],[0,178,9,0,179,193,0,41,[1,146285,23],[[146286,2,275]]],[0,186,9,0,187,195,0,41,[1,146308,26],[]],[0,178,9,0,179,196,0,41,[1,146335,24],[[146336,2,276]]],[0,34,35,0,36,198,0,0,[1,146360,0],[]]]],[0,133,7,0,0,134,0,0,[1,146360,501],[[0,135,35,0,136,137,138,0,[1,146361,0],[[146361,2,277]]],[0,62,35,0,63,140,138,0,[1,146361,1],[[146362,2,278]]],[0,62,35,0,63,142,143,0,[1,146362,0],[[146362,2,279]]],[0,145,9,0,146,147,0,148,[1,146362,499],[[146861,2,280]]]]]]],[147186,2,156],[147187,2,259],[2,157,9,0,158,0,0,12,[1,146862,323],[[147051,2,281],[147051,2,160],[147053,2,161],[147053,2,267],[147055,2,163],[147055,2,164],[147056,2,165],[147056,2,282],[147073,2,281],[147077,2,167],[147185,2,168]]]]]],[[1,205,9,0,206,207,0,12,[1,84129,261],[[84129,2,283],[84390,2,284]]],[2,210,9,0,211,0,0,12,[1,147188,166],[[147353,2,212]]]],[2,2,0,0]]],[],[],[6,6,0,0]];
+window.output["suite"] = [1,0,0,0,[],[0,null,602064],[[2,3,4,0,[],[1,0,129424],[],[[5,0,0,[],[1,2547,61312],[[1,6,7,0,0,0,0,0,[1,2552,67],[[0,8,9,0,10,11,0,12,[1,2553,60],[[2554,2,13],[2612,2,14],[2612,2,15]]],[0,16,9,0,17,18,0,19,[1,2613,6],[[2619,2,20]]]]],[0,21,7,0,0,0,0,0,[1,2620,14662],[[0,22,9,0,23,24,0,12,[1,2621,7531],[[10152,2,25]]],[0,26,7,0,0,0,0,0,[1,10152,7101],[[0,27,9,0,28,29,30,31,[1,10153,73],[[10226,2,32]]],[0,33,34,0,35,36,0,0,[1,10226,7011],[[0,37,9,0,38,39,0,40,[1,10227,7010],[]]]],[0,27,9,0,28,41,42,31,[1,17238,14],[[17252,2,43]]],[0,33,34,0,35,44,0,0,[1,17252,0],[]]]],[0,45,9,0,46,47,0,48,[1,17253,21],[[17274,2,49]]],[0,50,9,0,51,0,52,31,[1,17274,6],[[17279,2,53]]],[0,54,34,0,55,56,0,0,[1,17280,1],[]]]],[0,57,7,0,0,0,0,0,[1,17282,20207],[[0,58,7,0,0,59,0,0,[1,17282,1323],[[0,60,34,0,61,62,63,0,[1,17284,1],[[17285,2,64]]],[0,37,9,0,38,65,0,40,[1,17285,1320],[]]]],[0,66,7,0,0,67,0,0,[1,18606,5653],[[0,68,9,0,69,70,71,72,[1,18608,2758],[[21365,2,73],[21366,2,74]]],[0,37,9,0,38,71,0,40,[1,21367,2892],[]]]],[0,37,9,0,38,75,0,40,[1,24260,13229],[]]]],[0,76,7,0,0,0,0,0,[1,37490,14172],[[0,37,9,0,38,77,0,40,[1,37490,14171],[]]]],[0,78,7,0,0,0,0,0,[1,51662,9895],[[0,37,9,0,38,79,0,40,[1,51663,9893],[]]]],[0,80,7,0,0,0,0,0,[1,61557,1783],[[0,81,7,0,0,82,0,0,[1,61558,672],[[0,33,34,0,35,83,84,0,[1,61560,2],[[0,85,34,0,86,87,0,0,[1,61561,1],[]],[61562,2,88]]],[3,89,0,0,0,0,0,0,[1,61563,667],[[4,90,0,0,0,0,0,0,[1,61563,316],[[0,60,34,0,61,91,63,0,[1,61563,1],[[61564,2,92]]],[0,93,94,0,95,96,97,0,[1,61564,1],[[61565,2,98]]],[0,99,9,0,100,63,101,31,[1,61565,312],[[61877,2,102]]],[0,103,34,0,104,105,0,0,[1,61878,1],[]]]],[4,106,0,0,0,0,0,0,[1,61879,75],[[0,60,34,0,61,91,63,0,[1,61879,1],[[61880,2,107]]],[0,93,94,0,95,96,97,0,[1,61881,0],[[61881,2,108]]],[0,99,9,0,100,63,101,31,[1,61882,72],[[61954,2,109]]],[0,103,34,0,104,105,0,0,[1,61954,0],[]]]],[4,110,0,0,0,0,0,0,[1,61955,37],[[0,60,34,0,61,91,63,0,[1,61955,0],[[61955,2,111]]],[0,93,94,0,95,96,97,0,[1,61955,1],[[61956,2,112]]],[0,99,9,0,100,63,101,31,[1,61956,35],[[61991,2,113]]],[0,103,34,0,104,105,0,0,[1,61991,1],[]]]],[4,114,0,0,0,0,0,0,[1,61993,45],[[0,60,34,0,61,91,63,0,[1,61993,1],[[61994,2,115]]],[0,93,94,0,95,96,97,0,[1,61994,1],[[61995,2,116]]],[0,99,9,0,100,63,101,31,[1,61995,42],[[62037,2,117]]],[0,103,34,0,104,105,0,0,[1,62037,1],[]]]],[4,118,0,0,0,0,0,0,[1,62038,50],[[0,60,34,0,61,91,63,0,[1,62038,0],[[62038,2,119]]],[0,93,94,0,95,96,97,0,[1,62038,1],[[62039,2,120]]],[0,99,9,0,100,63,101,31,[1,62039,48],[[62087,2,121]]],[0,103,34,0,104,105,0,0,[1,62087,1],[]]]],[4,122,0,0,0,0,0,0,[1,62089,104],[[0,60,34,0,61,91,63,0,[1,62089,1],[[62090,2,123]]],[0,93,94,0,95,96,97,0,[1,62090,1],[[62091,2,124]]],[0,99,9,0,100,63,101,31,[1,62091,101],[[62191,2,125]]],[0,103,34,0,104,105,0,0,[1,62192,1],[]]]],[4,126,0,0,0,0,0,0,[1,62193,37],[[0,60,34,0,61,91,63,0,[1,62193,1],[[62194,2,127]]],[0,93,94,0,95,96,97,0,[1,62195,1],[[62196,2,128]]],[0,99,9,0,100,63,101,31,[1,62196,33],[[62229,2,129]]],[0,103,34,0,104,105,0,0,[1,62229,1],[]]]]]]]],[0,130,7,0,0,131,0,0,[1,62231,1109],[[0,132,34,0,133,134,135,0,[1,62231,1],[[62232,2,136]]],[0,60,34,0,61,137,135,0,[1,62232,1],[[62233,2,138]]],[0,60,34,0,61,139,140,0,[1,62233,1],[[62233,2,141]]],[0,142,9,0,143,144,0,145,[1,62234,1106],[[63340,2,146]]]]]]],[0,147,7,0,0,0,0,0,[1,63341,271],[[0,99,9,0,100,148,149,31,[1,63341,269],[[63610,2,150]]],[0,103,34,0,104,151,0,0,[1,63611,1],[]]]],[2,152,9,0,153,0,0,12,[1,63613,246],[[63646,2,154],[63649,2,155],[63652,2,156],[63655,2,157],[63662,2,158],[63858,2,159]]]]],[160,0,0,[],[1,63862,64891],[[1,6,7,0,0,0,0,0,[1,63866,50],[[0,8,9,0,10,11,0,12,[1,63867,44],[[63868,2,13],[63911,2,14],[63911,2,15]]],[0,16,9,0,17,18,0,19,[1,63912,4],[[63916,2,20]]]]],[0,21,7,0,0,0,0,0,[1,63917,16245],[[0,22,9,0,23,24,0,12,[1,63917,9022],[[72939,2,25]]],[0,26,7,0,0,0,0,0,[1,72940,6947],[[0,27,9,0,28,29,30,31,[1,72940,90],[[73030,2,32]]],[0,33,34,0,35,36,0,0,[1,73030,6620],[[0,37,9,0,38,39,0,40,[1,73031,6619],[]]]],[0,27,9,0,28,41,42,31,[1,79650,236],[[79886,2,43]]],[0,33,34,0,35,44,0,0,[1,79886,1],[]]]],[0,45,9,0,46,47,0,48,[1,79887,251],[[80137,2,49]]],[0,50,9,0,51,0,52,31,[1,80138,22],[[80159,2,53]]],[0,54,34,0,55,56,0,0,[1,80160,2],[]]]],[0,57,7,0,0,0,0,0,[1,80163,20280],[[0,58,7,0,0,59,0,0,[1,80163,2201],[[0,60,34,0,61,62,63,0,[1,80165,1],[[80166,2,64]]],[0,37,9,0,38,65,0,40,[1,80166,2197],[]]]],[0,66,7,0,0,67,0,0,[1,82364,5040],[[0,68,9,0,69,70,71,72,[1,82366,3218],[[85583,2,73],[85584,2,161]]],[0,37,9,0,38,71,0,40,[1,85584,1819],[]]]],[0,37,9,0,38,75,0,40,[1,87404,13038],[]]]],[0,76,7,0,0,0,0,0,[1,100443,15097],[[0,37,9,0,38,77,0,40,[1,100444,15096],[]]]],[0,162,7,0,0,0,0,0,[1,115541,12578],[[0,163,7,0,0,164,0,0,[1,115541,11254],[[0,165,34,0,166,167,0,0,[1,115542,1009],[[116551,2,168]]],[0,169,9,0,170,171,0,40,[1,116552,8805],[[116555,2,172]]],[0,169,9,0,170,173,0,40,[1,125358,455],[[125360,2,174]]],[0,169,9,0,170,175,0,40,[1,125813,157],[[125816,2,176]]],[0,177,9,0,178,179,0,40,[1,125971,255],[]],[0,169,9,0,170,180,0,40,[1,126226,67],[[126228,2,181]]],[0,169,9,0,170,182,0,40,[1,126294,93],[[126295,2,183]]],[0,169,9,0,170,184,0,40,[1,126388,164],[[126390,2,185]]],[0,177,9,0,178,186,0,40,[1,126553,183],[]],[0,169,9,0,170,187,0,40,[1,126736,57],[[126738,2,188]]],[0,33,34,0,35,189,0,0,[1,126793,2],[]]]],[0,130,7,0,0,131,0,0,[1,126795,1324],[[0,132,34,0,133,134,135,0,[1,126796,0],[[126796,2,190]]],[0,60,34,0,61,137,135,0,[1,126796,1],[[126797,2,191]]],[0,60,34,0,61,139,140,0,[1,126797,1],[[126798,2,192]]],[0,142,9,0,143,144,0,145,[1,126798,1320],[[128118,2,193]]]]]]],[2,152,9,0,153,0,0,12,[1,128120,633],[[128304,2,194],[128308,2,155],[128311,2,156],[128315,2,157],[128328,2,158],[128753,2,159]]]]]],[[1,195,9,0,196,197,0,12,[1,1394,1152],[[1395,2,198],[2546,2,199]]],[2,200,9,0,201,0,0,12,[1,128759,665],[[129424,2,202]]]],[2,2,0,0]],[2,3,4,0,[],[1,130468,131147],[],[[5,0,0,[],[1,133712,61840],[[1,6,7,0,0,0,0,0,[1,133718,76],[[0,8,9,0,10,11,0,12,[1,133718,69],[[133720,2,203],[133786,2,14],[133786,2,204]]],[0,16,9,0,17,18,0,19,[1,133787,7],[[133793,2,20]]]]],[0,21,7,0,0,0,0,0,[1,133794,15699],[[0,22,9,0,23,24,0,12,[1,133795,9471],[[143265,2,205]]],[0,26,7,0,0,0,0,0,[1,143266,6187],[[0,27,9,0,28,29,30,31,[1,143266,54],[[143320,2,32]]],[0,33,34,0,35,36,0,0,[1,143320,6091],[[0,37,9,0,38,39,0,40,[1,143321,6090],[]]]],[0,27,9,0,28,41,42,31,[1,149411,41],[[149452,2,43]]],[0,33,34,0,35,44,0,0,[1,149452,1],[]]]],[0,45,9,0,46,47,0,48,[1,149453,31],[[149484,2,49]]],[0,50,9,0,51,0,52,31,[1,149484,7],[[149491,2,206]]],[0,54,34,0,55,56,0,0,[1,149491,2],[]]]],[0,57,7,0,0,0,0,0,[1,149494,15388],[[0,58,7,0,0,59,0,0,[1,149494,1408],[[0,60,34,0,61,62,63,0,[1,149496,0],[[149496,2,64]]],[0,37,9,0,38,65,0,40,[1,149497,1405],[]]]],[0,66,7,0,0,67,0,0,[1,150902,6536],[[0,68,9,0,69,70,71,72,[1,150904,4364],[[155267,2,73],[155268,2,207]]],[0,37,9,0,38,71,0,40,[1,155268,2169],[]]]],[0,37,9,0,38,75,0,40,[1,157438,7444],[]]]],[0,76,7,0,0,0,0,0,[1,164883,17788],[[0,37,9,0,38,77,0,40,[1,164884,17786],[]]]],[0,78,7,0,0,0,0,0,[1,182671,9721],[[0,37,9,0,38,79,0,40,[1,182672,9719],[]]]],[0,80,7,0,0,0,0,0,[1,192393,2741],[[0,81,7,0,0,82,0,0,[1,192396,845],[[0,33,34,0,35,83,84,0,[1,192400,5],[[0,85,34,0,86,87,0,0,[1,192401,3],[]],[192405,2,88]]],[3,89,0,0,0,0,0,0,[1,192405,836],[[4,90,0,0,0,0,0,0,[1,192406,280],[[0,60,34,0,61,91,63,0,[1,192408,2],[[192410,2,92]]],[0,93,94,0,95,96,97,0,[1,192413,4],[[192417,2,208]]],[0,99,9,0,100,63,101,31,[1,192417,268],[[192684,2,209]]],[0,103,34,0,104,105,0,0,[1,192685,1],[]]]],[4,106,0,0,0,0,0,0,[1,192686,52],[[0,60,34,0,61,91,63,0,[1,192686,1],[[192687,2,107]]],[0,93,94,0,95,96,97,0,[1,192687,1],[[192688,2,210]]],[0,99,9,0,100,63,101,31,[1,192689,48],[[192736,2,211]]],[0,103,34,0,104,105,0,0,[1,192737,1],[]]]],[4,110,0,0,0,0,0,0,[1,192738,50],[[0,60,34,0,61,91,63,0,[1,192738,1],[[192739,2,111]]],[0,93,94,0,95,96,97,0,[1,192739,1],[[192740,2,212]]],[0,99,9,0,100,63,101,31,[1,192741,46],[[192787,2,213]]],[0,103,34,0,104,105,0,0,[1,192787,1],[]]]],[4,114,0,0,0,0,0,0,[1,192789,231],[[0,60,34,0,61,91,63,0,[1,192789,1],[[192790,2,115]]],[0,93,94,0,95,96,97,0,[1,192790,1],[[192791,2,214]]],[0,99,9,0,100,63,101,31,[1,192791,227],[[193018,2,215]]],[0,103,34,0,104,105,0,0,[1,193018,1],[]]]],[4,118,0,0,0,0,0,0,[1,193020,114],[[0,60,34,0,61,91,63,0,[1,193020,1],[[193021,2,119]]],[0,93,94,0,95,96,97,0,[1,193022,1],[[193022,2,216]]],[0,99,9,0,100,63,101,31,[1,193023,109],[[193132,2,217]]],[0,103,34,0,104,105,0,0,[1,193133,1],[]]]],[4,122,0,0,0,0,0,0,[1,193134,56],[[0,60,34,0,61,91,63,0,[1,193134,1],[[193135,2,123]]],[0,93,94,0,95,96,97,0,[1,193135,1],[[193136,2,218]]],[0,99,9,0,100,63,101,31,[1,193136,53],[[193189,2,219]]],[0,103,34,0,104,105,0,0,[1,193190,0],[]]]],[4,126,0,0,0,0,0,0,[1,193191,50],[[0,60,34,0,61,91,63,0,[1,193191,1],[[193192,2,127]]],[0,93,94,0,95,96,97,0,[1,193192,1],[[193193,2,220]]],[0,99,9,0,100,63,101,31,[1,193193,47],[[193239,2,221]]],[0,103,34,0,104,105,0,0,[1,193240,1],[]]]]]]]],[0,130,7,0,0,131,0,0,[1,193242,1892],[[0,132,34,0,133,134,135,0,[1,193243,0],[[193243,2,222]]],[0,60,34,0,61,137,135,0,[1,193244,2],[[193245,2,223]]],[0,60,34,0,61,139,140,0,[1,193246,1],[[193247,2,224]]],[0,142,9,0,143,144,0,145,[1,193247,1886],[[195133,2,225]]]]]]],[0,147,7,0,0,0,0,0,[1,195135,214],[[0,99,9,0,100,148,149,31,[1,195135,211],[[195346,2,226]]],[0,103,34,0,104,151,0,0,[1,195347,1],[]]]],[2,152,9,0,153,0,0,12,[1,195349,203],[[195357,2,227],[195360,2,155],[195363,2,156],[195366,2,157],[195376,2,158],[195552,2,159]]]]],[160,0,0,[],[1,195555,65296],[[1,6,7,0,0,0,0,0,[1,195560,52],[[0,8,9,0,10,11,0,12,[1,195560,48],[[195562,2,203],[195607,2,14],[195607,2,204]]],[0,16,9,0,17,18,0,19,[1,195608,4],[[195612,2,20]]]]],[0,21,7,0,0,0,0,0,[1,195613,16484],[[0,22,9,0,23,24,0,12,[1,195613,9603],[[205215,2,205]]],[0,26,7,0,0,0,0,0,[1,205216,6835],[[0,27,9,0,28,29,30,31,[1,205217,62],[[205279,2,32]]],[0,33,34,0,35,36,0,0,[1,205280,6742],[[0,37,9,0,38,39,0,40,[1,205280,6742],[]]]],[0,27,9,0,28,41,42,31,[1,212022,28],[[212050,2,43]]],[0,33,34,0,35,44,0,0,[1,212051,0],[]]]],[0,45,9,0,46,47,0,48,[1,212051,38],[[212089,2,49]]],[0,50,9,0,51,0,52,31,[1,212089,6],[[212095,2,206]]],[0,54,34,0,55,56,0,0,[1,212095,1],[]]]],[0,57,7,0,0,0,0,0,[1,212097,17170],[[0,58,7,0,0,59,0,0,[1,212098,2598],[[0,60,34,0,61,62,63,0,[1,212099,1],[[212100,2,64]]],[0,37,9,0,38,65,0,40,[1,212100,2596],[]]]],[0,66,7,0,0,67,0,0,[1,214697,7221],[[0,68,9,0,69,70,71,72,[1,214699,3638],[[218336,2,73],[218337,2,228]]],[0,37,9,0,38,71,0,40,[1,218337,3581],[]]]],[0,37,9,0,38,75,0,40,[1,221919,7348],[]]]],[0,76,7,0,0,0,0,0,[1,229268,17036],[[0,37,9,0,38,77,0,40,[1,229268,17036],[]]]],[0,162,7,0,0,0,0,0,[1,246305,13980],[[0,163,7,0,0,164,0,0,[1,246305,12621],[[0,165,34,0,166,167,0,0,[1,246306,1075],[[247380,2,168]]],[0,169,9,0,170,171,0,40,[1,247383,10074],[[247414,2,172]]],[0,169,9,0,170,173,0,40,[1,257457,412],[[257459,2,174]]],[0,169,9,0,170,175,0,40,[1,257869,81],[[257871,2,176]]],[0,177,9,0,178,179,0,40,[1,257950,400],[]],[0,169,9,0,170,180,0,40,[1,258350,69],[[258352,2,181]]],[0,169,9,0,170,182,0,40,[1,258420,92],[[258422,2,183]]],[0,169,9,0,170,184,0,40,[1,258512,110],[[258514,2,185]]],[0,177,9,0,178,186,0,40,[1,258622,233],[]],[0,169,9,0,170,187,0,40,[1,258856,67],[[258858,2,188]]],[0,33,34,0,35,189,0,0,[1,258923,2],[]]]],[0,130,7,0,0,131,0,0,[1,258926,1359],[[0,132,34,0,133,134,135,0,[1,258927,0],[[258927,2,229]]],[0,60,34,0,61,137,135,0,[1,258928,1],[[258929,2,230]]],[0,60,34,0,61,139,140,0,[1,258929,1],[[258930,2,231]]],[0,142,9,0,143,144,0,145,[1,258930,1355],[[260284,2,232]]]]]]],[2,152,9,0,153,0,0,12,[1,260286,565],[[260457,2,233],[260461,2,155],[260465,2,156],[260467,2,157],[260482,2,158],[260851,2,159]]]]]],[[1,195,9,0,196,197,0,12,[1,132370,1341],[[132371,2,234],[133711,2,235]]],[2,200,9,0,201,0,0,12,[1,260857,757],[[261614,2,202]]]],[2,2,0,0]],[2,3,4,0,[],[1,262595,130374],[],[[5,0,0,[],[1,265564,64589],[[1,6,7,0,0,0,0,0,[1,265570,92],[[0,8,9,0,10,11,0,12,[1,265571,83],[[265573,2,13],[265654,2,14],[265654,2,15]]],[0,16,9,0,17,18,0,19,[1,265655,6],[[265661,2,20]]]]],[0,21,7,0,0,0,0,0,[1,265662,21098],[[0,22,9,0,23,24,0,12,[1,265663,10233],[[275896,2,236]]],[0,26,7,0,0,0,0,0,[1,275896,10842],[[0,27,9,0,28,29,30,31,[1,275897,118],[[276014,2,32]]],[0,33,34,0,35,36,0,0,[1,276015,10711],[[0,37,9,0,38,39,0,40,[1,276016,10709],[]]]],[0,27,9,0,28,41,42,31,[1,286726,11],[[286737,2,43]]],[0,33,34,0,35,44,0,0,[1,286738,0],[]]]],[0,45,9,0,46,47,0,48,[1,286739,15],[[286754,2,49]]],[0,50,9,0,51,0,52,31,[1,286755,4],[[286759,2,53]]],[0,54,34,0,55,56,0,0,[1,286759,1],[]]]],[0,57,7,0,0,0,0,0,[1,286760,17901],[[0,58,7,0,0,59,0,0,[1,286760,1219],[[0,60,34,0,61,62,63,0,[1,286761,1],[[286762,2,64]]],[0,37,9,0,38,65,0,40,[1,286762,1216],[]]]],[0,66,7,0,0,67,0,0,[1,287979,5892],[[0,68,9,0,69,70,71,72,[1,287980,2600],[[290579,2,73],[290580,2,237]]],[0,37,9,0,38,71,0,40,[1,290580,3290],[]]]],[0,37,9,0,38,75,0,40,[1,293871,10790],[]]]],[0,76,7,0,0,0,0,0,[1,304662,13532],[[0,37,9,0,38,77,0,40,[1,304663,13530],[]]]],[0,78,7,0,0,0,0,0,[1,318194,8734],[[0,37,9,0,38,79,0,40,[1,318194,8733],[]]]],[0,80,7,0,0,0,0,0,[1,326928,2973],[[0,81,7,0,0,82,0,0,[1,326928,1716],[[0,33,34,0,35,83,84,0,[1,326929,1],[[0,85,34,0,86,87,0,0,[1,326929,0],[]],[326930,2,88]]],[3,89,0,0,0,0,0,0,[1,326930,1714],[[4,90,0,0,0,0,0,0,[1,326930,115],[[0,60,34,0,61,91,63,0,[1,326930,1],[[326931,2,92]]],[0,93,94,0,95,96,97,0,[1,326931,1],[[326932,2,98]]],[0,99,9,0,100,63,101,31,[1,326933,111],[[327043,2,102]]],[0,103,34,0,104,105,0,0,[1,327044,1],[]]]],[4,106,0,0,0,0,0,0,[1,327045,88],[[0,60,34,0,61,91,63,0,[1,327045,1],[[327046,2,107]]],[0,93,94,0,95,96,97,0,[1,327046,1],[[327047,2,108]]],[0,99,9,0,100,63,101,31,[1,327047,81],[[327127,2,109]]],[0,103,34,0,104,105,0,0,[1,327129,3],[]]]],[4,110,0,0,0,0,0,0,[1,327134,1344],[[0,60,34,0,61,91,63,0,[1,327135,6],[[327140,2,111]]],[0,93,94,0,95,96,97,0,[1,327142,5],[[327147,2,112]]],[0,99,9,0,100,63,101,31,[1,327149,1328],[[328477,2,113]]],[0,103,34,0,104,105,0,0,[1,328477,1],[]]]],[4,114,0,0,0,0,0,0,[1,328478,60],[[0,60,34,0,61,91,63,0,[1,328478,1],[[328479,2,115]]],[0,93,94,0,95,96,97,0,[1,328479,1],[[328480,2,116]]],[0,99,9,0,100,63,101,31,[1,328480,57],[[328537,2,117]]],[0,103,34,0,104,105,0,0,[1,328537,1],[]]]],[4,118,0,0,0,0,0,0,[1,328538,36],[[0,60,34,0,61,91,63,0,[1,328539,0],[[328539,2,119]]],[0,93,94,0,95,96,97,0,[1,328539,1],[[328540,2,120]]],[0,99,9,0,100,63,101,31,[1,328540,34],[[328573,2,121]]],[0,103,34,0,104,105,0,0,[1,328574,0],[]]]],[4,122,0,0,0,0,0,0,[1,328574,37],[[0,60,34,0,61,91,63,0,[1,328574,1],[[328575,2,123]]],[0,93,94,0,95,96,97,0,[1,328575,0],[[328575,2,124]]],[0,99,9,0,100,63,101,31,[1,328575,35],[[328610,2,125]]],[0,103,34,0,104,105,0,0,[1,328610,1],[]]]],[4,126,0,0,0,0,0,0,[1,328611,33],[[0,60,34,0,61,91,63,0,[1,328611,1],[[328612,2,127]]],[0,93,94,0,95,96,97,0,[1,328612,1],[[328613,2,128]]],[0,99,9,0,100,63,101,31,[1,328613,30],[[328643,2,129]]],[0,103,34,0,104,105,0,0,[1,328643,1],[]]]]]]]],[0,130,7,0,0,131,0,0,[1,328644,1257],[[0,132,34,0,133,134,135,0,[1,328644,1],[[328645,2,238]]],[0,60,34,0,61,137,135,0,[1,328645,0],[[328645,2,239]]],[0,60,34,0,61,139,140,0,[1,328646,0],[[328646,2,240]]],[0,142,9,0,143,144,0,145,[1,328646,1254],[[329900,2,241]]]]]]],[0,147,7,0,0,0,0,0,[1,329901,91],[[0,99,9,0,100,148,149,31,[1,329902,87],[[329989,2,150]]],[0,103,34,0,104,151,0,0,[1,329990,1],[]]]],[2,152,9,0,153,0,0,12,[1,329992,161],[[329997,2,242],[329999,2,155],[330001,2,156],[330003,2,157],[330009,2,158],[330152,2,159]]]]],[160,0,0,[],[1,330156,62095],[[1,6,7,0,0,0,0,0,[1,330163,65],[[0,8,9,0,10,11,0,12,[1,330164,58],[[330165,2,13],[330222,2,14],[330222,2,15]]],[0,16,9,0,17,18,0,19,[1,330222,6],[[330228,2,20]]]]],[0,21,7,0,0,0,0,0,[1,330229,18457],[[0,22,9,0,23,24,0,12,[1,330229,8295],[[338523,2,236]]],[0,26,7,0,0,0,0,0,[1,338524,10144],[[0,27,9,0,28,29,30,31,[1,338525,79],[[338604,2,32]]],[0,33,34,0,35,36,0,0,[1,338605,9980],[[0,37,9,0,38,39,0,40,[1,338606,9979],[]]]],[0,27,9,0,28,41,42,31,[1,348585,83],[[348668,2,43]]],[0,33,34,0,35,44,0,0,[1,348668,0],[]]]],[0,45,9,0,46,47,0,48,[1,348668,13],[[348681,2,49]]],[0,50,9,0,51,0,52,31,[1,348681,4],[[348685,2,53]]],[0,54,34,0,55,56,0,0,[1,348685,1],[]]]],[0,57,7,0,0,0,0,0,[1,348687,17829],[[0,58,7,0,0,59,0,0,[1,348687,1095],[[0,60,34,0,61,62,63,0,[1,348688,0],[[348688,2,64]]],[0,37,9,0,38,65,0,40,[1,348688,1094],[]]]],[0,66,7,0,0,67,0,0,[1,349783,4600],[[0,68,9,0,69,70,71,72,[1,349785,2525],[[352310,2,73],[352310,2,243]]],[0,37,9,0,38,71,0,40,[1,352310,2073],[]]]],[0,37,9,0,38,75,0,40,[1,354384,12131],[]]]],[0,76,7,0,0,0,0,0,[1,366516,13087],[[0,37,9,0,38,77,0,40,[1,366517,13085],[]]]],[0,162,7,0,0,0,0,0,[1,379603,12369],[[0,163,7,0,0,164,0,0,[1,379604,10231],[[0,165,34,0,166,167,0,0,[1,379604,1005],[[380609,2,168]]],[0,169,9,0,170,171,0,40,[1,380609,7936],[[380611,2,244]]],[0,169,9,0,170,173,0,40,[1,388546,376],[[388547,2,245]]],[0,169,9,0,170,175,0,40,[1,388923,64],[[388924,2,246]]],[0,177,9,0,178,179,0,40,[1,388987,101],[]],[0,169,9,0,170,180,0,40,[1,389088,161],[[389089,2,247]]],[0,169,9,0,170,182,0,40,[1,389250,178],[[389252,2,248]]],[0,169,9,0,170,184,0,40,[1,389428,62],[[389429,2,249]]],[0,177,9,0,178,186,0,40,[1,389490,100],[]],[0,169,9,0,170,187,0,40,[1,389590,242],[[389592,2,250]]],[0,33,34,0,35,189,0,0,[1,389832,3],[]]]],[0,130,7,0,0,131,0,0,[1,389835,2137],[[0,132,34,0,133,134,135,0,[1,389836,1],[[389837,2,251]]],[0,60,34,0,61,137,135,0,[1,389837,2],[[389839,2,252]]],[0,60,34,0,61,139,140,0,[1,389839,1],[[389840,2,253]]],[0,142,9,0,143,144,0,145,[1,389841,2131],[[391971,2,254]]]]]]],[2,152,9,0,153,0,0,12,[1,391973,278],[[392069,2,255],[392072,2,155],[392074,2,156],[392076,2,157],[392083,2,158],[392250,2,159]]]]]],[[1,195,9,0,196,197,0,12,[1,264375,1188],[[264376,2,256],[265563,2,257]]],[2,200,9,0,201,0,0,12,[1,392257,712],[[392969,2,202]]]],[2,2,0,0]],[258,259,260,0,[],[0,443783,83043],[],[[261,0,0,[],[0,446651,79385,262],[[1,6,7,0,0,0,0,0,[1,446656,46],[[0,8,9,0,10,11,0,12,[1,446657,38],[[446659,2,13],[446694,2,14],[446694,2,15]]],[0,16,9,0,17,18,0,19,[1,446695,7],[[446702,2,20]]]]],[0,21,7,0,0,0,0,0,[1,446703,17477],[[0,22,9,0,23,24,0,12,[1,446704,10217],[[456921,2,205]]],[0,26,7,0,0,0,0,0,[1,456922,7211],[[0,27,9,0,28,29,30,31,[1,456923,107],[[457030,2,32]]],[0,33,34,0,35,36,0,0,[1,457031,7075],[[0,37,9,0,38,39,0,40,[1,457032,7074],[]]]],[0,27,9,0,28,41,42,31,[1,464106,25],[[464131,2,43]]],[0,33,34,0,35,44,0,0,[1,464132,0],[]]]],[0,45,9,0,46,47,0,48,[1,464133,38],[[464171,2,49]]],[0,50,9,0,51,0,52,31,[1,464171,7],[[464178,2,206]]],[0,54,34,0,55,56,0,0,[1,464178,2],[]]]],[0,263,7,0,0,0,0,0,[0,464181,61472],[[0,45,9,0,46,264,0,48,[0,464181,61468],[[525341,2,265],[525344,5,262]]],[0,37,9,0,38,266,0,40,[3,525651,0],[]]]],[0,267,7,0,0,0,0,0,[3,525665,1],[]],[0,268,7,0,0,0,0,0,[3,525668,0],[]],[0,165,34,0,166,269,0,0,[3,525669,0],[]],[2,152,9,0,153,0,0,12,[1,525672,364],[[525689,2,270],[525694,2,155],[525699,2,156],[525704,2,157],[525715,2,158],[526035,2,159]]]]]],[[1,195,9,0,196,197,0,12,[1,445389,1261],[[445390,2,271],[446650,2,272]]],[2,200,9,0,201,0,0,12,[1,526041,785],[[526826,2,202]]]],[1,0,1,0]],[258,259,260,0,[],[0,443783,83043],[],[[261,0,0,[],[0,446651,79385,262],[[1,6,7,0,0,0,0,0,[1,446656,46],[[0,8,9,0,10,11,0,12,[1,446657,38],[[446659,2,13],[446694,2,14],[446694,2,15]]],[0,16,9,0,17,18,0,19,[1,446695,7],[[446702,2,20]]]]],[0,21,7,0,0,0,0,0,[1,446703,17477],[[0,22,9,0,23,24,0,12,[1,446704,10217],[[456921,2,205]]],[0,26,7,0,0,0,0,0,[1,456922,7211],[[0,27,9,0,28,29,30,31,[1,456923,107],[[457030,2,32]]],[0,33,34,0,35,36,0,0,[1,457031,7075],[[0,37,9,0,38,39,0,40,[1,457032,7074],[]]]],[0,27,9,0,28,41,42,31,[1,464106,25],[[464131,2,43]]],[0,33,34,0,35,44,0,0,[1,464132,0],[]]]],[0,45,9,0,46,47,0,48,[1,464133,38],[[464171,2,49]]],[0,50,9,0,51,0,52,31,[1,464171,7],[[464178,2,206]]],[0,54,34,0,55,56,0,0,[1,464178,2],[]]]],[0,263,7,0,0,0,0,0,[0,464181,61472],[[0,45,9,0,46,264,0,48,[0,464181,61468],[[525341,2,265],[525344,5,262]]],[0,37,9,0,38,266,0,40,[3,525651,0],[]]]],[0,267,7,0,0,0,0,0,[3,525665,1],[]],[0,268,7,0,0,0,0,0,[3,525668,0],[]],[0,165,34,0,166,269,0,0,[3,525669,0],[]],[2,152,9,0,153,0,0,12,[1,525672,364],[[525689,2,270],[525694,2,155],[525699,2,156],[525704,2,157],[525715,2,158],[526035,2,159]]]]]],[[1,195,9,0,196,197,0,12,[1,445389,1261],[[445390,2,271],[446650,2,272]]],[2,200,9,0,201,0,0,12,[1,526041,785],[[526826,2,202]]]],[1,0,1,0]],[258,259,260,0,[],[1,527687,45033],[],[[261,0,0,[],[1,530739,41448],[[1,6,7,0,0,0,0,0,[1,530747,91],[[0,8,9,0,10,11,0,12,[1,530748,81],[[530750,2,203],[530828,2,14],[530828,2,204]]],[0,16,9,0,17,18,0,19,[1,530829,9],[[530837,2,20]]]]],[0,21,7,0,0,0,0,0,[1,530839,18985],[[0,22,9,0,23,24,0,12,[1,530839,14115],[[544953,2,236]]],[0,26,7,0,0,0,0,0,[1,544954,4841],[[0,27,9,0,28,29,30,31,[1,544955,254],[[545209,2,32]]],[0,33,34,0,35,36,0,0,[1,545210,4557],[[0,37,9,0,38,39,0,40,[1,545210,4557],[]]]],[0,27,9,0,28,41,42,31,[1,549768,26],[[549794,2,43]]],[0,33,34,0,35,44,0,0,[1,549794,1],[]]]],[0,45,9,0,46,47,0,48,[1,549796,19],[[549814,2,49]]],[0,50,9,0,51,0,52,31,[1,549815,7],[[549821,2,53]]],[0,54,34,0,55,56,0,0,[1,549822,1],[]]]],[0,263,7,0,0,0,0,0,[1,549824,3526],[[0,45,9,0,46,264,0,48,[1,549825,32],[[549857,2,273]]],[0,37,9,0,38,266,0,40,[1,549857,3493],[]]]],[0,267,7,0,0,0,0,0,[1,553351,7929],[[0,37,9,0,38,79,0,40,[1,553351,7929],[]]]],[0,268,7,0,0,0,0,0,[1,561281,790],[[0,81,7,0,0,274,0,0,[1,561281,84],[[0,33,34,0,35,83,84,0,[1,561282,0],[[0,60,34,0,61,275,0,0,[1,561282,0],[]],[561282,2,276]]],[3,89,0,0,0,0,0,0,[1,561282,82],[[4,90,0,0,0,0,0,0,[1,561282,50],[[0,60,34,0,61,91,63,0,[1,561283,0],[[561283,2,92]]],[0,93,94,0,95,96,97,0,[1,561283,0],[[561283,2,98]]],[0,99,9,0,100,63,101,31,[1,561283,49],[[561332,2,102]]],[0,103,34,0,104,105,0,0,[1,561332,0],[]]]],[4,106,0,0,0,0,0,0,[1,561333,31],[[0,60,34,0,61,91,63,0,[1,561333,0],[[561333,2,107]]],[0,93,94,0,95,96,97,0,[1,561333,1],[[561333,2,108]]],[0,99,9,0,100,63,101,31,[1,561334,30],[[561364,2,109]]],[0,103,34,0,104,105,0,0,[1,561364,0],[]]]]]]]],[0,130,7,0,0,131,0,0,[1,561365,705],[[0,132,34,0,133,134,135,0,[1,561365,0],[[561365,2,277]]],[0,60,34,0,61,137,135,0,[1,561366,0],[[561366,2,278]]],[0,60,34,0,61,139,140,0,[1,561366,1],[[561367,2,279]]],[0,142,9,0,143,144,0,145,[1,561367,703],[[562070,2,280]]]]]]],[0,165,34,0,166,269,0,0,[1,562071,10014],[[572085,2,281]]],[2,152,9,0,153,0,0,12,[1,572086,101],[[572094,2,282],[572098,2,155],[572100,2,156],[572102,2,157],[572110,2,158],[572187,2,159]]]]]],[[1,195,9,0,196,197,0,12,[1,529387,1352],[[529388,2,283],[530738,2,284]]],[2,200,9,0,201,0,0,12,[1,572191,529],[[572719,2,202]]]],[1,1,0,0]]],[],[],[9,7,2,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Quote Navigation Tests","*Request A Quote","*C:\\projects\\ROBOT\\BRP\\POW\\tests\\request_a_quote.robot","*../../tests/request_a_quote.robot","*User tries to send a request a quote form without filling in the required fields","*Setup Test","*quote_keywords","*New Context","*Browser","*<p>Create a new BrowserContext with specified options.\x3c/p>","*viewport={'width': 1920, 'height': 1080}","*BrowserControl, Setter","eNpVjk0LwjAMhu/+irGzwvSkHv0AL8Jw3kQktulWKU1Jq0PE/27mBPWY582bPI9BluWgFIa0otY7Ah3zeZb4isMuOt8DxLisSoEGXOypIVaol+SIu+3ck8f8nTRW484smNqI/NextSfGzX5fVmvmvvhNL3CDSrENae3h7FD/SpAxzsqH3wKjvorDlpIl3zuMAqNBRq8+MjeLbSBOEj9kFtJanRoZx7NJMexRg7ZuupVxMS0EPd9VjXJMQUJ9ChRPwHXnezgOni91G13X","*Successfully created context. ","*{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'width': 1920, 'height': 1080}, 'deprecated_pos_args': []}","*Set Browser Timeout","*<p>Sets the timeout used by most input and getter keywords.\x3c/p>","*1 minute","*Config, Setter","*Set timeout to: 60000","*[\n  {\n    \"type\": \"chromium\",\n    \"id\": \"browser=ee2ffe12-0c02-4d95-a343-0fe68612a335\",\n    \"contexts\": [],\n    \"activeBrowser\": true\n  }\n]","*Given The user accesses the site with its respective data","*New Page","*<p>Open a new Page.\x3c/p>","*${URL}","*Successfully initialized new page object and opened url: <a href=\"https://can-am.brp.com/off-road/ca/en/\">https://can-am.brp.com/off-road/ca/en/\x3c/a>","*Close Modal If Exists","*Get Element Count","*<p>Returns the count of elements found with <code>selector\x3c/code>.\x3c/p>","*css=#root_newsletter-popup .overlay","*${newsletter}","*Assertion, Getter, PageContent","*${newsletter} = 1","*Run Keyword If","*BuiltIn","*<p>Runs the given keyword with the given arguments, if <code>condition\x3c/code> is true.\x3c/p>","*${newsletter} &gt; 0    Click    css=#root_newsletter-popup button[aria-label=\"Close\"]","*Click","*<p>Simulates mouse click on the element found by <code>selector\x3c/code>.\x3c/p>","*css=#root_newsletter-popup button[aria-label=\"Close\"]","*PageContent, Setter","*css=.modal.fade.show","*${modals}","*${modals} = 0","*${modals} &gt; 0    Click    css=.modal.fade.show button.close","*Wait For Elements State","*<p>Waits for the element found by <code>selector\x3c/code> to satisfy state option.\x3c/p>","*css=#root_newsletter-popup .overlay    hidden    10s","*PageContent, Wait","*Waited for Element with selector css=#root_newsletter-popup .overlay at state hidden","*Get Title","*<p>Returns the title of the current page.\x3c/p>","*${title}","*Title: '2025 Can-Am Off-Road ATVs &amp; Side-by-Sides Vehicles'","*${title} = 2025 Can-Am Off-Road ATVs &amp; Side-by-Sides Vehicles","*Should Contain","*<p>Fails if <code>container\x3c/code> does not contain <code>item\x3c/code> one or more times.\x3c/p>","*${title}    ${can_am[\"expected_title\"]}","*When The user selects a model and year","*Click Model Menu","*${can_am[\"menu_label\"]}","*Set Variable","*<p>Returns the given values which can then be assigned to a variables.\x3c/p>","*a[data-analytic-label=\"${menu_label}\"]","*${selector}","*${selector} = a[data-analytic-label=\"side-by-side-vehicles\"]","*${selector} &gt;&gt; nth=1","*Click Model By Name","*${can_am[\"model\"]}","*Get Element","*<p>Returns a reference to a Playwright <a href=\"https://playwright.dev/docs/api/class-locator\">Locator\x3c/a>.\x3c/p>","*a[data-technical-name=\"${model_name}\"]:visible &gt;&gt; nth=0","*${element}","*Getter, PageContent","*Locator found successfully.","*${element} = element=156c3d47-9799-4d00-92c2-961ba964a423","*text=${can_am[\"model_year\"]}","*And The user clicks the quote button","*text=${can_am[\"quote_text\"]} &gt;&gt; nth=0","*And The user tries to submit the quote form without filling in the required fields","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"button1\"]","*Then Validation messages should appear for each required field","*Validate Error Messages In Iframe","*${IFRAME_SELECTOR}    &amp;{EXPECTED_ERRORS}","*${id}    IN    @{errors.keys()}","*${id} = form_input_name_error_text","*${iframe} &gt;&gt;&gt; div#${id}","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_name_error_text","*Get From Dictionary","*Collections","*<p>Returns a value from the given <code>dictionary\x3c/code> based on the given <code>key\x3c/code>.\x3c/p>","*${errors}    ${id}","*${expected}","*${expected} = Please enter a valid name.","*Get Text","*<p>Returns text attribute of the element found by <code>selector\x3c/code>.\x3c/p>","*${actual}","*Text: 'Please enter a valid name.'","*${actual} = Please enter a valid name.","*Should Be Equal As Strings","*<p>Fails if objects are unequal after converting them to strings.\x3c/p>","*${actual}    ${expected}","*${id} = form_input_email_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_email_error_text","*${expected} = Please enter a valid email.","*Text: 'Please enter a valid email.'","*${actual} = Please enter a valid email.","*${id} = form_input_phone_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_phone_error_text","*${expected} = Please enter a valid phone number.","*Text: 'Please enter a valid phone number.'","*${actual} = Please enter a valid phone number.","*${id} = form_input_custom2_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_custom2_error_text","*${expected} = Please enter a valid address.","*Text: 'Please enter a valid address.'","*${actual} = Please enter a valid address.","*${id} = form_input_custom3_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_custom3_error_text","*${expected} = Please enter a valid city.","*Text: 'Please enter a valid city.'","*${actual} = Please enter a valid city.","*${id} = form_input_custom4_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_custom4_error_text","*${expected} = Please select your state.","*Text: 'Please select your state.'","*${actual} = Please select your state.","*${id} = form_input_custom5_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_custom5_error_text","*${expected} = Please enter a valid zip code.","*Text: 'Please enter a valid zip code.'","*${actual} = Please enter a valid zip code.","*Take Timestamped Screenshot","*${locale}","*Get Time","*<p>Returns the given time in the requested format.\x3c/p>","*result_format=%Y%m%d-%H%M%S","*${timestamp}","*${timestamp} = 2025-04-13 08:45:52","*${timestamp.replace(\":\", \"-\")}","*${timestamp} = 2025-04-13 08-45-52","*${locale}-screenshot-${timestamp}","*${filename}","*${filename} = CA_EN-screenshot-2025-04-13 08-45-52","*Take Screenshot","*<p>Takes a screenshot of the current window or element and saves it to disk.\x3c/p>","*filename=${filename}    fullPage=True","*PageContent","eNqljzEKwyAUQK8iHzparYmQQYVSuvYKwag1oYnKV0iP39ClB+jwljc8eIo1bxRraNQXT1xea7FJQwdGWTJjeGqYMO81IKsOQ0h1zo3druP9QX+CCi4k5T29dCfB+UB7SaU4lxSBNIsxNA3jtNr0OrrLFklF93d4X3ybNQyclzewY8SaD+V7QZs=","*And The form should not be submitted","*h1.cmp-teaser__title","*${text}","*Text: 'REQUEST A QUOTE'","*${text} = REQUEST A QUOTE","*${text}    ${can_am[\"title_RAQ_PAGE\"]}","*No context open.","*Close Context","*<p>Closes a Context.\x3c/p>","eNrNU0tvnDAQvu+vsKjUU728DJQ0RNps7k13q1yiVTTY4wUJY2JMm6rqf49Z2IpNbzn1gLC+me8he+ZxRchv9xHi2V8delfE45XRqh6U92nCazGipdE/ezQFYiQlhhENeBBRJvKEQsxiGkhMP6dhBHGcnJlctxZfbO/4jyfk7HXpN3XNpIXlXCggKVnEo5SmcSYo42VMgfGEBkkpyzBgJYdyyQZu6x94D8eTfOf+BaaBkDKNaRYCuNQuei5Sp5hHnEcZS3ORLSVG0jL2ZfSL+GPrgjrVatucijt8HrC3BMi3QVskUhsCLdl8fyDutH/ZE0q20NKNIl+lpDsN4q3WYJpR6RpIZVAWXmVt11/5Pnc0UOvSdGuula8d3Ti6w31s/b7SXVe3R2q1bnr/iJYCfR4zrCurmg/t8YmDLW5390/7/cNHUN0XByktsCnuUGIr0JxRa2r1D6h60xVhEuf5GeGDMcV2c+fd/PcRr324eXvP08y9Z1rmJ1fuoZ2PUwkzxhLGsjha52G46Pvz93xYLZHDvDDT5G7nhXjfCswit9O+OhFrBlyNTodX+54cjA==","*Switching browser to CURRENT","*Active context id","*Switching browser to browser=ee2ffe12-0c02-4d95-a343-0fe68612a335","*Successfully changed active browser","*Switching context to CURRENT in CURRENT","*Returned active context id","*Switching context to context=a5b42c26-637d-4cb3-a4c5-05bfb104bcab in CURRENT","*Successfully changed active context","*Successfully closed Context","*User Navigates, Selects Model And Submits Quote Form","*${element} = element=14bd7f19-6817-4105-877c-a2e5b4dcf6ee","*Then The user fills out and submits the quote form","*Fill Quote Form","*${form}","*Sleep","*<p>Pauses the test executed for the given time.\x3c/p>","*1","*Slept 1 second.","*Fill Text","*<p>Clears and fills the given <code>txt\x3c/code> into the text field found by <code>selector\x3c/code>.\x3c/p>","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_first_name\"]    ${form[\"first_name\"]}","*Fills the text 'John' in the given field.","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_last_name\"]    ${form[\"last_name\"]}","*Fills the text 'Doe' in the given field.","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_email\"]    ${form[\"email\"]}","*Fills the text 'john.doe@example.com' in the given field.","*Select Options By","*<p>Selects options from select element found by <code>selector\x3c/code>.\x3c/p>","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_country_code\"]    value    ${form[\"country_code\"]}","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_phone\"]    ${form[\"phone\"]}","*Fills the text '1234567890' in the given field.","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_custom2\"]    ${form[\"address\"]}","*Fills the text '2, rue des Jardins Québec, QC G1R4S9Canada' in the given field.","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_custom3\"]    ${form[\"city\"]}","*Fills the text 'Quebec' in the given field.","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_custom4\"]    value    ${form[\"province\"]}","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_custom5\"]    ${form[\"postal_code\"]}","*Fills the text 'G1R4S9' in the given field.","*'${form[\"click_checkboxes\"]}' == 'True'    Click Checkboxes In Iframe","*${timestamp} = 2025-04-13 08:46:13","*${timestamp} = 2025-04-13 08-46-13","*${filename} = CA_EN-screenshot-2025-04-13 08-46-13","eNqlj0EKwyAUBa8iH7q0WpOWLFQopdteIRi1JiRV+Qrp8Svd9ABdPBhmMfAkq05LVlHL7xyxaSvZRAUdaGnIjP6pYMK0F4+sWPQ+ljlVdruO9wf9CSq4OFPe01N3EJwPtL80POYYgFSDwVcF47SZuLbu8gqkoP07vC+uzgoGzvMbWDti9AfkX0GX","eNrNU89vmzAUvuevsKi00xxibAjuSqU0va9Lpl6qqHrAIyBhTI3ZOk3732cCmUh366kHhPW99/2Q/d7TgpDf7iPEs79a9K6Jl5VGq6pX3ucRr/IBTY3+2aFJEIOiQBbQVbYKqMhlSIELTlcFRnHEAuA8PDMz3Vh8tZ3jP52Qs9el39g1kWaWUyGRXISMFZI645yKNOc0jsKQsjUGYQyCxxDP2ZDZ6gc+wPEk37p/gjKNIAVGZbBaOwkQVEYMKUqOMuZR7KTnEgNpHvsy+kX8oXVGHWuVrU/FHb702FkC5FuvLZJCGwIN2Xx/JO60f90TSrbQ0I0iX4uC7jTkb7V6Uw9KN0BKg0Xilda23bXvZ44Gapmadplp5WtHN47ucB8bvyt121bNkVqt684/oqVAX4YMy9Kq+qo5Pmdgk7vdw/N+//gJVPvFQUrnWCf3WGCTozmj1lTqP1B1pk1YyKU8I1lvTLLd3Hu3Hz7ijQ+3b+95nLn3TMv05Mo9tPNxKmwtRCjEOhRLFsezvj//zofFHDlMCzNO7nZaiPetwCRyN+6rE7Gmx8XgdPgL/6Eb6g==","*Switching context to context=934511f9-ffed-4bd3-8655-17e258a438a8 in CURRENT","*New Browser","*<p>Create a new playwright Browser with specified options.\x3c/p>","*chromium    headless=False","*{\"browser\": \"chromium\", \"headless\": false, \"devtools\": false, \"handleSIGHUP\": true, \"handleSIGINT\": true, \"handleSIGTERM\": true, \"slowMo\": 0.0, \"timeout\": 30000.0, \"deprecated_pos_args\": [], \"tracesDir\": \"C:\\\\projects\\\\ROBOT\\\\BRP\\\\POW\\\\reports\\\\CA_EN\\\\browser\\\\traces\\\\ba67baff-a9c0-4d6b-b703-4860e3e31ef6\"}","*Successfully created browser with options: {\"browser\":\"chromium\",\"headless\":false,\"devtools\":false,\"handleSIGHUP\":true,\"handleSIGINT\":true,\"handleSIGTERM\":true,\"slowMo\":0,\"timeout\":30000,\"deprecated_pos_args\":[],\"tracesDir\":\"C:\\\\projects\\\\ROBOT\\\\BRP\\\\POW\\\\reports\\\\CA_EN\\\\browser\\\\traces\\\\ba67baff-a9c0-4d6b-b703-4860e3e31ef6\"}","*Close Browser","*<p>Closes the current browser.\x3c/p>","*Closed browser","eNpVjk0LwjAMhu/+irGzwvSkHv0AL8Jwu4lIbNOtUpqS1g0R/7utE9Rjnjdv8jxGWZaDEOjChnprCKTPl1ngG45TdLk78H5dlREqMH6giligXJMhTtu5JYv5O2m1xINaMfUe+a+jG0uMu7ouqy3zUPymV+igEqxd2Fq4GJS/EqSU0fHDb4FR3qLDnoImOzhMHKNCRis+Mp3G3hGHGD/inPRQN22ap8W8GA+s1zK0CS1mRSTPd1ViPCYgoDw78mfgJvkeT6PnC3c9Xdc=","*{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'height': 1080, 'width': 1920}, 'deprecated_pos_args': []}","*[\n  {\n    \"type\": \"chromium\",\n    \"id\": \"browser=db9beb6b-581d-4113-865e-1f31adb99f63\",\n    \"contexts\": [],\n    \"activeBrowser\": true\n  }\n]","*Successfully initialized new page object and opened url: <a href=\"https://can-am.brp.com/off-road/ca/fr/\">https://can-am.brp.com/off-road/ca/fr/\x3c/a>","*Title: 'Véhicules Can-Am Hors-Route 2025 : VTT et VCC'","*${title} = Véhicules Can-Am Hors-Route 2025 : VTT et VCC","*${element} = element=f422ef50-90df-4e4c-88ce-1d78a67dcb0e","*${expected} = Veuillez saisir un prénom et un nom valides.","*Text: 'Veuillez saisir un prénom et un nom valides.'","*${actual} = Veuillez saisir un prénom et un nom valides.","*${expected} = Veuillez saisir une adresse électronique valide.","*Text: 'Veuillez saisir une adresse électronique valide.'","*${actual} = Veuillez saisir une adresse électronique valide.","*${expected} = Veuillez saisir un numéro de téléphone valide.","*Text: 'Veuillez saisir un numéro de téléphone valide.'","*${actual} = Veuillez saisir un numéro de téléphone valide.","*${expected} = Veuillez saisir une adresse valide.","*Text: 'Veuillez saisir une adresse valide.'","*${actual} = Veuillez saisir une adresse valide.","*${expected} = Veuillez saisir une ville valide.","*Text: 'Veuillez saisir une ville valide.'","*${actual} = Veuillez saisir une ville valide.","*${expected} = Veuillez sélectionner votre province.","*Text: 'Veuillez sélectionner votre province.'","*${actual} = Veuillez sélectionner votre province.","*${expected} = Veuillez saisir un code postal valide.","*Text: 'Veuillez saisir un code postal valide.'","*${actual} = Veuillez saisir un code postal valide.","*${timestamp} = 2025-04-13 08:46:34","*${timestamp} = 2025-04-13 08-46-34","*${filename} = CA_FR-screenshot-2025-04-13 08-46-34","eNqlj0EKwyAQAL8iCz1at9GWHFQohT6gHwhGbRKSaliF9PkNvfQBPcxlDgOjRQ1Wi0pWfwnM56WsLhmQYLVjI8WngZ7yViKJ4inGVMZcxe3a3R/8J3iDzZmj4id5aBBbri5cquOaBmDV0RCrga5fXJr37vQaWCH/d3ibQh0NtIjrG8Q+4uwH6hdBpw==","*Text: 'DEMANDEZ UN PRIX'","*${text} = DEMANDEZ UN PRIX","eNrVU8tunDAU3c9XWFTqqh7iYBuchkgJs+gySqLZRKPI+DGDhDEydpu26r/XDEzENLvsukDG597zkHXv8wqA3/EDIPE/e5VcgUQcnDVNMMmXCW/kiNbO/hiUK2XNalXTGpICSYgRymBBiYJIZ4jHItM0OzGF7bx69UPkPx+Rk9e539Q1kxaWc6EkF+qykPUFZJIyiGsuYEFigpxnVNOCSc7Qks2Fb76re74/yvfxLJlEOCsyApUucohzGsUoZpARTrjSpBbycikxkpaxz6OfxR9bF9Sp1vj2WNwowzupfoHQgd41r6C3wY2X7dMTsAFsqwpAUPEO3hrwzboBPtjg3+kF145q1xwcnNJlcvC+H67SVEQiN+va9WthTWq1hs5yGfFUuzQqNe0ApYKG7/nQdDFpKudEMHRwTLQ+eNN+6vYvgvvy7uH+5fFx+5mb/muEjJWqLTdKq8hwJ9S7xrwDzeD6EpGMsRMignNldbtJbv6ntNcpv/n39adp/MgczcNg1OCjT1RBOcYE4zyna0Tpou/P2/9utUR28ypNM13Nq/Kx5ZhF7qZNjiLeBbUanXZ/ASPPJkU=","*Switching browser to browser=db9beb6b-581d-4113-865e-1f31adb99f63","*Switching context to context=50e28db0-9d69-4bac-856b-7a36f689da91 in CURRENT","*${element} = element=ecb0b6ef-b6a9-482d-a62a-8a7228f6ef6a","*${timestamp} = 2025-04-13 08:46:53","*${timestamp} = 2025-04-13 08-46-53","*${filename} = CA_FR-screenshot-2025-04-13 08-46-53","eNqlj0EKwyAQAL8iCz1arSYlBxVKoQ/oB4JRa0JTlVVIn9/QSx/Qw1zmMDCKNW8Ua2jUF09cXmuxSYMEoyyZMTw0TJi3GpBVhyGkOufGrpfxdqc/QQUXPeUdPcmD4Hyg3Zn28lhSBNIsxtA0jNNq03PvLq9IKrq/w9vi26xh4Ly8ge0j1nwA6qhBqQ==","eNrVU01vnDAQve+vsKjUU2epwYZ1GiIl7KHHKIn2Eq0iA+NdJIyRMW3aqv+9ZmErtrnl1gMyfjPvQ9bM84qQX/4jJHA/OgyuSFAerdH1oINPE15XI1pY871Hm1WFKLBICuAbWgGjNIZNwhGoiqn0RaGS+MwsTevw1fWe/3xCzl6XflPXTFpYzoUs4SWLGI+gohEFVhQCBCYSmPwcoeBRUTK6ZMvS1d/wXh5O8p0/MxUpqtIkBc5jBYynMYjISyhEjKmQPJYXEiNpGfsy+kX8sXVBnWq1a07FLWrZVviTDC3pbP1KOjPY8bJ7eiJmILs8J0By2cKtJl+N7eHBDO6N3mCbUe1akqNFlQVH57r+KgxLT5R6XdhuXRodGqXAGll5PFQ29Ep100OFoOVB9nXrk4bVnAiGFsZE66PTzYf28FJKl9093L88Pu4+St198ZA2FTbZFhV6hj2jztb6Dah722WUx0KckXKwNstvt8HN/5T2OpQ3/77+NI3vmaN5GDT2zvt4FZoyxhlLBV9vYrro+/33f79aIvt5laaZzudVed9yzCJ30yZ7EWcHXI1O+z/vByWL","*Switching context to context=65c42452-d121-4bb9-9e6a-4a02e952bc41 in CURRENT","*{\"browser\": \"chromium\", \"headless\": false, \"devtools\": false, \"handleSIGHUP\": true, \"handleSIGINT\": true, \"handleSIGTERM\": true, \"slowMo\": 0.0, \"timeout\": 30000.0, \"deprecated_pos_args\": [], \"tracesDir\": \"C:\\\\projects\\\\ROBOT\\\\BRP\\\\POW\\\\reports\\\\CA_FR\\\\browser\\\\traces\\\\08783da3-b205-46c5-8401-dc4139048bd1\"}","*Successfully created browser with options: {\"browser\":\"chromium\",\"headless\":false,\"devtools\":false,\"handleSIGHUP\":true,\"handleSIGINT\":true,\"handleSIGTERM\":true,\"slowMo\":0,\"timeout\":30000,\"deprecated_pos_args\":[],\"tracesDir\":\"C:\\\\projects\\\\ROBOT\\\\BRP\\\\POW\\\\reports\\\\CA_FR\\\\browser\\\\traces\\\\08783da3-b205-46c5-8401-dc4139048bd1\"}","*[\n  {\n    \"type\": \"chromium\",\n    \"id\": \"browser=187b71a5-4d73-4002-9428-526468a5c2e1\",\n    \"contexts\": [],\n    \"activeBrowser\": true\n  }\n]","*Successfully initialized new page object and opened url: <a href=\"https://can-am.brp.com/off-road/us/en/\">https://can-am.brp.com/off-road/us/en/\x3c/a>","*${element} = element=bb10cd08-f089-42dc-aa8e-8d5163e597cc","*${timestamp} = 2025-04-13 08:47:20","*${timestamp} = 2025-04-13 08-47-20","*${filename} = US_EN-screenshot-2025-04-13 08-47-20","eNqlj7EOwiAUAH+FvMQRQVpjB2BzdTHODQWkTSuQB0n9fImLH+Bwyw2XnGTVackqavnFEZu2kk1U0IGWhszonwomTHvxyIpF72OZU2WP+3i90Z+ggosz5T09dQfB+UD7S1PHHAOQajD4qmCcNhPX1l1egRS0f4f3xdVZwcB5fgNrI0Z/AAIBQd0=","eNrNU0tvnDAQvu+vsIjUU70EsHkkIVIe96ZLk0u0isbGXpAwJsa0qar895qFjdjkllMOCOub+R7gmccVQv/cg5Bn/3bCO0Mer4xW9aC87xNelyPKjP7TC5MHacKSACgmZRJhcnoa4oyEKaZhTOIUKA9FcGBy3VrxYnvHf9wjB69jv6lrJi0s50IeQRxTGXDMqCCYAAsxsIDijNGspFGUZEm2ZAO39W9xB7u9fOfeeSySDEIZYCklYBJFEWbMfURMMk7jkjJK46XESFrGPo5+FH9sXVCnWm2bfXEjngfRWwTo56CtQFIbBC26+vWA3Kl4KRBGN9DiK4V+SIk3Gsr3WoNpRqULQJURMvcqa7v+zPe5o4FaM9OtuVa+dnTj6P7Q+6L1+0p3Xd3usNW66f2dsBjw85hhXVnVnLS7Jw42v97cPRXFwzdQ3bmDlC5Fk98KKdpSmANqTa0+gKo3XR6EaZYdED4Yk98Xt97ll4944cPl+/88zdxnpmW+cuUu2vk4lSAhhBKSBvE6Iou217fzdrVEtvO+TIN7M+/D5zZgFrme1tWJWDOI1ei0/Q/bpBuQ","*Switching browser to browser=187b71a5-4d73-4002-9428-526468a5c2e1","*Switching context to context=3a665f1c-b5e4-4ab2-ab15-9b59d5337979 in CURRENT","*${element} = element=20fb9a08-4e1f-49e3-8dbf-fcf1175f88ac","*Fills the text 'Paul' in the given field.","*Fills the text 'Díanno' in the given field.","*Fills the text 'paul.dianno@example.ca' in the given field.","*Fills the text '0987654321' in the given field.","*Fills the text '456 Elm Street' in the given field.","*Fills the text 'Miami' in the given field.","*Fills the text '33101' in the given field.","*${timestamp} = 2025-04-13 08:47:58","*${timestamp} = 2025-04-13 08-47-58","*${filename} = US_EN-screenshot-2025-04-13 08-47-58","eNqlj7EOwiAUAH+FvMQRQdpGBmBzdTHODQWkjRXIg6R+vo2LH+Bwyw2XnGLNG8UaGvXFE5fXWmzS0IFRlswYHhomzFsNyKrDEFKdc2P323i50p+ggouB8p6euoPgXNL+TAd5LCkCaRZjaBrGabXpuXeXVyQV3d/hbfFt1iA5L29g+4g1HwgWQfM=","eNrNU0tvnDAQvu+vsKjUU70YYxaThkh53JssaS7RKjJmWJAwJsa0qaL895iFrdj0llMPgPXNfA/hmccVQq/uQcizfzrwzpAnK6NVPSjv24TXxYjmRv/uwaQBj/M4EBFmRRxiRgjFCaMcR3TDNlxEkkJwZErdWnixveM/HpCj16nf1DWTFpZzISWQJLwEjmUoc8ycJxYMwL1ITkhehGFIlmwhbf0LbsX+IN+5b0qjqJBCUhwlNHGpoxznEQ3xRkLCCwKExcVSYiQtY59GP4k/ti6oU622zaG4hecBeosEuhu0BVRqg0SLLu8fkDtlLxnC6Fq0+FKhH2WJt1oUH7UG04xK5wJVBsrUq6zt+jPfl44m1Do33Vpq5WtHN47uD70Prd9Xuuvqdo+t1k3v78FigZ/HDOvKquZLu3+SwqZX29unLHv4KlT33UFKF9CkN1BCW4A5otbU6h9Q9aZLA8qT5IjIwZj0Z3bjXfz3Ec99cfHxP08z95lpma9cuYt2Pk4liBmLGOMsWMeEL/re/p53qyWymxdmmtzreSE+twKzyNW0r07EmgFWo9PuHTB2G3I=","*Switching context to context=0e998fe8-c3cb-4400-a4ee-a40b00bd3330 in CURRENT","*{\"browser\": \"chromium\", \"headless\": false, \"devtools\": false, \"handleSIGHUP\": true, \"handleSIGINT\": true, \"handleSIGTERM\": true, \"slowMo\": 0.0, \"timeout\": 30000.0, \"deprecated_pos_args\": [], \"tracesDir\": \"C:\\\\projects\\\\ROBOT\\\\BRP\\\\POW\\\\reports\\\\US_EN\\\\browser\\\\traces\\\\966cc100-4ce8-4771-a606-d976b1b6bdcd\"}","*Successfully created browser with options: {\"browser\":\"chromium\",\"headless\":false,\"devtools\":false,\"handleSIGHUP\":true,\"handleSIGINT\":true,\"handleSIGTERM\":true,\"slowMo\":0,\"timeout\":30000,\"deprecated_pos_args\":[],\"tracesDir\":\"C:\\\\projects\\\\ROBOT\\\\BRP\\\\POW\\\\reports\\\\US_EN\\\\browser\\\\traces\\\\966cc100-4ce8-4771-a606-d976b1b6bdcd\"}"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Quote Navigation Tests","*Request A Quote","*C:\\Users\\notre\\Documents\\studyrobot\\tests\\request_a_quote.robot","*../../tests/request_a_quote.robot","*User tries to send a request a quote form without filling in the required fields","*Setup Test","*quote_keywords","*New Context","*Browser","*<p>Create a new BrowserContext with specified options.\x3c/p>","*viewport={'width': 1920, 'height': 1080}","*BrowserControl, Setter","eNpVj8FqwzAMhl+l+LyNdKd1x3UduxTKkhdQbLnWMJaRnYRR+u6V6aHZTXzfrx/pYsBazPWTlxQZXDHvmyoTPm0MnRMLfg/DqT+IsDTlIZbmxr8Mpez704rNhEtmqYouZiFXg07b3WunLiCdQzPb7q27KnA4k8XeQsQvsJWluZcWpXLkkSKumgOUgScbVugXZuitUK6HBGNE97ibvY+U/u2Twx//IbwUlBUXdJNFd+RKnJSbxM9Z0KNgsmg04Vk0sOd4f18DWny9AX+3Zeg=","*Successfully created context. ","eNpVj7tuwzAMRX8lm5YUcDK1HZsHugQIav8ATVERA0EUKNlGEeTfK6FD3Y045/L1MIBIqRxliUHAZvO+GXSi7cbwLYrS5zBc+5OqaFNnCLm58TtBzof+umIz05JES0UPs7Atvla7t31XnSe++WZ23Wv3rMDSzEg9QqAzYBFtri3NFxk50GquhzzIhH6F7jBDj8qpnCKMgezf1eJc4Pivny19uQ+VJZOuuJKdkOxFCkus3ER5SUqOlCKSqQknWgMHCb/P10Ad/PwBm4plKg==","*Set Browser Timeout","*<p>Sets the timeout used by most input and getter keywords.\x3c/p>","*1 minute","*Config, Setter","*Set timeout to: 60000","*Given The user accesses the site with its respective data","*New Page","*<p>Open a new Page.\x3c/p>","*${URL}","*Successfully initialized new page object and opened url: <a href=\"https://can-am.brp.com/off-road/ca/en/\">https://can-am.brp.com/off-road/ca/en/\x3c/a>","*Close Modal If Exists","*Get Element Count","*<p>Returns the count of elements found with <code>selector\x3c/code>.\x3c/p>","*css=#root_newsletter-popup .overlay","*${newsletter}","*Assertion, Getter, PageContent","*${newsletter} = 1","*Run Keyword If","*BuiltIn","*<p>Runs the given keyword with the given arguments, if <code>condition\x3c/code> is true.\x3c/p>","*${newsletter} &gt; 0, Click, css=#root_newsletter-popup button[aria-label=\"Close\"]","*Click","*<p>Simulates mouse click on the element found by <code>selector\x3c/code>.\x3c/p>","*css=#root_newsletter-popup button[aria-label=\"Close\"]","*PageContent, Setter","*css=.modal.fade.show","*${modals}","*${modals} = 0","*${modals} &gt; 0, Click, css=.modal.fade.show button.close","*Wait For Elements State","*<p>Waits for the element found by <code>selector\x3c/code> to satisfy state option.\x3c/p>","*css=#root_newsletter-popup .overlay, hidden, 10s","*PageContent, Wait","*Waited for Element with selector css=#root_newsletter-popup .overlay at state hidden","*Get Title","*<p>Returns the title of the current page.\x3c/p>","*${title}","*${title} = 2025 Can-Am Off-Road ATVs &amp; Side-by-Sides Vehicles","*Should Contain","*<p>Fails if <code>container\x3c/code> does not contain <code>item\x3c/code> one or more times.\x3c/p>","*${title}, ${can_am[\"expected_title\"]}","*When The user selects a model and year","*Click Model Menu","*${can_am[\"menu_label\"]}","*Set Variable","*<p>Returns the given values which can then be assigned to a variables.\x3c/p>","*a[data-analytic-label=\"${menu_label}\"]","*${selector}","*${selector} = a[data-analytic-label=\"side-by-side-vehicles\"]","*${selector} &gt;&gt; nth=1","*Click Model By Name","*${can_am[\"model\"]}","*Get Element","*<p>Returns a reference to a Playwright <a href=\"https://playwright.dev/docs/api/class-locator\">Locator\x3c/a>.\x3c/p>","*a[data-technical-name=\"${model_name}\"]:visible &gt;&gt; nth=0","*${element}","*Getter, PageContent","*Locator found successfully.","*${element} = element=5115b490-d116-4147-ad08-fc2aaecc4130","*text=${can_am[\"model_year\"]}","*And The user clicks the quote button","*text=${can_am[\"quote_text\"]} &gt;&gt; nth=0","*And The user tries to submit the quote form without filling in the required fields","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"button1\"]","*Then Validation messages should appear for each required field","*Validate Error Messages In Iframe","*${IFRAME_SELECTOR}, &amp;{EXPECTED_ERRORS}","*${only_keys}, Set Variable, @{only_keys}, ELSE, Evaluate, list(${errors}.keys())","*${keys_to_check}","*Evaluate","*<p>Evaluates the given expression in Python and returns the result.\x3c/p>","*list(${errors}.keys())","eNpTqc5OrSyOL8mPT85ITc6uVbBViFZPyy/Kjc/MKygtic9LzE2NTy0qyi+KL0mtKFHXUUCWTc1NzMzBLV2QkZ+HR3dyaXFJfq4RIQXGhBSYYFegp6cHAB/LVI4=","*${id} IN [ @{keys_to_check} ]","*${id} = form_input_name_error_text","*${iframe} &gt;&gt;&gt; div#${id}","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_name_error_text","*Get From Dictionary","*Collections","*<p>Returns a value from the given <code>dictionary\x3c/code> based on the given <code>key\x3c/code>.\x3c/p>","*${errors}, ${id}","*${expected}","*${expected} = Please enter a valid name.","*Get Text","*<p>Returns text attribute of the element found by <code>selector\x3c/code>.\x3c/p>","*${actual}","*${actual} = Please enter a valid name.","*Should Be Equal As Strings","*<p>Fails if objects are unequal after converting them to strings.\x3c/p>","*${actual}, ${expected}","*${id} = form_input_email_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_email_error_text","*${expected} = Please enter a valid email.","*${actual} = Please enter a valid email.","*${id} = form_input_phone_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_phone_error_text","*${expected} = Please enter a valid phone number.","*${actual} = Please enter a valid phone number.","*${id} = form_input_custom2_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_custom2_error_text","*${expected} = Please enter a valid address.","*${actual} = Please enter a valid address.","*${id} = form_input_custom3_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_custom3_error_text","*${expected} = Please enter a valid city.","*${actual} = Please enter a valid city.","*${id} = form_input_custom4_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_custom4_error_text","*${expected} = Please select your state.","*${actual} = Please select your state.","*${id} = form_input_custom5_error_text","*${selector} = css=iframe[id^=\"lightbox-iframe-\"] &gt;&gt;&gt; div#form_input_custom5_error_text","*${expected} = Please enter a valid zip code.","*${actual} = Please enter a valid zip code.","*Take Timestamped Screenshot","*${locale}","*Get Time","*<p>Returns the given time in the requested format.\x3c/p>","*result_format=%Y%m%d-%H%M%S","*${timestamp}","*${timestamp} = 2025-04-13 11:02:05","*${timestamp.replace(\":\", \"-\")}","*${timestamp} = 2025-04-13 11-02-05","*${locale}-screenshot-${timestamp}","*${filename}","*${filename} = CA_EN-screenshot-2025-04-13 11-02-05","*Take Screenshot","*<p>Takes a screenshot of the current window or element and saves it to disk.\x3c/p>","*filename=${filename}, fullPage=True","*PageContent","eNqz0S9JsbPRLymyswHjFIXk/JzigsQ8WyVjJTubRIWMotQ0W6Wkovzy4tQi/eLkotTUvOKM/BJ9Z8d4Vz9dhICukYGRqa6Bia6hsaqRgaGhroGRroGpXkFeOtCczNx0heKiZEoNUijPTCnJsFWyMDAoqAAaq59oBwB0Yzu/","*And The form should not be submitted","*h1.cmp-teaser__title","*${text}","*${text} = REQUEST A QUOTE","*${text}, ${can_am[\"title_RAQ_PAGE\"]}","*Close Context","*<p>Closes a Context.\x3c/p>","eNrNk11P5CAUhv8K6SZeLdNpSwu41mQc71dnjDdmYigcpk1KqZSuGjP/fcGP1axX7tVeQR54Xk5yDjdPiX8cITlGiWydNd1sku8o6VQkjbP3E7i6oSWpCCyxqhTBhFGFmVQVrmSuuS6ynCsdLWkHDw9+Cu7Nh9wX+h77Cuq84gCUFpgpxTBpKGABLMeKlYwKVuUNL6IlpO9+wYXYP8eNYa0zUEUjZIF1CRkmdMlDCKc4p5oAywpC+TKq8fJf5UQUj3zn+2ewgbsZJo8EupytB6StQ2JAq6trFHbbhy3CaC0GvDLop9Z4Y4WK/uz6aJ8I1DrQddJ6P07HaSrDVWEWjRsX0prUBsUFJfAUhnRq7Th2wx57a/sp3YPHAt/FdxetN/23YX8rha/PNhe32+31kTDjj4CMVdDX56BhUODeqHed+QTN5MY6KwvO34icnavXq/Pk9L8v8SQVp+9z8qVO+86EJoa8YGaUkLLMWVUtCsoPu8PuzxStX4fxn8fw7OVPhADvZjjsfgNjEggP","*Active context id","*Successfully changed active browser","*Returned active context id","*Successfully changed active context","*Successfully closed Context","*User Navigates, Selects Model And Submits Quote Form","*${element} = element=b987c7c5-0a4c-49eb-b3de-0857be0aa6c9","*Then The user fills out and submits the quote form","*Fill Quote Form","*${form}","*Sleep","*<p>Pauses the test executed for the given time.\x3c/p>","*1","*Slept 1 second","*Fill Text","*<p>Clears and fills the given <code>txt\x3c/code> into the text field found by <code>selector\x3c/code>.\x3c/p>","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_first_name\"], ${form[\"first_name\"]}","*Fills the text 'John' in the given field.","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_last_name\"], ${form[\"last_name\"]}","*Fills the text 'Doe' in the given field.","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_email\"], ${form[\"email\"]}","*Fills the text 'john.doe@example.com' in the given field.","*Select Options By","*<p>Selects options from select element found by <code>selector\x3c/code>.\x3c/p>","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_country_code\"], value, ${form[\"country_code\"]}","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_phone\"], ${form[\"phone\"]}","*Fills the text '1234567890' in the given field.","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_custom2\"], ${form[\"address\"]}","*Fills the text '2, rue des Jardins Québec, QC G1R4S9Canada' in the given field.","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_custom3\"], ${form[\"city\"]}","*Fills the text 'Quebec' in the given field.","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_custom4\"], value, ${form[\"province\"]}","*${IFRAME_SELECTOR} &gt;&gt;&gt; [id=\"form_input_custom5\"], ${form[\"postal_code\"]}","*Fills the text 'G1R4S9' in the given field.","*'${form[\"click_checkboxes\"]}' == 'True', Click Checkboxes In Iframe","*${timestamp} = 2025-04-13 11:03:10","*${timestamp} = 2025-04-13 11-03-10","*${filename} = CA_EN-screenshot-2025-04-13 11-03-10","eNqlzEEKAiEUgOGriNDy5VMLWqgQ0bYrhKmNA43KU5iO39CmA7T4N//iM2JEZ8QgZ75FFuqrN18s19wZzzKlp+UPqmtPJHqglErPdYjL+X69wW+AQnUEPIDUO4VSAmqQuG9l2px5mVin8C/E1jmObPkJsb03Vnj3AXL6O7k=","eNrNk01v3CAQhv8KcqWeyvpjMTZpHGmzuTfdjXKJVtEYhrUlYxyM21TV/vfizVeVnJJTTqAHnpeRZrj5G/k/A0YnJJKNs6adTPSNRK2aSe3s7xFdVRc54wwTqrhilJWFoqVUnHKZaaGXaSaUni1pe4/3fgzuzX+5D/Ql9hFUSVpoEJmgKfCUMr5MaJ0jUC3qclmouqx5PlsgffsLL2F/jBvCWrGyhLRkSKVUQFmWZVQkMvhcIhYcRJ2oWZ0vvypnRvORb313BBu8m3D0BMjPyXok2joCPVldXZOw295vCSVr6OnKkB9a042FY/Tkutk+BdI41FXUeD+MJ3Esw1Uwi9oNC2lNbIPighJ4jH08NnYY2n5PvbXdGO/RU6B387uLxpvuS7+/leCr883l7XZ7/RXM8D0gYxV21QVq7BW6J+pda95AM7qhSvOlEE9ETs5V69VFdPbpSzyN4exlTt7Vad+a0MSQF8y0YCzPM5GViyQpDrvD7nmK1o/D+OExPH/4EyHAuwkPu3/T0gkW","*New Browser","*<p>Create a new playwright Browser with specified options.\x3c/p>","*chromium, headless=False","*{\"browser\": \"chromium\", \"headless\": false, \"handleSIGINT\": true, \"handleSIGTERM\": true, \"handleSIGHUP\": true, \"timeout\": 30000.0, \"devtools\": false, \"slowMo\": 0.0, \"tracesDir\": \"C:\\\\Users\\\\notre\\\\Documents\\\\studyrobot\\\\reports\\\\CA_EN_RAQ\\\\browser\\\\traces\\\\ab6d2ca9-79cd-4453-b5b0-1299968a1596\"}","*Successfully created browser with options: {\"browser\":\"chromium\",\"headless\":false,\"handleSIGINT\":true,\"handleSIGTERM\":true,\"handleSIGHUP\":true,\"timeout\":30000,\"devtools\":false,\"slowMo\":0,\"tracesDir\":\"C:\\\\Users\\\\notre\\\\Documents\\\\studyrobot\\\\reports\\\\CA_EN_RAQ\\\\browser\\\\traces\\\\ab6d2ca9-79cd-4453-b5b0-1299968a1596\"}","*Close Browser","*<p>Closes the current browser.\x3c/p>","*Closed browser","eNpVj7FuwzAMRH8l0NwWbqc2Y9MEWQIEtX+ApqiIgSAKlGyjCPLvkdCh7sZ7dzyQNwOIlMqXLDEI2Gy2m6ITPW0MX6IoHYfh3O9VRZvlIOTmjT8Jct715xWbmZYkWiq6GU988W187d67ai5si2/y4627V21pZqQeIdABsIg276UlOZ9k5ECrZg95kAn9Cl1hhh6VU9lHGAPZv7vFucDx3z5b+nafKksmXXElOyHZkxSWWLmJ8pyUHClFJFMTTrQGdhJ+36+BWnx/AIDrZeg=","eNpVjz1uwzAMha+STUsLuJ3Sjk0TZAkQxL4ATVERC0EUKNlGEeTulZAh7sb3vce/mwFESuVblhgEbDafm0EnetkYvkZROg7Dud+rijbrACE3b/xNkPOuP6/YzLQk0VLRzXjiq2/lW7ftqrmwLb7Jj/fuXrWlmZF6hEAHwCLavLY0n2TkQKu5HvIgE/oV+oEZelROZR9hDGSfV4tzgeO/frZ0cV8qSyZdcSU7IdmTFJZYuYnympQcKUUkUxNOtAZ2Eh7P10AdfP8DnLRlKg==","*Successfully initialized new page object and opened url: <a href=\"https://can-am.brp.com/off-road/ca/fr/\">https://can-am.brp.com/off-road/ca/fr/\x3c/a>","*${title} = Véhicules Can-Am Hors-Route 2025 : VTT et VCC","*${element} = element=a5ff9a0c-880f-4356-8c67-048c8276be29","*${expected} = Veuillez saisir un prénom et un nom valides.","*${actual} = Veuillez saisir un prénom et un nom valides.","*${expected} = Veuillez saisir une adresse électronique valide.","*${actual} = Veuillez saisir une adresse électronique valide.","*${expected} = Veuillez saisir un numéro de téléphone valide.","*${actual} = Veuillez saisir un numéro de téléphone valide.","*${expected} = Veuillez saisir une adresse valide.","*${actual} = Veuillez saisir une adresse valide.","*${expected} = Veuillez saisir une ville valide.","*${actual} = Veuillez saisir une ville valide.","*${expected} = Veuillez sélectionner votre province.","*${actual} = Veuillez sélectionner votre province.","*${expected} = Veuillez saisir un code postal valide.","*${actual} = Veuillez saisir un code postal valide.","*${timestamp} = 2025-04-13 11:04:16","*${timestamp} = 2025-04-13 11-04-16","*${filename} = CA_FR-screenshot-2025-04-13 11-04-16","eNqz0S9JsbPRLymyswHjFIXk/JzigsQ8WyVjJTubRIWMotQ0W6Wkovzy4tQi/eLkotTUvOKM/BJ9Z8d4tyBdhICukYGRqa6Bia6hsaqRgaEhmGmmV5CXDjQnMzddobgomVKDFMozU0oybJUsDAwKKoDG6ifaAQB6EDvR","*${text} = DEMANDEZ UN PRIX","eNrVkztv2zAUhf8KoQKdSssi9WIaBUjkoWOQBF4CI+Dj0hYgigJFtmkL//eSjtMU7dRunXj58Z6DMxw+fs/81xmyC5TJg7NmCCb7gLJBJSKc/bKA67QASklVYqrbGpdMMczrdYvLhvCWFZWOQ1JJO3l49kvUPv7i+0LfbM+ga0hRkgoAg9CAS141uK1Bx6nha0J0y5hKKi798Blu+f5kN8ezAyVYW1OCdUmigAmKhaxEdFKioIQ2ktZJmpZ/i5NQevKDH09gA4ZPCr6hMKHZDc9otsGly/bhAdmAtn2PMOr5hK8N+mTdgu9s8CeP4MbkcMnRwYHusoP383KR5zIuc7MSbl5Ja3KrNXaWq8hz7fKoHsYFK8CG7/kyTDFRrs4pcJhwSrE6eDO+m/ZPkvvu5u726f5++56b+WNExioYuw1oiAr3Sr0bzB/QLG7uiooy9kpkcK7rrzfZ1f+U9jLnV28N+qsO+MHA4qNfVBZNWVYVYaxZ1Wt23B13P/vVn2v6zwW9efkt0cC7AMfdD1plE4k=","*${element} = element=ee8ae9da-cdd9-461a-b7e0-fb05783e7da7","*${timestamp} = 2025-04-13 11:05:22","*${timestamp} = 2025-04-13 11-05-22","*${filename} = CA_FR-screenshot-2025-04-13 11-05-22","eNqz0S9JsbPRLymyswHjFIXk/JzigsQ8WyVjJTubRIWMotQ0W6Wkovzy4tQi/eLkotTUvOKM/BJ9Z8d4tyBdhICukYGRqa6Bia6hsaqRgaGhroGprpGRXkFeOtCczNx0heKiZEoNUijPTCnJsFWyMDAoqAAaq59oBwB5IjvN","eNrVk0tv2zAQhP8KoQI9dS3rQUlMowCJfOgxSAJfAiNY8WETEEWBotq0hf97ScdpivbU3noi+e3OYA7Dx++J/zrJ5IIk/OCs0YtJPpBEi0h6Z7/M0rWql0WR0xIK1VRQMsEAq3UDZZ1jwzKqwiWquB29fPZz0D7+4vtC32zPoM2brC8lp9AXPIeSMwWMVzkIJXjGKK3VOosq5F5/lre4P9lN4Wwp9r1seA0CMeRAvgZWqQoKgbJpJC1UX0ZpXP4tTkRx5LUfTmAjDY5CfiPLSCann8lkFxcf24cHYhey7ToCpMMRrg35ZN0Md3bxJ4/FDdHhEsnBSdUmB++n+SJNeVhGs+rdtOLWpFYpcBZF4KlyaVDrYQYhweAeZz2GRKk4p4BlhJhidfBmeDfunzj69ubu9un+fvsezfQxIGOFHNqNVDIo3Cv1Tps/oJnd1Ga0YOyV8MW5trveJFf/U9rLFK/eGvRXHfDayNkHv6DM6rKktFhTtmpofdwddz/71Z1r+s8FvXn5LcHAu0Uedz8AGssUng==","*{\"browser\": \"chromium\", \"headless\": false, \"handleSIGINT\": true, \"handleSIGTERM\": true, \"handleSIGHUP\": true, \"timeout\": 30000.0, \"devtools\": false, \"slowMo\": 0.0, \"tracesDir\": \"C:\\\\Users\\\\notre\\\\Documents\\\\studyrobot\\\\reports\\\\CA_FR_RAQ\\\\browser\\\\traces\\\\ffb5d30f-f76e-4f75-841c-0361091c4ced\"}","*Successfully created browser with options: {\"browser\":\"chromium\",\"headless\":false,\"handleSIGINT\":true,\"handleSIGTERM\":true,\"handleSIGHUP\":true,\"timeout\":30000,\"devtools\":false,\"slowMo\":0,\"tracesDir\":\"C:\\\\Users\\\\notre\\\\Documents\\\\studyrobot\\\\reports\\\\CA_FR_RAQ\\\\browser\\\\traces\\\\ffb5d30f-f76e-4f75-841c-0361091c4ced\"}","*Successfully initialized new page object and opened url: <a href=\"https://can-am.brp.com/off-road/us/en/\">https://can-am.brp.com/off-road/us/en/\x3c/a>","*${element} = element=e8c97724-1bf9-4180-b5eb-c35bdfacec65","*${timestamp} = 2025-04-13 11:06:32","*${timestamp} = 2025-04-13 11-06-32","*${filename} = US_EN-screenshot-2025-04-13 11-06-32","eNqlzDEOAiEQQNGrEBLLkQHUWACdrY2xNgi4bKJABpL1+G5sPIDFb37xjBjRGTHImW+RhfrszRfLNXfGs0zpYfmd6tITiR4opdJzHeJ6uZ3O8BugUO0BdyD1RqGUgAfQatvKtDrza2Kdwr8QW+Y4suVHxPZeWeHdB5H9PA8=","eNrNk0tv3SAQRv8KcqWuMtcvbEMaR8pjn/S6zSa6ijAeri0Z42Dcpqrufy/k0VTtqlllBTpwPkaa4fZn5H7MGB2TSPbW6GHV0RGJhi6Q1prvC9q6U1zJrEWo8qICKssSOAoFZctoJpBilZXBkmZy+OAW797+kftEX2OfQS0pSwpZUciQlkBZWQCrcgk547SVkuZK5cES0g3f8FrsH+Nmv9Y05UolnAGysgMqeAUsSSooWpWkSao6VhVBDZf/KiegcOQGNz6CLd6vuDgiyOfVOCTKWCImcvblhvhd89AQIBdigjNNrpSCrRFd8Fc7BvtEkN6iqqPeuXk5jmPprwq9ae28kUbHxivWK/G6xDjFS2/meZj24IwZl3iPDgTch3c3vdPjh2l/J4Wrz7fXd01z81Ho+ZNH2nQ41peocOrQvlBnB/0P1Iud6zRjnL8QuVpbf20uo9N3X+JJLE5f5+S/Ou0G7Zvo87yZVpQWRZ5mfEM5P+wOu99TdPE8jG8ew/OnP+EDnF3xsPsFXWEHxg==","*${element} = element=dca69298-1149-4edb-879c-773caa60b54b","*Fills the text 'Paul' in the given field.","*Fills the text 'Díanno' in the given field.","*Fills the text 'paul.dianno@example.ca' in the given field.","*Fills the text '0987654321' in the given field.","*Fills the text '456 Elm Street' in the given field.","*Fills the text 'Miami' in the given field.","*Fills the text '33101' in the given field.","*${timestamp} = 2025-04-13 11:07:33","*${timestamp} = 2025-04-13 11-07-33","*${filename} = US_EN-screenshot-2025-04-13 11-07-33","eNqlzDEOAiEQQNGrEBLLkQE0WgCdrY2xNgi4bKJABpL1+G5sPIDFb37xjBjRGTHImW+RhfrszRfLNXfGs0zpYfmd6tITiR4opdJzHeJ6uZ3O8BugUO0BdyD1RqGUgAfQetvKtDrza2Kdwr8QW+Y4suVHxPZeWeHdB5L5PBM=","eNrNk01v3CAQhv8KcqWewnrXBtukcaR83JOu21yiVTSGYW3JGAfjNlW1/72Qj6ZqT80pJ9ADz8tIM9z+TPyPCZNjksjOWdMvJjkiSa8iaZ39PqOrlRZaZi3SMuclZbIoqEDQtGgrlgEyLLMiWtKOHh/8HNzbP3Kf6GvsM6gZyxkrxZqWqCRlGUMKgjPKZcl5CyrnKo8WSN9/w2vYP8ZNYa3zjcAWckartggVcY20KgtB10KAbplSVcGjGi//VU5E8cj3fngEW7xfcPYEyOfFeiTaOgIjOftyQ8KueWgIJRcw0jNDrrSmWwsq+osbon0CpHOo66TzfpqP01SGq2BWrZtW0prUBsUFJV3mFMd07uw09eOeemuHOd2jp0Dv47urzpvhw7i/k+Dr8+31XdPcfAQzfQrIWIVDfYkaR4XuhXrXm3+gmd1Ub7JKiBciF+fqr81lcvruSzxJ4fR1Tv6r0743oYkhL5ibkjHOg8lW6/KwO+x+D9HF8yy+eQrPn75ECPBuwcPuF/sdCKU=","*{\"browser\": \"chromium\", \"headless\": false, \"handleSIGINT\": true, \"handleSIGTERM\": true, \"handleSIGHUP\": true, \"timeout\": 30000.0, \"devtools\": false, \"slowMo\": 0.0, \"tracesDir\": \"C:\\\\Users\\\\notre\\\\Documents\\\\studyrobot\\\\reports\\\\US_EN_RAQ\\\\browser\\\\traces\\\\06654dde-ea03-4051-944f-f08d6e29bd9e\"}","*Successfully created browser with options: {\"browser\":\"chromium\",\"headless\":false,\"handleSIGINT\":true,\"handleSIGTERM\":true,\"handleSIGHUP\":true,\"timeout\":30000,\"devtools\":false,\"slowMo\":0,\"tracesDir\":\"C:\\\\Users\\\\notre\\\\Documents\\\\studyrobot\\\\reports\\\\US_EN_RAQ\\\\browser\\\\traces\\\\06654dde-ea03-4051-944f-f08d6e29bd9e\"}","*Subscribe To A Newsletter","*C:\\Users\\notre\\Documents\\studyrobot\\tests\\subscribe_to_a_newsletter.robot","*../../tests/subscribe_to_a_newsletter.robot","*Attempt to subscribe without filling in required fields","eNqFjUEOgkAQBO+8osMDiCcPJhz1A/IBdmnJJIuTzAzK813iWaxjd6d6kIW6xtVM7YKieQy17j1K3PZg+NY4nyqLg1smJ05d0/+mambHwaDZ/fKc8VCDszDXU7TBLfr7mjybJLYIRSJe4pIKjw7/8gFvakQe","*When the user sees the newsletter subscription form","*text=Subscribe, visible","eNqVjDEOgCAQwL5C2PUwLg7AXxAQSBDIHYk+X+Li7NChQyuhOy2ho5YvjtmaqZmi+Mq1NCyiPxTfsV7kEcii94Vi7XCYlKfPp2VuJYwknYER2h8Nu5LrUfFNiHaPAxj9AKNZNIM=","*text=Subscribe","*And the user clicks the subscribe button without filling in first name, last name, and email","*Then validation messages should appear for the required fields","*10","eNqdkrtuwyAUhl8FeS4xYCAmiiO1XjpWVZQlzYC51JbiYGHci6q8eyGJmqpT2wn0cb5fcA7bjyy8DyZbgEy13vXd1Gc3IOt0Io13r6PxlZVkzjWnUFNdQmq1goITBLUgqJAlaRBiyVLuEMxbGKO7/ZZ7ptfYC6gIEQ1paExUUkAqJIYSxV1DmOUFa7DgNFlShe7FPMjnU9wQ1wppHE3ModBzBinVFpaUW0iZMHMpiGAlTmoq/nGdhNJR6ML+BDZPE0JGtJ2a9mYEtTzA2x7cOz/CRzcFAwgiDCzAZr0GJoBNXSd98vskLyVovbFV1oYwjIs8V1GX/azxw0y5PnfWQu+kjjy3Ps9Wv6tb5nJ1bdifnhy63oxB9kM08ZxSxooC4xkl/Lg77r7aWV+m8u953J0/RwwIfjLH3ScJXqvy","*{\"browser\": \"chromium\", \"headless\": false, \"handleSIGINT\": true, \"handleSIGTERM\": true, \"handleSIGHUP\": true, \"timeout\": 30000.0, \"devtools\": false, \"slowMo\": 0.0, \"tracesDir\": \"C:\\\\Users\\\\notre\\\\Documents\\\\studyrobot\\\\reports\\\\CA_FR_NEW\\\\browser\\\\traces\\\\057ab832-20fb-4800-b4ff-0c867ce23472\"}","*Successfully created browser with options: {\"browser\":\"chromium\",\"headless\":false,\"handleSIGINT\":true,\"handleSIGTERM\":true,\"handleSIGHUP\":true,\"timeout\":30000,\"devtools\":false,\"slowMo\":0,\"tracesDir\":\"C:\\\\Users\\\\notre\\\\Documents\\\\studyrobot\\\\reports\\\\CA_FR_NEW\\\\browser\\\\traces\\\\057ab832-20fb-4800-b4ff-0c867ce23472\"}","*Waited for Element with selector text=Subscribe at state visible","*${IFRAME_SELECTOR}, form_input_name_error_text, form_input_email_error_text, &amp;{EXPECTED_ERRORS}","*@{only_keys}","*${keys_to_check} = ['form_input_name_error_text', 'form_input_email_error_text']","*${timestamp} = 2025-04-13 11:10:24","*${timestamp} = 2025-04-13 11-10-24","*${filename} = US_EN-screenshot-2025-04-13 11-10-24","eNqz0S9JsbPRLymyswHjFIXk/JzigsQ8WyVjJTubRIWMotQ0W6Wkovzy4tQi/eLkotTUvOKM/BL90OB4Vz9dhICukYGRqa6Bia6hsaqRgaGhrqGBrpGJXkFeOtCczNx0heKiZEoNUijPTCnJsFWyMDAoqAAaq59oBwCP8zwH","*Slept 10 seconds","eNqtkstOxCAUhl+FdC1tp9ALk+kkOnGt0eVkFodLbZNSGqBeYubdhZmJGncaV4Sf832Qc9i/J/5tVskaJaK3Rg+LTq5QMsiYcGtenLKtKEogNS0xk7TCNJcEs0Jy3EkoCtYIIgsWKWEmr169C+z+m/ecfmkvQVtQKkooc8xyRTBVqwIDVxLntFMSWJlXAJEC4YdndQ9PJ90c1laQBnJQFSaQC0w72mAuO4o7UjNeN6yoeBnRWPzjOTGKR37w4yl4XLgTduAKeYPMYtGthmF0CKMdTPhao7uuww8GZKQWO0ZmA6i3qmuT3vvZrbNMhFLQKbdzKozOTEBsQLLFZWrKrHJBLFTYRDd25ytnP5gp7b0ek+0/iTYZbL86/ate+UEr50HPgVzVlJYlIYymNVsdD8fD5xx2l3H+eZA3518VBN4u6nj4ADuQyGc=","*{\"browser\": \"chromium\", \"headless\": false, \"handleSIGINT\": true, \"handleSIGTERM\": true, \"handleSIGHUP\": true, \"timeout\": 30000.0, \"devtools\": false, \"slowMo\": 0.0, \"tracesDir\": \"C:\\\\Users\\\\notre\\\\Documents\\\\studyrobot\\\\reports\\\\US_EN_NEW\\\\browser\\\\traces\\\\160e0bb9-ab4c-4b9b-8f36-667d62a13a00\"}","*Successfully created browser with options: {\"browser\":\"chromium\",\"headless\":false,\"handleSIGINT\":true,\"handleSIGTERM\":true,\"handleSIGHUP\":true,\"timeout\":30000,\"devtools\":false,\"slowMo\":0,\"tracesDir\":\"C:\\\\Users\\\\notre\\\\Documents\\\\studyrobot\\\\reports\\\\US_EN_NEW\\\\browser\\\\traces\\\\160e0bb9-ab4c-4b9b-8f36-667d62a13a00\"}"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:02:23","fail":0,"label":"All Tests","pass":6,"skip":0}],[],[{"elapsed":"00:02:27","fail":0,"id":"s1","label":"Quote Navigation Tests","name":"Quote Navigation Tests","pass":6,"skip":0},{"elapsed":"00:00:43","fail":0,"id":"s1-s1","label":"Quote Navigation Tests.Request A Quote","name":"Request A Quote","pass":2,"skip":0},{"elapsed":"00:00:40","fail":0,"id":"s1-s2","label":"Quote Navigation Tests.Request A Quote","name":"Request A Quote","pass":2,"skip":0},{"elapsed":"00:01:04","fail":0,"id":"s1-s3","label":"Quote Navigation Tests.Request A Quote","name":"Request A Quote","pass":2,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:09:40","fail":2,"label":"All Tests","pass":7,"skip":0}],[],[{"elapsed":"00:10:02","fail":2,"id":"s1","label":"Quote Navigation Tests","name":"Quote Navigation Tests","pass":7,"skip":0},{"elapsed":"00:02:09","fail":0,"id":"s1-s1","label":"Quote Navigation Tests.Request A Quote","name":"Request A Quote","pass":2,"skip":0},{"elapsed":"00:02:11","fail":0,"id":"s1-s2","label":"Quote Navigation Tests.Request A Quote","name":"Request A Quote","pass":2,"skip":0},{"elapsed":"00:02:10","fail":0,"id":"s1-s3","label":"Quote Navigation Tests.Request A Quote","name":"Request A Quote","pass":2,"skip":0},{"elapsed":"00:01:23","fail":1,"id":"s1-s4","label":"Quote Navigation Tests.Subscribe To A Newsletter","name":"Subscribe To A Newsletter","pass":0,"skip":0},{"elapsed":"00:01:23","fail":1,"id":"s1-s5","label":"Quote Navigation Tests.Subscribe To A Newsletter","name":"Subscribe To A Newsletter","pass":0,"skip":0},{"elapsed":"00:00:45","fail":0,"id":"s1-s6","label":"Quote Navigation Tests.Subscribe To A Newsletter","name":"Subscribe To A Newsletter","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1744544731823;
+window.output["baseMillis"] = 1744552863373;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 148022;
+window.output["generated"] = 688856;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2099,7 +1831,7 @@ window.settings = {"defaultLevel":"TRACE","minLevel":"INFO","reportURL":"merged_
 </script>
 <title></title>
 </head>
-<body data-theme="dark">
+<body>
 <div id="javascript-disabled">
   <h1>Opening Robot Framework log failed</h1>
   <ul>
@@ -2109,13 +1841,12 @@ window.settings = {"defaultLevel":"TRACE","minLevel":"INFO","reportURL":"merged_
   </ul>
 </div>
 <script type="text/javascript">removeJavaScriptDisabledWarning();</script>
+
 <div id="header"></div>
 <div id="statistics-container"></div>
 
 <script type="text/javascript">
 $(document).ready(function() {
-    storage.init();
-    theme.init(storage);
     try {
         var topsuite = window.testdata.suite();
     } catch (error) {
@@ -2123,7 +1854,6 @@ $(document).ready(function() {
         return;
     }
     initLayout(topsuite.name, 'Log');
-    theme.reflectPreference();
     addStatistics();
     addErrors();
     addExecutionLog(topsuite);
@@ -2164,6 +1894,25 @@ function drawErrorsRecursively(errors, target) {
         // Errors may have moved scroll position. Resetting location re-scrolls.
         if (window.location.hash)
             window.location.replace(window.location.hash);
+        highlightLinkTarget();
+    }
+}
+
+function highlightLinkTarget() {
+    if (window.location.hash) {
+        var target = $(window.location.hash);
+        highlight(target);
+    }
+}
+
+function highlight(element, color) {
+    if (color === undefined)
+        color = 242;
+    if (color < 255) {
+        element.css({'background-color': 'rgb('+color+','+color+','+color+')'});
+        setTimeout(function () { highlight(element, color+1); }, 300);
+    } else {
+        element.css({'background-color': ''});
     }
 }
 
@@ -2179,8 +1928,9 @@ function makeElementVisible(id) {
         util.map(ids, expandElementWithId);
         if (ids.length) {
             expandFailed(window.testdata.findLoaded(util.last(ids)));
+            window.location.hash = '';
             window.location.hash = id;
-            document.getElementById(id).scrollIntoView();
+            highlightLinkTarget();
         }
     });
 }
@@ -2204,7 +1954,7 @@ function addExecutionLog(main) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr class="row-${$item.index}">
-    <td class="stats-col-name" title="${doc}">
+    <td class="stats-col-name" title="{{html doc}}">
       <div class="stat-name">
         <span>{{html label}}</span>
         {{if info}}(${info}){{/if}}
@@ -2378,9 +2128,8 @@ function addExecutionLog(main) {
       <div class="element-header-left" title="${type}  {{if name}}{{html fullName}}  {{/if}}[${status}]">
         <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
         <span class="label ${status.toLowerCase()}">${type}</span>
-        <span class="assign">{{html assign}}</span>
+        <span>{{html assign}}</span>
         <span class="name"><span class="parent-name">{{html libname}}{{if libname}} . {{/if}}</span>{{html name}}</span>
-        &nbsp;
         <span class="arg">{{html arguments}}</span>
       </div>
       <div class="element-header-right" onclick="stopPropagation(event)">
@@ -2414,12 +2163,6 @@ function addExecutionLog(main) {
           <th>Start / End / Elapsed:</th>
           <td>${times.startTime} / ${times.endTime} / ${times.elapsedTime}</td>
         </tr>
-        {{if message()}}
-        <tr>
-          <th>Message:</th>
-          <td class="message">{{html message()}}</td>
-        </tr>
-        {{/if}}
       </table>
     </div>
   </div>
@@ -2442,7 +2185,6 @@ function addExecutionLog(main) {
   <div id="log-level-selector">
   Log level:
     <select onchange="logLevelSelected(this.options[selectedIndex].value)">
-      <option value="3">WARN</option>
       <option value="2">INFO</option>
       <option value="1">DEBUG</option>
       {{if showTrace()}}<option value="0">TRACE</option>{{/if}}

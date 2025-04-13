@@ -5,29 +5,42 @@ The user accesses the site with its respective data
     Close Modal If Exists
     Wait For Elements State    css=#root_newsletter-popup .overlay    hidden    10s
     ${title}=         Get Title
-    #Should Contain    ${title}    ${can_am.expected_title}
     Should Contain    ${title}    ${can_am["expected_title"]}
 
 # When
 The user selects a model and year
-    #Click Model Menu        ${can_am.menu_label}
-    #Click Model By Name     ${can_am.model}
-    #Click                   text="${can_am.model_year}"
     Click Model Menu        ${can_am["menu_label"]}
     Click Model By Name     ${can_am["model"]}
     Click                   text=${can_am["model_year"]}
 
+#The user selects a model and year
+    #Click Model Menu        ${${model_data}["menu_label"]}
+    #Click Model By Name     ${${model_data}["model"]}
+    #Click                   text=${${model_data}["model_year"]}
+
 The user clicks the quote button
-    #Click    text="${can_am.quote_text}" >> nth=0
     Click    text=${can_am["quote_text"]} >> nth=0
 
 The user fills out and submits the quote form
     Fill Quote Form                ${form}
     Take Timestamped Screenshot    ${locale}
 
+#Setup Test
+    #New Context            viewport={'width': 1920, 'height': 1080}
+    #Set Browser Timeout    1 minute
+    #${model_data}=    Evaluate    globals()[${brand}]
+    #Set Suite Variable    ${model_data}
+
 Setup Test
     New Context            viewport={'width': 1920, 'height': 1080}
     Set Browser Timeout    1 minute
+    ${model_data}=    Get Variable Value    ${brand}    # Acessa o valor de ${brand}
+    Run Keyword If      '${model_data}' == ''    Fail    Brand data not found!
+    Log    ${model_data}    # Depuração para conferir o conteúdo
+    Set Suite Variable    ${model_data}
+    Log    ${brand}    # Verifique se a variável brand tem o valor esperado, como 'can_am' ou 'sea_doo'
+
+
 
 Close Modal If Exists
     ${newsletter}=    Get Element Count    css=#root_newsletter-popup .overlay
@@ -110,8 +123,9 @@ Validation messages should appear for each required field
     Take Timestamped Screenshot    ${locale}
 
 Validate Error Messages In Iframe
-    [Arguments]    ${iframe}    &{errors}
-    FOR    ${id}    IN    @{errors.keys()}
+    [Arguments]    ${iframe}    @{only_keys}    &{errors}
+    ${keys_to_check}=    Run Keyword If    ${only_keys}    Set Variable    @{only_keys}    ELSE    Evaluate    list(${errors}.keys())
+    FOR    ${id}    IN    @{keys_to_check}
         ${selector}=    Set Variable    ${iframe} >>> div#${id}
         ${expected}=    Get From Dictionary    ${errors}    ${id}
         ${actual}=    Get Text    ${selector}
@@ -123,5 +137,9 @@ The form should not be submitted
     Should Be Equal As Strings    ${text}    ${can_am["title_RAQ_PAGE"]}
 
 validation messages should appear for the required fields
-    Validate Error Messages In Iframe    ${IFRAME_SELECTOR}    &{EXPECTED_ERRORS}
+    Validate Error Messages In Iframe
+    ...    ${IFRAME_SELECTOR}
+    ...    form_input_name_error_text
+    ...    form_input_email_error_text
+    ...    &{EXPECTED_ERRORS}
     Take Timestamped Screenshot    ${locale}

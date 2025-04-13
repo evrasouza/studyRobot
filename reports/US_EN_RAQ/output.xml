@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.9.4 on win32)" generated="20250413 11:05:25.939" rpa="false" schemaversion="3">
+<suite id="s1" name="Request A Quote" source="C:\Users\notre\Documents\studyrobot\tests\request_a_quote.robot">
+<kw name="New Browser" library="Browser" type="SETUP">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20250413 11:05:27.749" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\Users\\notre\\Documents\\studyrobot\\reports\\US_EN_RAQ\\browser\\traces\\06654dde-ea03-4051-944f-f08d6e29bd9e"}</msg>
+<msg timestamp="20250413 11:05:28.936" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\Users\\notre\\Documents\\studyrobot\\reports\\US_EN_RAQ\\browser\\traces\\06654dde-ea03-4051-944f-f08d6e29bd9e"}</msg>
+<status status="PASS" starttime="20250413 11:05:27.748" endtime="20250413 11:05:28.936"/>
+</kw>
+<test id="s1-t1" name="User tries to send a request a quote form without filling in the required fields" line="13">
+<kw name="Setup Test" library="quote_keywords" type="SETUP">
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1920, 'height': 1080}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20250413 11:05:28.946" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "viewport": {"width": 1920, "height": 1080}, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20250413 11:05:29.027" level="INFO">Successfully created context. </msg>
+<msg timestamp="20250413 11:05:29.027" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'viewport': {'width': 1920, 'height': 1080}, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20250413 11:05:28.944" endtime="20250413 11:05:29.027"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>1 minute</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20250413 11:05:29.034" level="INFO">Set timeout to: 60000</msg>
+<status status="PASS" starttime="20250413 11:05:29.028" endtime="20250413 11:05:29.034"/>
+</kw>
+<status status="PASS" starttime="20250413 11:05:28.943" endtime="20250413 11:05:29.035"/>
+</kw>
+<kw name="Given The user accesses the site with its respective data" library="quote_keywords">
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20250413 11:05:39.269" level="INFO">Successfully initialized new page object and opened url: https://can-am.brp.com/off-road/us/en/</msg>
+<status status="PASS" starttime="20250413 11:05:29.036" endtime="20250413 11:05:39.269"/>
+</kw>
+<kw name="Close Modal If Exists" library="quote_keywords">
+<kw name="Get Element Count" library="Browser">
+<var>${newsletter}</var>
+<arg>css=#root_newsletter-popup .overlay</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20250413 11:05:39.387" level="INFO">${newsletter} = 1</msg>
+<status status="PASS" starttime="20250413 11:05:39.270" endtime="20250413 11:05:39.388"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${newsletter} &gt; 0</arg>
+<arg>Click</arg>
+<arg>css=#root_newsletter-popup button[aria-label="Close"]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click" library="Browser">
+<arg>css=#root_newsletter-popup button[aria-label="Close"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:05:39.389" endtime="20250413 11:05:50.098"/>
+</kw>
+<status status="PASS" starttime="20250413 11:05:39.388" endtime="20250413 11:05:50.099"/>
+</kw>
+<kw name="Get Element Count" library="Browser">
+<var>${modals}</var>
+<arg>css=.modal.fade.show</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20250413 11:05:50.110" level="INFO">${modals} = 0</msg>
+<status status="PASS" starttime="20250413 11:05:50.099" endtime="20250413 11:05:50.110"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${modals} &gt; 0</arg>
+<arg>Click</arg>
+<arg>css=.modal.fade.show button.close</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250413 11:05:50.111" endtime="20250413 11:05:50.111"/>
+</kw>
+<status status="PASS" starttime="20250413 11:05:39.269" endtime="20250413 11:05:50.111"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#root_newsletter-popup .overlay</arg>
+<arg>hidden</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20250413 11:05:50.127" level="INFO">Waited for Element with selector css=#root_newsletter-popup .overlay at state hidden</msg>
+<status status="PASS" starttime="20250413 11:05:50.112" endtime="20250413 11:05:50.127"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20250413 11:05:50.132" level="INFO">${title} = 2025 Can-Am Off-Road ATVs &amp; Side-by-Sides Vehicles</msg>
+<status status="PASS" starttime="20250413 11:05:50.128" endtime="20250413 11:05:50.132"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title}</arg>
+<arg>${can_am["expected_title"]}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20250413 11:05:50.132" endtime="20250413 11:05:50.133"/>
+</kw>
+<status status="PASS" starttime="20250413 11:05:29.035" endtime="20250413 11:05:50.133"/>
+</kw>
+<kw name="When The user selects a model and year" library="quote_keywords">
+<kw name="Click Model Menu" library="quote_keywords">
+<arg>${can_am["menu_label"]}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selector}</var>
+<arg>a[data-analytic-label="${menu_label}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:05:50.135" level="INFO">${selector} = a[data-analytic-label="side-by-side-vehicles"]</msg>
+<status status="PASS" starttime="20250413 11:05:50.134" endtime="20250413 11:05:50.135"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${selector} &gt;&gt; nth=1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:05:50.135" endtime="20250413 11:05:51.351"/>
+</kw>
+<status status="PASS" starttime="20250413 11:05:50.133" endtime="20250413 11:05:51.352"/>
+</kw>
+<kw name="Click Model By Name" library="quote_keywords">
+<arg>${can_am["model"]}</arg>
+<kw name="Get Element" library="Browser">
+<var>${element}</var>
+<arg>a[data-technical-name="${model_name}"]:visible &gt;&gt; nth=0</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<msg timestamp="20250413 11:05:53.952" level="INFO">Locator found successfully.</msg>
+<msg timestamp="20250413 11:05:53.953" level="INFO">${element} = element=e8c97724-1bf9-4180-b5eb-c35bdfacec65</msg>
+<status status="PASS" starttime="20250413 11:05:51.353" endtime="20250413 11:05:53.953"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${element}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:05:53.953" endtime="20250413 11:05:57.243"/>
+</kw>
+<status status="PASS" starttime="20250413 11:05:51.352" endtime="20250413 11:05:57.244"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>text=${can_am["model_year"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:05:57.244" endtime="20250413 11:06:08.034"/>
+</kw>
+<status status="PASS" starttime="20250413 11:05:50.133" endtime="20250413 11:06:08.034"/>
+</kw>
+<kw name="And The user clicks the quote button" library="quote_keywords">
+<kw name="Click" library="Browser">
+<arg>text=${can_am["quote_text"]} &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:06:08.036" endtime="20250413 11:06:21.566"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:08.035" endtime="20250413 11:06:21.567"/>
+</kw>
+<kw name="And The user tries to submit the quote form without filling in the required fields" library="quote_keywords">
+<kw name="Click" library="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="button1"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:06:21.567" endtime="20250413 11:06:30.300"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:21.567" endtime="20250413 11:06:30.301"/>
+</kw>
+<kw name="Then Validation messages should appear for each required field" library="quote_keywords">
+<kw name="Validate Error Messages In Iframe" library="quote_keywords">
+<arg>${IFRAME_SELECTOR}</arg>
+<arg>&amp;{EXPECTED_ERRORS}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${keys_to_check}</var>
+<arg>${only_keys}</arg>
+<arg>Set Variable</arg>
+<arg>@{only_keys}</arg>
+<arg>ELSE</arg>
+<arg>Evaluate</arg>
+<arg>list(${errors}.keys())</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Evaluate" library="BuiltIn">
+<arg>list(${errors}.keys())</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" starttime="20250413 11:06:30.302" endtime="20250413 11:06:30.302"/>
+</kw>
+<msg timestamp="20250413 11:06:30.303" level="INFO">${keys_to_check} = ['form_input_name_error_text', 'form_input_email_error_text', 'form_input_phone_error_text', 'form_input_custom2_error_text', 'form_input_custom3_error_text', 'form_input_custom4_error_text', 'form_in...</msg>
+<status status="PASS" starttime="20250413 11:06:30.302" endtime="20250413 11:06:30.303"/>
+</kw>
+<for flavor="IN">
+<var>${id}</var>
+<value>@{keys_to_check}</value>
+<iter>
+<var name="${id}">form_input_name_error_text</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:06:30.304" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_name_error_text</msg>
+<status status="PASS" starttime="20250413 11:06:30.303" endtime="20250413 11:06:30.304"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20250413 11:06:30.305" level="INFO">${expected} = Please enter a valid name.</msg>
+<status status="PASS" starttime="20250413 11:06:30.304" endtime="20250413 11:06:30.305"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20250413 11:06:30.416" level="INFO">${actual} = Please enter a valid name.</msg>
+<status status="PASS" starttime="20250413 11:06:30.306" endtime="20250413 11:06:30.417"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20250413 11:06:30.417" endtime="20250413 11:06:30.418"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:30.303" endtime="20250413 11:06:30.418"/>
+</iter>
+<iter>
+<var name="${id}">form_input_email_error_text</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:06:30.419" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_email_error_text</msg>
+<status status="PASS" starttime="20250413 11:06:30.418" endtime="20250413 11:06:30.419"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20250413 11:06:30.420" level="INFO">${expected} = Please enter a valid email.</msg>
+<status status="PASS" starttime="20250413 11:06:30.419" endtime="20250413 11:06:30.420"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20250413 11:06:30.500" level="INFO">${actual} = Please enter a valid email.</msg>
+<status status="PASS" starttime="20250413 11:06:30.420" endtime="20250413 11:06:30.501"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20250413 11:06:30.502" endtime="20250413 11:06:30.505"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:30.418" endtime="20250413 11:06:30.506"/>
+</iter>
+<iter>
+<var name="${id}">form_input_phone_error_text</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:06:30.513" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_phone_error_text</msg>
+<status status="PASS" starttime="20250413 11:06:30.508" endtime="20250413 11:06:30.514"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20250413 11:06:30.520" level="INFO">${expected} = Please enter a valid phone number.</msg>
+<status status="PASS" starttime="20250413 11:06:30.515" endtime="20250413 11:06:30.520"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20250413 11:06:31.850" level="INFO">${actual} = Please enter a valid phone number.</msg>
+<status status="PASS" starttime="20250413 11:06:30.522" endtime="20250413 11:06:31.850"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20250413 11:06:31.850" endtime="20250413 11:06:31.851"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:30.507" endtime="20250413 11:06:31.851"/>
+</iter>
+<iter>
+<var name="${id}">form_input_custom2_error_text</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:06:31.852" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_custom2_error_text</msg>
+<status status="PASS" starttime="20250413 11:06:31.851" endtime="20250413 11:06:31.852"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20250413 11:06:31.853" level="INFO">${expected} = Please enter a valid address.</msg>
+<status status="PASS" starttime="20250413 11:06:31.852" endtime="20250413 11:06:31.853"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20250413 11:06:31.910" level="INFO">${actual} = Please enter a valid address.</msg>
+<status status="PASS" starttime="20250413 11:06:31.853" endtime="20250413 11:06:31.910"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20250413 11:06:31.910" endtime="20250413 11:06:31.911"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:31.851" endtime="20250413 11:06:31.911"/>
+</iter>
+<iter>
+<var name="${id}">form_input_custom3_error_text</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:06:31.912" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_custom3_error_text</msg>
+<status status="PASS" starttime="20250413 11:06:31.912" endtime="20250413 11:06:31.912"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20250413 11:06:31.913" level="INFO">${expected} = Please enter a valid city.</msg>
+<status status="PASS" starttime="20250413 11:06:31.912" endtime="20250413 11:06:31.913"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20250413 11:06:31.946" level="INFO">${actual} = Please enter a valid city.</msg>
+<status status="PASS" starttime="20250413 11:06:31.913" endtime="20250413 11:06:31.947"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20250413 11:06:31.947" endtime="20250413 11:06:31.947"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:31.911" endtime="20250413 11:06:31.947"/>
+</iter>
+<iter>
+<var name="${id}">form_input_custom4_error_text</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:06:31.948" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_custom4_error_text</msg>
+<status status="PASS" starttime="20250413 11:06:31.947" endtime="20250413 11:06:31.948"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20250413 11:06:31.948" level="INFO">${expected} = Please select your state.</msg>
+<status status="PASS" starttime="20250413 11:06:31.948" endtime="20250413 11:06:31.948"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20250413 11:06:31.983" level="INFO">${actual} = Please select your state.</msg>
+<status status="PASS" starttime="20250413 11:06:31.948" endtime="20250413 11:06:31.983"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20250413 11:06:31.983" endtime="20250413 11:06:31.984"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:31.947" endtime="20250413 11:06:31.984"/>
+</iter>
+<iter>
+<var name="${id}">form_input_custom5_error_text</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selector}</var>
+<arg>${iframe} &gt;&gt;&gt; div#${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:06:31.985" level="INFO">${selector} = css=iframe[id^="lightbox-iframe-"] &gt;&gt;&gt; div#form_input_custom5_error_text</msg>
+<status status="PASS" starttime="20250413 11:06:31.984" endtime="20250413 11:06:31.985"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${expected}</var>
+<arg>${errors}</arg>
+<arg>${id}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20250413 11:06:31.986" level="INFO">${expected} = Please enter a valid zip code.</msg>
+<status status="PASS" starttime="20250413 11:06:31.985" endtime="20250413 11:06:31.986"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<var>${actual}</var>
+<arg>${selector}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20250413 11:06:32.016" level="INFO">${actual} = Please enter a valid zip code.</msg>
+<status status="PASS" starttime="20250413 11:06:31.986" endtime="20250413 11:06:32.016"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20250413 11:06:32.016" endtime="20250413 11:06:32.017"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:31.984" endtime="20250413 11:06:32.017"/>
+</iter>
+<status status="PASS" starttime="20250413 11:06:30.303" endtime="20250413 11:06:32.017"/>
+</for>
+<status status="PASS" starttime="20250413 11:06:30.301" endtime="20250413 11:06:32.017"/>
+</kw>
+<kw name="Take Timestamped Screenshot" library="quote_keywords">
+<arg>${locale}</arg>
+<kw name="Get Time" library="BuiltIn">
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M%S</arg>
+<doc>Returns the given time in the requested format.</doc>
+<msg timestamp="20250413 11:06:32.018" level="INFO">${timestamp} = 2025-04-13 11:06:32</msg>
+<status status="PASS" starttime="20250413 11:06:32.017" endtime="20250413 11:06:32.018"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${timestamp}</var>
+<arg>${timestamp.replace(":", "-")}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:06:32.018" level="INFO">${timestamp} = 2025-04-13 11-06-32</msg>
+<status status="PASS" starttime="20250413 11:06:32.018" endtime="20250413 11:06:32.018"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${filename}</var>
+<arg>${locale}-screenshot-${timestamp}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:06:32.019" level="INFO">${filename} = US_EN-screenshot-2025-04-13 11-06-32</msg>
+<status status="PASS" starttime="20250413 11:06:32.019" endtime="20250413 11:06:32.019"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<arg>filename=${filename}</arg>
+<arg>fullPage=True</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20250413 11:06:33.273" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/US_EN-screenshot-2025-04-13%2011-06-32.png"&gt;&lt;img src="browser/screenshot/US_EN-screenshot-2025-04-13%2011-06-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250413 11:06:32.019" endtime="20250413 11:06:33.273"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:32.017" endtime="20250413 11:06:33.274"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:30.301" endtime="20250413 11:06:33.274"/>
+</kw>
+<kw name="And The form should not be submitted" library="quote_keywords">
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>h1.cmp-teaser__title</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20250413 11:06:33.362" level="INFO">${text} = REQUEST A QUOTE</msg>
+<status status="PASS" starttime="20250413 11:06:33.275" endtime="20250413 11:06:33.362"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${can_am["title_RAQ_PAGE"]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20250413 11:06:33.363" endtime="20250413 11:06:33.364"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:33.274" endtime="20250413 11:06:33.365"/>
+</kw>
+<kw name="Close Context" library="Browser" type="TEARDOWN">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes a Context.</doc>
+<msg timestamp="20250413 11:06:33.370" level="INFO">[{"type": "chromium", "id": "browser=df9fc2be-7357-4c66-9eaf-6b842ae4e726", "contexts": [{"type": "context", "id": "context=c4805c74-2e46-4865-873c-3894bcc43ff3", "activePage": "page=419ff098-e86d-4a97-8007-5bf0101fd875", "pages": [{"type": "page", "title": "Request a Quote for an ATV or SxS - Can-Am Off-Road", "url": "https://can-am.brp.com/off-road/us/en/shopping-tools/get-a-quote.html#ng_cat=BRP_SSV&amp;ng_model=Defender&amp;ng_trim=Defender&amp;ng_msrp=12899&amp;ng_curr=USD", "id": "page=419ff098-e86d-4a97-8007-5bf0101fd875", "timestamp": 1744553129.499}]}], "activeContext": "context=c4805c74-2e46-4865-873c-3894bcc43ff3", "activeBrowser": true}]</msg>
+<msg timestamp="20250413 11:06:33.372" level="INFO">Active context id</msg>
+<msg timestamp="20250413 11:06:33.374" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20250413 11:06:33.376" level="INFO">Returned active context id</msg>
+<msg timestamp="20250413 11:06:33.382" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20250413 11:06:33.525" level="INFO">Successfully closed Context</msg>
+<status status="PASS" starttime="20250413 11:06:33.365" endtime="20250413 11:06:33.526"/>
+</kw>
+<status status="PASS" starttime="20250413 11:05:28.937" endtime="20250413 11:06:33.526"/>
+</test>
+<test id="s1-t2" name="User Navigates, Selects Model And Submits Quote Form" line="21">
+<kw name="Setup Test" library="quote_keywords" type="SETUP">
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1920, 'height': 1080}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20250413 11:06:33.538" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "viewport": {"width": 1920, "height": 1080}, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20250413 11:06:33.595" level="INFO">Successfully created context. </msg>
+<msg timestamp="20250413 11:06:33.595" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'viewport': {'width': 1920, 'height': 1080}, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20250413 11:06:33.537" endtime="20250413 11:06:33.595"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>1 minute</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20250413 11:06:33.601" level="INFO">Set timeout to: 60000</msg>
+<status status="PASS" starttime="20250413 11:06:33.595" endtime="20250413 11:06:33.601"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:33.536" endtime="20250413 11:06:33.601"/>
+</kw>
+<kw name="Given The user accesses the site with its respective data" library="quote_keywords">
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20250413 11:06:41.896" level="INFO">Successfully initialized new page object and opened url: https://can-am.brp.com/off-road/us/en/</msg>
+<status status="PASS" starttime="20250413 11:06:33.602" endtime="20250413 11:06:41.897"/>
+</kw>
+<kw name="Close Modal If Exists" library="quote_keywords">
+<kw name="Get Element Count" library="Browser">
+<var>${newsletter}</var>
+<arg>css=#root_newsletter-popup .overlay</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20250413 11:06:41.977" level="INFO">${newsletter} = 1</msg>
+<status status="PASS" starttime="20250413 11:06:41.898" endtime="20250413 11:06:41.977"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${newsletter} &gt; 0</arg>
+<arg>Click</arg>
+<arg>css=#root_newsletter-popup button[aria-label="Close"]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click" library="Browser">
+<arg>css=#root_newsletter-popup button[aria-label="Close"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:06:41.979" endtime="20250413 11:06:51.958"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:41.978" endtime="20250413 11:06:51.958"/>
+</kw>
+<kw name="Get Element Count" library="Browser">
+<var>${modals}</var>
+<arg>css=.modal.fade.show</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20250413 11:06:52.041" level="INFO">${modals} = 0</msg>
+<status status="PASS" starttime="20250413 11:06:51.958" endtime="20250413 11:06:52.041"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${modals} &gt; 0</arg>
+<arg>Click</arg>
+<arg>css=.modal.fade.show button.close</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250413 11:06:52.041" endtime="20250413 11:06:52.041"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:41.897" endtime="20250413 11:06:52.041"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#root_newsletter-popup .overlay</arg>
+<arg>hidden</arg>
+<arg>10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20250413 11:06:52.054" level="INFO">Waited for Element with selector css=#root_newsletter-popup .overlay at state hidden</msg>
+<status status="PASS" starttime="20250413 11:06:52.041" endtime="20250413 11:06:52.054"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20250413 11:06:52.058" level="INFO">${title} = 2025 Can-Am Off-Road ATVs &amp; Side-by-Sides Vehicles</msg>
+<status status="PASS" starttime="20250413 11:06:52.054" endtime="20250413 11:06:52.058"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title}</arg>
+<arg>${can_am["expected_title"]}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20250413 11:06:52.058" endtime="20250413 11:06:52.059"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:33.602" endtime="20250413 11:06:52.059"/>
+</kw>
+<kw name="When The user selects a model and year" library="quote_keywords">
+<kw name="Click Model Menu" library="quote_keywords">
+<arg>${can_am["menu_label"]}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selector}</var>
+<arg>a[data-analytic-label="${menu_label}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:06:52.061" level="INFO">${selector} = a[data-analytic-label="side-by-side-vehicles"]</msg>
+<status status="PASS" starttime="20250413 11:06:52.061" endtime="20250413 11:06:52.061"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${selector} &gt;&gt; nth=1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:06:52.061" endtime="20250413 11:06:53.155"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:52.060" endtime="20250413 11:06:53.155"/>
+</kw>
+<kw name="Click Model By Name" library="quote_keywords">
+<arg>${can_am["model"]}</arg>
+<kw name="Get Element" library="Browser">
+<var>${element}</var>
+<arg>a[data-technical-name="${model_name}"]:visible &gt;&gt; nth=0</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<msg timestamp="20250413 11:06:55.683" level="INFO">Locator found successfully.</msg>
+<msg timestamp="20250413 11:06:55.683" level="INFO">${element} = element=dca69298-1149-4edb-879c-773caa60b54b</msg>
+<status status="PASS" starttime="20250413 11:06:53.158" endtime="20250413 11:06:55.683"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${element}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:06:55.683" endtime="20250413 11:06:57.756"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:53.156" endtime="20250413 11:06:57.756"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>text=${can_am["model_year"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:06:57.757" endtime="20250413 11:07:09.888"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:52.060" endtime="20250413 11:07:09.889"/>
+</kw>
+<kw name="And The user clicks the quote button" library="quote_keywords">
+<kw name="Click" library="Browser">
+<arg>text=${can_am["quote_text"]} &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:07:09.890" endtime="20250413 11:07:22.975"/>
+</kw>
+<status status="PASS" starttime="20250413 11:07:09.889" endtime="20250413 11:07:22.976"/>
+</kw>
+<kw name="Then The user fills out and submits the quote form" library="quote_keywords">
+<kw name="Fill Quote Form" library="quote_keywords">
+<arg>${form}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250413 11:07:23.982" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250413 11:07:22.977" endtime="20250413 11:07:23.982"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_first_name"]</arg>
+<arg>${form["first_name"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20250413 11:07:23.984" level="INFO">Fills the text 'Paul' in the given field.</msg>
+<status status="PASS" starttime="20250413 11:07:23.982" endtime="20250413 11:07:31.918"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_last_name"]</arg>
+<arg>${form["last_name"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20250413 11:07:31.920" level="INFO">Fills the text 'Díanno' in the given field.</msg>
+<status status="PASS" starttime="20250413 11:07:31.919" endtime="20250413 11:07:32.295"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_email"]</arg>
+<arg>${form["email"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20250413 11:07:32.297" level="INFO">Fills the text 'paul.dianno@example.ca' in the given field.</msg>
+<status status="PASS" starttime="20250413 11:07:32.296" endtime="20250413 11:07:32.360"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_country_code"]</arg>
+<arg>value</arg>
+<arg>${form["country_code"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:07:32.360" endtime="20250413 11:07:32.461"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_phone"]</arg>
+<arg>${form["phone"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20250413 11:07:32.462" level="INFO">Fills the text '0987654321' in the given field.</msg>
+<status status="PASS" starttime="20250413 11:07:32.461" endtime="20250413 11:07:32.622"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_custom2"]</arg>
+<arg>${form["address"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20250413 11:07:32.625" level="INFO">Fills the text '456 Elm Street' in the given field.</msg>
+<status status="PASS" starttime="20250413 11:07:32.623" endtime="20250413 11:07:32.801"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_custom3"]</arg>
+<arg>${form["city"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20250413 11:07:32.802" level="INFO">Fills the text 'Miami' in the given field.</msg>
+<status status="PASS" starttime="20250413 11:07:32.801" endtime="20250413 11:07:32.863"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_custom4"]</arg>
+<arg>value</arg>
+<arg>${form["province"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20250413 11:07:32.863" endtime="20250413 11:07:32.963"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${IFRAME_SELECTOR} &gt;&gt;&gt; [id="form_input_custom5"]</arg>
+<arg>${form["postal_code"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20250413 11:07:32.965" level="INFO">Fills the text '33101' in the given field.</msg>
+<status status="PASS" starttime="20250413 11:07:32.963" endtime="20250413 11:07:33.205"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${form["click_checkboxes"]}' == 'True'</arg>
+<arg>Click Checkboxes In Iframe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250413 11:07:33.205" endtime="20250413 11:07:33.208"/>
+</kw>
+<status status="PASS" starttime="20250413 11:07:22.977" endtime="20250413 11:07:33.208"/>
+</kw>
+<kw name="Take Timestamped Screenshot" library="quote_keywords">
+<arg>${locale}</arg>
+<kw name="Get Time" library="BuiltIn">
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M%S</arg>
+<doc>Returns the given time in the requested format.</doc>
+<msg timestamp="20250413 11:07:33.210" level="INFO">${timestamp} = 2025-04-13 11:07:33</msg>
+<status status="PASS" starttime="20250413 11:07:33.209" endtime="20250413 11:07:33.210"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${timestamp}</var>
+<arg>${timestamp.replace(":", "-")}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:07:33.212" level="INFO">${timestamp} = 2025-04-13 11-07-33</msg>
+<status status="PASS" starttime="20250413 11:07:33.210" endtime="20250413 11:07:33.212"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${filename}</var>
+<arg>${locale}-screenshot-${timestamp}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250413 11:07:33.213" level="INFO">${filename} = US_EN-screenshot-2025-04-13 11-07-33</msg>
+<status status="PASS" starttime="20250413 11:07:33.212" endtime="20250413 11:07:33.213"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<arg>filename=${filename}</arg>
+<arg>fullPage=True</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20250413 11:07:35.344" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/US_EN-screenshot-2025-04-13%2011-07-33.png"&gt;&lt;img src="browser/screenshot/US_EN-screenshot-2025-04-13%2011-07-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250413 11:07:33.214" endtime="20250413 11:07:35.345"/>
+</kw>
+<status status="PASS" starttime="20250413 11:07:33.208" endtime="20250413 11:07:35.345"/>
+</kw>
+<status status="PASS" starttime="20250413 11:07:22.976" endtime="20250413 11:07:35.345"/>
+</kw>
+<kw name="Close Context" library="Browser" type="TEARDOWN">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes a Context.</doc>
+<msg timestamp="20250413 11:07:35.442" level="INFO">[{"type": "chromium", "id": "browser=df9fc2be-7357-4c66-9eaf-6b842ae4e726", "contexts": [{"type": "context", "id": "context=44344790-7edc-424e-a954-5c755bad35d3", "activePage": "page=319eba34-8b67-45fe-8769-099afb4dd865", "pages": [{"type": "page", "title": "Request a Quote for an ATV or SxS - Can-Am Off-Road", "url": "https://can-am.brp.com/off-road/us/en/shopping-tools/get-a-quote.html#ng_cat=BRP_SSV&amp;ng_model=Defender&amp;ng_trim=Defender&amp;ng_msrp=12899&amp;ng_curr=USD", "id": "page=319eba34-8b67-45fe-8769-099afb4dd865", "timestamp": 1744553194.07}]}], "activeContext": "context=44344790-7edc-424e-a954-5c755bad35d3", "activeBrowser": true}]</msg>
+<msg timestamp="20250413 11:07:35.445" level="INFO">Active context id</msg>
+<msg timestamp="20250413 11:07:35.447" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20250413 11:07:35.449" level="INFO">Returned active context id</msg>
+<msg timestamp="20250413 11:07:35.456" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20250413 11:07:35.623" level="INFO">Successfully closed Context</msg>
+<status status="PASS" starttime="20250413 11:07:35.346" endtime="20250413 11:07:35.624"/>
+</kw>
+<status status="PASS" starttime="20250413 11:06:33.529" endtime="20250413 11:07:35.624"/>
+</test>
+<kw name="Close Browser" library="Browser" type="TEARDOWN">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20250413 11:07:36.342" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20250413 11:07:35.630" endtime="20250413 11:07:36.342"/>
+</kw>
+<status status="PASS" starttime="20250413 11:05:25.968" endtime="20250413 11:07:36.342"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Request A Quote">Request A Quote</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
