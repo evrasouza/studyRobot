@@ -23,19 +23,23 @@ EXPECTED_ERRORS = {
 
 locale = "CA_FR"
 
-sea_doo = {
+brands = {
+    "sea_doo": {
   "model": "spark",
   "model_year": "2024 Spark",
   "quote_text": "Demandez un prix",
   "expected_title": "Motomarines et Bateaux Pontons Sea-Doo 2025",
   "menu_label": "models"
-}
+},
 
-can_am = {
+"can_am": {
   "model": "defender",
   "model_year": "Defender 2024",
   "quote_text": "Demander un prix",
   "title_RAQ_PAGE": "DEMANDEZ UN PRIX",
   "expected_title": "Véhicules Can-Am Hors-Route 2025 : VTT et VCC",
   "menu_label": "side-by-side-vehicles"
+}
+
+    
 }

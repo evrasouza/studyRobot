@@ -5,21 +5,19 @@ The user accesses the site with its respective data
     Close Modal If Exists
     Wait For Elements State    css=#root_newsletter-popup .overlay    hidden    10s
     ${title}=         Get Title
-    #Should Contain    ${title}    ${can_am.expected_title}
-    Should Contain    ${title}    ${can_am["expected_title"]}
+    ${brand_data}=  Get From Dictionary    ${brands}    ${BRAND}
+    Should Contain    ${title}    ${brand_data["expected_title"]}
 
 # When
 The user selects a model and year
-    #Click Model Menu        ${can_am.menu_label}
-    #Click Model By Name     ${can_am.model}
-    #Click                   text="${can_am.model_year}"
-    Click Model Menu        ${can_am["menu_label"]}
-    Click Model By Name     ${can_am["model"]}
-    Click                   text=${can_am["model_year"]}
+    ${brand_data}=  Get From Dictionary    ${brands}    ${BRAND}
+    Click Model Menu        ${brand_data["menu_label"]}
+    Click Model By Name     ${brand_data["model"]}
+    Click                   text=${brand_data["model_year"]}
 
 The user clicks the quote button
-    #Click    text="${can_am.quote_text}" >> nth=0
-    Click    text=${can_am["quote_text"]} >> nth=0
+    ${brand_data}=  Get From Dictionary    ${brands}    ${BRAND}
+    Click    text=${brand_data["quote_text"]} >> nth=0
 
 The user fills out and submits the quote form
     Fill Quote Form                ${form}
@@ -120,7 +118,8 @@ Validate Error Messages In Iframe
 
 The form should not be submitted
     ${text}=    Get Text    h1.cmp-teaser__title
-    Should Be Equal As Strings    ${text}    ${can_am["title_RAQ_PAGE"]}
+    ${brand_data}=  Get From Dictionary    ${brands}    ${BRAND}
+    Should Be Equal As Strings    ${text}    ${brand_data["title_RAQ_PAGE"]}
 
 validation messages should appear for the required fields
     Validate Error Messages In Iframe    ${IFRAME_SELECTOR}    &{EXPECTED_ERRORS}
