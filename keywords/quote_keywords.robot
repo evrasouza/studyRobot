@@ -1,4 +1,5 @@
 *** Keywords ***
+# Given
 The user accesses the site with its respective data
     New Page          ${URL}
     Close Modal If Exists
@@ -7,6 +8,7 @@ The user accesses the site with its respective data
     #Should Contain    ${title}    ${can_am.expected_title}
     Should Contain    ${title}    ${can_am["expected_title"]}
 
+# When
 The user selects a model and year
     #Click Model Menu        ${can_am.menu_label}
     #Click Model By Name     ${can_am.model}
@@ -94,12 +96,19 @@ Get Shadow Button
 
 The user tries to submit the quote form without filling in the required fields
     Click                    ${IFRAME_SELECTOR} >>> [id="button1"]
+
+the user sees the newsletter subscription form
+    Wait For Elements State    text=Subscribe    visible
+    Click    text=Subscribe
+
+the user clicks the subscribe button without filling in first name, last name, and email
+    Click                    ${IFRAME_SELECTOR} >>> [id="button1"]
     
+# THEN
 Validation messages should appear for each required field
     Validate Error Messages In Iframe    ${IFRAME_SELECTOR}    &{EXPECTED_ERRORS}
     Take Timestamped Screenshot    ${locale}
 
-*** Keywords ***
 Validate Error Messages In Iframe
     [Arguments]    ${iframe}    &{errors}
     FOR    ${id}    IN    @{errors.keys()}
@@ -112,3 +121,7 @@ Validate Error Messages In Iframe
 The form should not be submitted
     ${text}=    Get Text    h1.cmp-teaser__title
     Should Be Equal As Strings    ${text}    ${can_am["title_RAQ_PAGE"]}
+
+validation messages should appear for the required fields
+    Validate Error Messages In Iframe    ${IFRAME_SELECTOR}    &{EXPECTED_ERRORS}
+    Take Timestamped Screenshot    ${locale}
