@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Running separate tests in parallel..."
+echo "Running separate tests..."
 
 declare -A locales=(
   ["CA_EN"]="https://can-am.brp.com/off-road/ca/en/"
@@ -13,32 +13,16 @@ tests=(
   "subscribe_to_a_newsletter.robot::NEW"
 )
 
-# Função para rodar cada teste
-run_test() {
-  local locale=$1
-  local url=$2
-  local file=$3
-  local suffix=$4
-
-  echo "Running: $file - $locale"
-  robot -v URL:"$url" -v BRAND:can_am \
-        --variablefile "resources/yaml/${locale}.py" \
-        -d "./reports/${locale}_${suffix}" \
-        "tests/${file}"
-}
-
-# Loop paralelo
+# Loop para rodar todos os testes
 for locale in "${!locales[@]}"; do
   url="${locales[$locale]}"
   for test in "${tests[@]}"; do
     file="${test%%::*}"
     suffix="${test##*::}"
-    run_test "$locale" "$url" "$file" "$suffix" &
+    echo "Running test: $file for $locale"
+    robot -v URL:"$url" -v BRAND:can_am --variablefile "resources/yaml/${locale}.py" -d "./reports/${locale}_${suffix}" "tests/${file}"
   done
 done
-
-# Espera todos os testes finalizarem
-wait
 
 echo "Preparing merge paste..."
 mkdir -p reports/merged/Browser/screenshot
@@ -60,4 +44,4 @@ rebot --name "Quote Navigation Tests" \
       reports/*_RAQ/output.xml \
       reports/*_NEW/output.xml
 
-echo "✅ Final report generated in reports/merged"
+echo "Final report generated in reports/merged"
