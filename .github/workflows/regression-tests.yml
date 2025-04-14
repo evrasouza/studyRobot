@@ -42,20 +42,20 @@ jobs:
 
     - name: Run Web Tests in Parallel
       run: |
-        chmod +x frontend/run.sh
-        ./frontend/run.sh
+        chmod +x run_all_tests.sh
+        ./run_all_tests.sh
 
     - name: Upload Robot Reports
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: robot-reports
-        path: frontend/reports/merged
+        path: reports/merged
 
     - name: Test Reporter
       uses: dorny/test-reporter@v1.5.0
       if: always()
       with:
         name: Web Test Results
-        path: frontend/reports/merged/merged_output.xml
+        path: reports/merged/merged_output.xml
         reporter: java-junit
